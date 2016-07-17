@@ -1,0 +1,40 @@
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("/RedseaPlatform/skins/library/swipe/basic/css/swiper.min.css,/RedseaPlatform/skins/library/swipe/basic/js/swiper.min.js");
+	}
+</script>
+
+    <style>
+    
+    .swiper-container {
+        width: 100%;
+        height: 500px;
+    }
+   
+    </style>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="http://www.hr-soft.cn/r/cms/redsea/redsea/imgs/pic/homepage1.jpg"/></div>
+            <div class="swiper-slide"><img src="http://www.hr-soft.cn/r/cms/redsea/redsea/imgs/pic/homepage2.jpg"/></div>
+            <div class="swiper-slide"><img src="http://www.hr-soft.cn/r/cms/redsea/redsea/imgs/pic/homepage3.jpg"/></div>
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+		<div style="padding: 20px;">
+		<a style="font-size: 18px;" href="http://www.swiper.com.cn/demo/index.html">更多示例点击查看</a>
+		</div>
+
+
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    </script>

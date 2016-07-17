@@ -1,0 +1,462 @@
+<meta charset="utf-8">
+<style type="text/css">
+
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2,bootswitch");
+	}
+</script>
+ 
+<div class="RedSea">
+
+<div class="selet2-100 RedSea-Body-3">
+	<div class="info-title">
+		<p class="line-2px"><i class="icon-building"></i>客户基本信息</p>
+		<em>
+			<!--元件1-->
+				<div class="btn-group pull-right btn-group-sm">
+					<button type="button" class="btn btn-default but-border">新签合同</button>
+
+				</div>
+				<!--元件2-->
+				<div class="btn-group btn-group-sm pull-right mgr-10">
+					<button type="button" class="btn btn-default but-border">快捷操作</button>
+					<button type="button" class="btn btn-default but-border dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			
+		</em>
+	</div>
+	<div class="mt10 clearfix">
+		<form id="cust_info_form" name="form1" method="post" action="/OutWork/PtFjk.mc?method=upload" enctype="multipart/form-data" border="0">
+			
+
+			<table class="c-table" width="100%">
+				<tbody>
+					<tr>
+						<td class="labelText" align="center" width="12%">客户名称：</td>
+						<td colspan="2">
+							<input class="form-control" name="customerName" id="customerName" validate="required" type="text">
+						</td>
+						<td rowspan="5" width="25%">
+							<div style="padding:0 20px; text-align:center">
+								<input id="customerPhoto" name="customerPhoto" type="hidden">
+								<img id="customer-image" src="http://192.168.101.186:8299/OutWork/skins/style/images/noImage.png" onerror="this.src='/OutWork/skins/style/images/noImage.png'" height="180" width="150">
+								<input d="fi_file" name="fj_file" onchange="ajaxSubmitFormUpload()" style="display:none;" id="uploadFile" type="file">
+								<div style="margin-top:5px;">
+									<button class="btn btn-success btn-xs" onclick="$('#uploadFile').click();" type="button">上传</button>
+									<button id="image-delete-btn" class="btn btn-default btn-xs" type="button">删除</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText" align="center" width="12%">客户简称：</td>
+						<td colspan="2">
+							<input class="form-control" name="shortName" id="shortName" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText" align="center" width="12%">联系方式：</td>
+						<td colspan="2">
+							<input class="form-control phoneformate" name="customerTel" id="customerTel" validate="required,phone" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText" align="center" width="12%">客户地址：</td>
+						<td colspan="2" style="border-spacing: 0px;">
+							<div class="input-group" style="width:100%">
+								<input autocomplete="off" class="form-control" name="customerAddr" id="customerAddr" validate="required" type="text">
+								<span class="input-group-btn" id="map-show">
+                                 <button class="btn btn-default" type="button">
+                                     <span class="glyphicon glyphicon-map-marker"></span>
+								</button>
+								</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText" align="center" width="12%">所属区域：</td>
+						<td colspan="2">
+							<input name="province" id="province" placeholder="省" readonly="readonly" class="form-control pull-left mr5" style="width:90px;" type="text">
+							<input name="city" id="city" placeholder="市" readonly="readonly" class="form-control pull-left mr5" style="width:90px;" type="text">
+							<input name="downtown" id="downtown" placeholder="县（区）" readonly="readonly" class="form-control pull-left mr5" style="width:90px;" type="text">
+							<input name="town" id="town" placeholder="镇(街道)" class="form-control pull-left" style="width:200px;" type="text">
+						</td>
+					</tr>
+					<tr>
+
+						<td class="labelText">客户状态：</td>
+						<td width="30%">
+							<select class="form-control" name="nowPhase" id="nowPhase">
+								<option value="1">初步沟通</option>
+								
+
+							</select>
+						</td>
+						<td class="labelText" width="12%">人员规模：</td>
+						<td>
+							<select class="form-control" name="peopleScale" id="peopleScale">
+								<option value="1">50人以下</option>
+								
+
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText">客户分级：</td>
+						<td>
+							<select class="form-control" name="customerKind" id="customerKind">
+								<option value="1">小型客户</option>
+								<option value="2">中型客户</option>
+								<option value="3">大型客户</option>
+								<option value="4">Vip客户</option>
+
+							</select>
+						</td>
+						<td class="labelText">客户来源：</td>
+						<td>
+							<select class="form-control" name="customertFrom" id="customertFrom">
+								<option value="1">独立开发</option>
+								<option value="2">来电咨询</option>
+								<option value="3">客户介绍</option>
+								<option value="4">促销活动</option>
+								<option value="5">搜索引擎</option>
+								<option value="6">广告</option>
+								<option value="7">其他</option>
+
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText">负责人：</td>
+						<td style="border-spacing: 0px;">
+							<div class="input-group">
+								<input class="form-control" name="customerManagerName" id="customerManagerName" value="廖勇" style="z-index: 0;background: #fff;" readonly="readonly" type="text">
+								<input name="customerManager" id="customerManager" value="廖勇" type="hidden">
+								<span class="input-group-btn" id="customerManager-btn">
+                             <button class="btn btn-default" type="button">
+                                 <span class=" icon-eye-open"></span>
+								</button>
+								</span>
+							</div>
+						</td>
+						<td class="labelText">客户行业：</td>
+						<td>
+							<select class="form-control" name="customerType" id="customerType">
+								<option value="">采矿业</option>
+								
+
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText">联合跟进人：</td>
+						<td colspan="3" style="border-spacing: 0px;">
+							<div class="input-group" style="width:100%">
+								<input class="form-control" name="sharePeopleName" id="sharePeopleName" style="z-index: 0;background: #fff;" readonly="readonly" type="text">
+								<input name="sharePeople" id="sharePeople" type="hidden">
+								<span class="input-group-btn" id="sharePeople-btn">
+                             <button class="btn btn-default" type="button">
+                                 <span class="icon-eye-open"></span>
+								</button>
+								</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="labelText">客户邮箱：</td>
+						<td>
+							<input class="form-control" name="customerEmail" id="customerEmail" validate="email" type="text">
+						</td>
+						<td class="labelText">客户网址：</td>
+						<td>
+							<input class="form-control" name="customerWebsate" id="customerWebsate" type="text">
+						</td>
+					</tr>
+
+					<tr>
+						<td class="labelText">公司简介：</td>
+						<td colspan="3">
+							<textarea class="form-control" name="customerDesc" id="customerDesc" rows="3" style="width:100%;"></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div style=" width:100%; text-align:center;">
+				<button class="btn btn-success btn-sm" type="button" id="cust-info-save">保存</button>
+				<button class="btn btn-default btn-sm" type="button" onclick="back()">返回</button>
+			</div>
+		</form>
+
+	</div>
+	
+	
+	
+	
+	
+	<!--表2-->	
+	<div class="info-title">
+		<p class="line-2px"><i class="icon-user"></i>客户联系人</p>
+		<em>
+			<div class="RedSea-Title-tabs">
+					
+					<ul class="nav nav-tabs" id="myTabs">
+					  <li role="presentation" class="pull-right active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">首页</a></li>
+					  <li role="presentation" class="pull-right"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">简介</a></li>
+					  <li role="presentation" class="pull-right"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">消息</a></li>
+					</ul>
+										
+				</div>
+			
+		</em>
+	</div>
+	
+	
+	
+	<div id="cust-contacter" style="width: 100%;">
+		<div class="cust-contacter-group">
+			<form>
+				
+
+				<table class="c-table" width="100%">
+					<tbody>
+						<tr>
+							<td class="labelText">联系人名称：</td>
+							<td>
+								<input class="form-control" name="contacterName" id="contacterName" validate="required" type="text">
+							</td>
+							<td class="labelText">手机号码：</td>
+							<td>
+								<input class="form-control phoneformate" name="contacterMobilephone" id="contacterMobilephone" validate="phone" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">职务：</td>
+							<td>
+								<input class="form-control" name="contacterPost" id="contacterPost" type="text">
+							</td>
+							<td class="labelText">联系电话：</td>
+							<td>
+								<input class="form-control phoneformate" name="contacterTel" id="contacterTel" validate="phone" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">性别：</td>
+							<td>
+								<label class="radio-inline">
+									<input type="radio" id="rad" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 未知
+								</label>
+
+							</td>
+							<td class="labelText">传真(QQ)：</td>
+							<td>
+								<input class="form-control" name="contacterFax" id="contacterFax" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">生日：</td>
+							<td>
+								<input class="form-control" name="contacterBirth" id="contacterBirth" onclick="WdatePicker({startDate:'2015-11-13'});" type="text">
+							</td>
+							<td class="labelText">Email：</td>
+							<td>
+								<input class="form-control" name="contacterEmail" id="contacterEmail" type="text">
+							</td>
+						</tr>
+						<tr style="line-height:33px; position:relative">
+							<td class="labelText">是否主要联系人：</td>
+							<td style="position:relative; left:0px; top:0px;">
+								<div class="switch" data-on-label="SI" data-off-label="NO">
+									<input type="checkbox" checked class="switchs" name="my-checkbox" />
+								</div>
+							</td>
+							<td class="labelText">亲密程度 ：</td>
+							<td>
+								<select name="relationship" class="form-control">
+									<option value="1">初相识</option>
+									<option value="2">一般关系</option>
+									<option value="3">朋友关系</option>
+									<option value="4">好友关系</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">描述：</td>
+							<td colspan="3">
+								<textarea class="form-control" rows="3" style="width:100%;" name="contacterDesc" id="contacterDesc"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="width:100%; text-align:center;">
+					<button class="btn btn-default btn-sm cust-contacter-add-btn" type="button" style="display: none;">新增</button>
+					<button class="btn btn-success btn-sm cust-contacter-save" type="button">保存</button>
+					<button class="btn btn-default btn-sm" type="button" onclick="back()">返回</button>
+				</div>
+			</form>
+			<div id="cust-contacter-detail-placeholder"></div>
+		</div>
+	</div>
+
+
+
+<!--表3-->	
+	<div class="info-title">
+		<p class="line-2px"><i class="icon-user"></i>客户联系人</p>
+		
+	</div>
+	
+	
+	
+	<div id="cust-contacter" style="width: 100%;">
+		<div class="cust-contacter-group">
+			<form>
+				
+
+				<table class="c-table" width="100%">
+					<tbody>
+						<tr>
+							<td class="labelText">联系人名称：</td>
+							<td>
+								<input class="form-control" name="contacterName" id="contacterName" validate="required" type="text">
+							</td>
+							<td class="labelText">手机号码：</td>
+							<td>
+								<input class="form-control phoneformate" name="contacterMobilephone" id="contacterMobilephone" validate="phone" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">职务：</td>
+							<td>
+								<input class="form-control" name="contacterPost" id="contacterPost" type="text">
+							</td>
+							<td class="labelText">联系电话：</td>
+							<td>
+								<input class="form-control phoneformate" name="contacterTel" id="contacterTel" validate="phone" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">性别：</td>
+							<td>
+								<label class="radio-inline">
+									<input type="radio" id="rad" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 未知
+								</label>
+
+							</td>
+							<td class="labelText">传真(QQ)：</td>
+							<td>
+								<input class="form-control" name="contacterFax" id="contacterFax" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">生日：</td>
+							<td>
+								<input class="form-control" name="contacterBirth" id="contacterBirth" onclick="WdatePicker({startDate:'2015-11-13'});" type="text">
+							</td>
+							<td class="labelText">Email：</td>
+							<td>
+								<input class="form-control" name="contacterEmail" id="contacterEmail" type="text">
+							</td>
+						</tr>
+						<tr style="line-height:33px; position:relative">
+							<td class="labelText">是否主要联系人：</td>
+							<td style="position:relative; left:0px; top:0px;">
+								<div class="switch" data-on-label="SI" data-off-label="NO">
+									<input type="checkbox" checked class="switchs" name="my-checkbox" />
+								</div>
+							</td>
+							<td class="labelText">亲密程度 ：</td>
+							<td>
+								<select name="relationship" class="form-control">
+									<option value="1">初相识</option>
+									<option value="2">一般关系</option>
+									<option value="3">朋友关系</option>
+									<option value="4">好友关系</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="labelText">描述：</td>
+							<td colspan="3">
+								<textarea class="form-control" rows="3" style="width:100%;" name="contacterDesc" id="contacterDesc"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="width:100%; text-align:center;">
+					<button class="btn btn-default btn-sm cust-contacter-add-btn" type="button" style="display: none;">新增</button>
+					<button class="btn btn-success btn-sm cust-contacter-save" type="button">保存</button>
+					<button class="btn btn-default btn-sm" type="button" onclick="back()">返回</button>
+				</div>
+			</form>
+			<div id="cust-contacter-detail-placeholder"></div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+	//下拉框
+	$('select').select2({
+		 	 minimumResultsForSearch: Infinity,
+		 	 width: 'resolve'
+	});
+	
+	//iCheck
+	$(function(){
+	        	 $('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });	          
+	 });
+	
+	//Switch	
+	$(".switchs").bootstrapSwitch();
+</script>
+<script>
+	$('#myTabs a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+</script>

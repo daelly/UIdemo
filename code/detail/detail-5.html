@@ -1,0 +1,332 @@
+<meta charset="utf-8">
+<style type="text/css">
+
+	body{background-color: #f3f4f6;}
+	
+	
+</style>
+
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("echarts,icheck");
+	}
+</script>
+ 
+
+<div class="RedSea">
+	<div class="RedSea-Body-4">
+		<div class="info-title">
+			<p class="line-2px"><i class="icon-building"></i>客户基本信息</p>
+			<em>
+				
+			</em>
+		</div>
+		
+		<div class="RedSea-detail-3">
+			<div class="RedSea-detail-3-db1">
+				<div class="RedSea-detail-3-db1-L">
+					<em><img src="/RedseaPlatform/skins/style/images/noImage.png"/></em>
+					<span>莫诗淇</span>
+					<span>441225199010081046</span>					
+				</div>
+				<div class="RedSea-detail-3-db1-R">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>请假日期</td>
+								<td>请假天数</td>
+								<td>请假类型</td>
+								<td>备案人</td>
+							</tr>
+							<tr>
+								<td>2015-10-30</td>
+								<td><font>1</font>天</td>
+								<td><font>事假</font></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</div>
+				<div class="RedSea-detail-3-db1-C">
+					<div class="RedSea-detail-3-db1-C-chart" id="chart-01">
+							
+					</div>
+					
+					<div class="RedSea-detail-3-db1-C-form">
+						<em><s><input type="radio"/> 柱形图</s>   <s><input type="radio"/>折线图</s></em>
+						<em><button class="btn btn-default btn-sm">上个月</button><button class="btn btn-default btn-sm">当前月</button><button class="btn btn-default btn-sm">下个月</button></em>
+					</div>
+					
+					
+					
+				</div>
+			</div>
+			
+			
+		</div>
+	
+		
+		
+		<div class="info-title">
+		<p class="line-2px"><i class="icon-building"></i>基本信息</p>
+		<em>
+			
+			
+		</em>
+	</div>
+		
+		
+		<table class="table-view" border="0" width="100%">
+						<tbody>
+							<tr height="22">
+								<td width="120" class="title"><span style="font-weight: 600;">请假事由：</span></td>
+								<td colspan="3"><span style="font-weight: 600; color: red;">w(ﾟДﾟ)w 啊啊</span></td>
+								<!-- 				<td class="title" width='120'>申请人：</td> -->
+
+							</tr>
+							<tr>
+								<td class="title">请假总天数：</td>
+								<td colspan="3">1.0天</td>
+
+							</tr>
+
+							<!-- 生成请假单列表 -->
+
+							<tr>
+								<td class="title">请假开始时间：</td>
+								<td>2015年10月30日</td>
+
+								<td class="title">请假结束时间：</td>
+								<td>2015年10月31日</td>
+							</tr>
+							<tr>
+								<td class="title">请假类型：</td>
+								<td><input type="hidden" name="leaveType" value="09"><span id="leaveType_span">事假</span></td>
+
+								<td class="title">请假天数：</td>
+								<td>1.0天</td>
+							</tr>
+
+
+							<!-- 附件上-->
+							<tr>
+								<input type="hidden" id="upFile" name="upFile">
+								<td class="title">附件 ：</td>
+								<td colspan="5">
+
+									<div id="file_down">
+
+
+
+										<a id="fj_file_downa0e0b37e-befc-406d-b440-655c08222810" href="javascript:void(0);"
+											onclick="fileDownload('/2015/10/30/20151030_1707101299215347.sql','2015-10-26 pub_comhelp.sql')">2015-10-26 pub_comhelp.sql</a> <br>
+
+
+									</div>
+
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+					
+					
+					
+					
+					
+					
+					<!--回复列表-->
+		<div class="RedSea-Reply-1" style="margin: 0px -20px;">
+			<div class="RedSea-Reply-1-tt"><span>回复列表</span></div>
+			<div class="RedSea-Reply-1-bd">
+				<ul>
+					<li>
+						<dl>
+							<dt><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=354684324,9237889&fm=116&gp=0.jpg"/></dt>
+							<dd>
+								<h1><span>李明丽</span><span>一级审批</span><b>通过</b><em>2015-10-15 14:20</em></h1>
+								<h2><span>看起来显得更加阳刚,整体造型相比现款可谓焕然一新</span></h2>
+							</dd>
+						</dl>						
+					</li>
+					
+				</ul>
+		
+			</div>
+			<div class="RedSea-Reply-1-form">
+				<div class="RedSea-Reply-1-form-5"><dl class="RedSea-form-seltap"><dt>审批结果</dt><dd><s><input type="radio"/> 通过</s><s><input type="radio"/> 不通过</s></dd></dl>	</div>
+				<div class="RedSea-Reply-1-form-3"><dl class="RedSea-form-seltap"><dt>抄送人</dt><dd><em class="eq1"><span>张三峰<i class=" icon-remove"></i></span></em><em class="eq2"><a><i class="icon-plus"></i>选择抄送人</a></em></dd></dl>	</div>
+				<div class="RedSea-Reply-1-form-4">
+					<dl id="upfile" class="RedSea-form-seltap"><dt>附件</dt><dd><em class="eq1"></em><em class="eq2"><a><i class="icon-plus"></i>增加附件</a></em></dd></dl>											
+					<input id="hidfile" type="file" style="display:none">
+				</div>
+				
+				<div class="RedSea-Reply-1-form-1"><textarea placeholder="回复评论"></textarea></div>
+				<div class="RedSea-Reply-1-form-2"><button class="btn btn-primary btn-sm">回复</button><button class="btn btn-default btn-sm">关闭</button></div>
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+
+
+
+
+
+	<script>
+	 //--表１---------------------------------------------------------------------
+				option = {
+    title: {
+        x: 'center',
+        text: '莫诗淇 考勤情况',
+        subtext: '2015-11',
+        link: '#',
+        textStyle:{
+        	fontSize: 14,
+			fontWeight: 'normal',			
+			fontFamily:'Microsoft YaHei'
+        }
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    toolbox: {
+        show: false,
+        feature: {
+            dataView: {show: true, readOnly: false},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    calculable: true,
+    grid: {
+        borderWidth: 0,
+        y: 80,
+        y2: 60
+    },
+    xAxis: [
+        {
+            type: 'category',
+            show: false,
+            data: ['早退', '旷工', '正常', '漏打卡']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            show: false
+        }
+    ],
+    series: [
+        {
+            name: '考勤数据统计',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: function(params) {
+                        // build a color map as your need.
+                        var colorList = [
+                          '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                           '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+                           '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{b}\n{c}'
+                    }
+                }
+            },
+            data: [12,21,10,4,12,5,6,5,25,23,7]
+           
+        }
+    ]
+};
+                       
+
+	
+	
+	</script>
+	
+<script>
+	require.config({
+            paths: {
+                echarts: '/RedseaPlatform/skins/js/common/echarts-2.2.2/build/dist/'
+            }
+        });
+        require(
+            [
+                'echarts',
+                'echarts/theme/macarons',
+                'echarts/chart/bar',
+                'echarts/chart/line',
+                'echarts/chart/pie',
+                'echarts/chart/funnel',
+                'echarts/chart/gauge'
+                
+                // 使用柱状图就加载bar模块，按需加载
+                
+            ],
+            function (ec,theme) {
+                // 基于准备好的dom，初始化echarts图表
+               var chart1 = ec.init(document.getElementById('chart-01'),theme); 
+              	chart1.setOption(option);                 	
+               }   
+                             
+        );
+</script>
+
+
+<script>
+	$(function(){
+	        	$('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });  
+	
+	            
+	            
+	          
+	        });
+</script>
+
+<script>
+	$(document).ready(function(){
+		$(".RedSea-form-seltap dd .eq2 a").click(function(){
+			if($(this).parents("dl").attr("id")=="upfile"){
+				$('#hidfile').click();					
+			}else{
+				$(this).parents("dd").find(".eq1").append("<span>张三峰<i class=\" icon-remove\"></i></span>")
+			}
+			
+			
+		})
+		
+		$('#hidfile').change(function() {   
+		 $("#upfile dd .eq1").append("<span>"+$(this).val()+"<i class=\' icon-remove\'></i></span>") 
+		});
+		
+		
+		$(document).on("click",".RedSea-form-seltap dd .eq1 span i",function(){
+			$(this).parents("span").remove();
+		})
+		
+		 $('select').select2({
+		 	 minimumResultsForSearch: Infinity
+		 });
+	})
+		
+	
+</script>

@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+.navList li{
+	display:inline-block
+}
+.navList{
+	padding:3px;
+}
+.pp{
+	border:1px solid #CCCCCC;
+	border-radius:5px;
+	background:#f8f8f8;
+	padding:10px 5px;
+}
+.frame{
+	border:1px solid #cccccc;
+	border-radius:5px;
+	padding:5px 10px;
+	margin:10px 0px 3px 0px;
+}
+.line{
+	border:2px solid #B2B2B2;
+	display:inline-block;
+	width:100px;
+	margin-bottom:2px;
+}
+p{
+	margin-bottom:0px !important;
+}
+.title{
+	font-size:16px;
+	
+}
+.title li{
+	display:inline-block;
+	font-weight:600 !important;
+}
+tr > td:nth-child(1){
+	width:15%;
+	color:#767376;
+	font-size:13px
+}
+.addList th{
+	padding:0px !important;
+	vertical-align:middle !important;
+	background:#ECECEC;
+}
+.listActive{
+	color:#799B4D !important;
+}
+.progressList li{
+	display:inline-block;
+	margin-left:20px !important;
+	color:#8A8A8A;
+	font-size:20px;
+}
+.progressList li span{
+	font-size:18px;
+	margin:0px 3px;
+}
+

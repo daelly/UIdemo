@@ -1,0 +1,153 @@
+
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+ 
+		
+
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-2">
+		<!--列表头-->
+		<div class="RedSea-Title-1">
+			<div class="RedSea-Title-1-text"><span class="icon-edit"></span>我的考场</div>
+			<div class="RedSea-Title-1-tools">
+				<!--元件1-->
+				<div class="btn-group pull-right btn-group-sm mgl-10">
+					<button type="button" class="btn btn-default but-border">面试</button>
+				</div>
+				<div class="btn-group pull-right btn-group-sm">
+					<button type="button" class="btn btn-default but-border">创建集中考试</button>
+				</div>
+				<!--元件4-->
+				<div class="btn-group pull-right mgr-10  btn-group-sm">
+					<input type="text" class="form-control input-sm inline-block pull-left" style="width: 120px;" placeholder="考场名称" />
+					<button class="btn btn-info btn-sm but-border" style="margin-left: -10px;"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+
+				
+				<!--元件5-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 200px;">
+					<span class="input-group-addon" id="sizing-addon2">仅显示</span>
+					<select class="form-control">
+						<option>显示全部状态</option>
+						<option>未开始</option>
+						<option>进行中</option>
+						<option>已结束</option>						
+					</select>
+				</div>
+				
+				
+				
+				
+				
+				
+
+				
+			</div>
+
+		</div>
+
+		<!--列表头end-->
+		
+		
+		
+		<div class="RedSea-list-7 mgt-10">
+		
+			<ul>
+				<li>
+					<dl>
+						<dt><em><span>2月26日</span><i class="icon-circle"></i></em></dt>
+						<dd>
+						<h1>
+							<span><i class="icon-bookmark-empty"></i><b>考试类型</b></span><em>Java 初级考试<a>查看考试详情</a></em>
+						</h1>
+						<h2>
+							<span></span>
+							<em>
+								<s><i class="icon-time"></i>开考时间:2016-03-04 08:35 </s>
+								<s><i class="icon-calendar"></i>成绩查询时间：2016-05-04</s>
+								<s><i class="icon-laptop"></i>考试类型:电脑</s>
+								<s><i class="icon-user"></i>参考人数:50人</s>
+							</em>
+						</h2>
+						</dd>
+					</dl>
+				</li>
+				
+				
+				<li><h3>2016年2月2日</h3></li>
+				
+				<li>
+					<dl>
+						<dt><em><span>2月26日</span><i class="icon-circle"></i></em></dt>
+						<dd>
+						<h1>
+							<span><i class="icon-bookmark-empty"></i><b>考试类型</b></span><em>Java 初级考试<a>查看考试详情</a></em>
+						</h1>
+						<h2>
+							<span></span>
+							<em>
+								<s><i class="icon-time"></i>开考时间:2016-03-04 08:35 </s>
+								<s><i class="icon-calendar"></i>成绩查询时间：2016-05-04</s>
+								<s><i class="icon-laptop"></i>考试类型:电脑</s>
+								<s><i class="icon-user"></i>参考人数:50人</s>
+							</em>
+						</h2>
+						</dd>
+					</dl>
+				</li>
+				
+				<li>
+					<dl>
+						<dt><em><span>2月26日</span><i class="icon-circle"></i></em></dt>
+						<dd>
+						<h1>
+							<span><i class="icon-bookmark-empty"></i><b>考试类型</b></span><em>Java 初级考试<a>查看考试详情</a></em>
+						</h1>
+						<h2>
+							<span></span>
+							<em>
+								<s><i class="icon-time"></i>开考时间:2016-03-04 08:35 </s>
+								<s><i class="icon-calendar"></i>成绩查询时间：2016-05-04</s>
+								<s><i class="icon-laptop"></i>考试类型:电脑</s>
+								<s><i class="icon-user"></i>参考人数:50人</s>
+							</em>
+						</h2>
+						</dd>
+					</dl>
+				</li>
+				
+			</ul>
+			
+		
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('input').iCheck({
+		        	 	   checkboxClass: 'icheckbox_minimal-blue',
+						   radioClass: 'iradio_minimal-blue',					  
+		        	 });  
+	
+	$('select').select2({
+				 	 minimumResultsForSearch: Infinity
+				 });
+})
+</script>

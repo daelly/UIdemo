@@ -1,0 +1,191 @@
+
+<script>
+	$(function() {
+		$('.xwc').on('click', function() {
+			//询问框
+			layer.confirm('您是如何看待前端开发？', {
+				btn : [ '重要', '奇葩' ]
+			//按钮
+			}, function() {
+				layer.msg('的确很重要', {
+					icon : 1
+				});
+			}, function() {
+				layer.msg('也可以这样', {
+					time : 20000, //20s后自动关闭
+					btn : [ '明白了', '知道了' ]
+				});
+			});
+		});
+		$('.ml').on('click', function() {
+			//墨绿深蓝风
+			layer.alert('墨绿风格，点击确认看深蓝', {
+				skin : 'layui-layer-molv' //样式类名
+				,
+				closeBtn : 0
+			}, function() {
+				layer.alert('偶吧深蓝style', {
+					skin : 'layui-layer-lan',
+					closeBtn : 0,
+					shift : 4
+				//动画类型
+				});
+			});
+		});
+	})
+</script>
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1 ">
+		<!--列表头-->
+		<div class="RedSea-Title-3">
+			<div class="RedSea-Title-3-clear">
+				<div class="RedSea-Title-tabs">
+					<div class="RedSea-Title-3-text">
+						<span class="icon-group"></span>模态框
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表头end-->
+		<!-- Tab panes -->
+		<div class="RedSea-list-1">
+			<!-- 标签页 -->
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active"><a href="#home" data-toggle="tab">bootstrap模态框</a></li>
+				<li><a href="#ios" data-toggle="tab">layer模态框</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="home" style="margin-top: 10px">
+					<div class="tabs-container">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">小模态框</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">大模态框</button>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="ios" style="margin-top: 10px">
+					<div class="tabs-container">
+						<a href="javascript:;" class="btn btn-outline btn-default xwc">询问层</a> <a href="javascript:;" class="btn btn-outline btn-default ml">墨绿深蓝风</a>
+					</div>
+					<div class="well">
+						<span class="red1">引入icheck所需js文件</span>	
+						<!-- 引入layer模态框 -->
+
+						<pre style="color: red">
+	  						<p>
+    <br />
+</p>
+<p>
+    <span style="font-family: Consolas; color: rgb(0, 128, 128); font-size: 15px">&lt;</span><span
+									style="font-family: Consolas; color: rgb(63, 127, 127); font-size: 15px; background: rgb(192, 192, 192); background: rgb(192, 192, 192)">script</span><span
+									style="font-family: 宋体; color: rgb(63, 127, 127); font-size: 15px; background: rgb(192, 192, 192); background: rgb(192, 192, 192)">&nbsp;&nbsp;</span><span
+									style="font-family: Consolas; color: rgb(127, 0, 127); font-size: 15px">type</span><span style="font-family: Consolas; font-size: 15px">=</span><span
+									style="font-family: Consolas; color: rgb(42, 0, 255); font-style: italic; font-size: 15px">&quot;text/javascript&quot;</span><span
+									style="font-family: Consolas; font-size: 15px">&nbsp;</span><span style="font-family: Consolas; color: rgb(127, 0, 127); font-size: 15px">src</span><span
+									style="font-family: Consolas; font-size: 15px">=</span><span style="font-family: Consolas; color: rgb(42, 0, 255); font-style: italic; font-size: 15px">&quot;/RedseaPlatform/skins/library/layer-v2.1/layer/layer.js&quot;</span><span
+									style="font-family: Consolas; color: rgb(0, 128, 128); font-size: 15px">&gt;&lt;/</span><span
+									style="font-family: Consolas; color: rgb(63, 127, 127); font-size: 15px; background: rgb(192, 192, 192); background: rgb(192, 192, 192)">script</span><span
+									style="font-family: Consolas; color: rgb(0, 128, 128); font-size: 15px">&gt;</span>
+</p>
+<p>
+    <br />
+</p>
+目前有个bug，按需加载（div加载）时才引入的layer.js会造成模态框不能正常显示
+必须在index（主页面）里面引入了该js才行
+
+/!*
+ 如果是页面层
+ */
+layer.open({
+    type: 1, 
+    content: '传入任意的文本或html' //这里content是一个普通的String
+});
+layer.open({
+    type: 1,
+    content: $('#id') //这里content是一个DOM
+});
+//Ajax获取
+$.post('url', {}, function(str){
+    layer.open({
+        type: 1,
+        content: str //注意，如果str是object，那么需要字符拼接。
+    });
+});
+
+/!*
+ 如果是iframe层
+ */
+layer.open({
+    type: 2, 
+    content: 'http://sentsin.com' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+}); 
+
+/!*
+	  						
+	  					</pre>
+	  					<a href="http://layer.layui.com/api.html" target="_blank">请点击获取更多layer运用的文档说明</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- boostrap模态框 -->
+<!-- Modal1 -->
+<!-- Large modal -->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="recipient-name" class="control-label">Recipient:</label> <input type="text" class="form-control" id="recipient-name">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="control-label">Message:</label>
+						<textarea class="form-control" id="message-text"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Send message</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Small modal -->
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="recipient-name" class="control-label">Recipient:</label> <input type="text" class="form-control" id="recipient-name">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="control-label">Message:</label>
+						<textarea class="form-control" id="message-text"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Send message</button>
+			</div>
+		</div>
+	</div>
+</div>

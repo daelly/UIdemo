@@ -1,0 +1,164 @@
+
+	    <script src="/RedseaPlatform/skins/library/stickUp.min.js"></script>
+	
+         <style>
+         	.collapse ul li a{color:#fff!important;}
+         	.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover,
+         	 .navbar-inverse .navbar-nav>.active>a:focus{background-color:#398439!important}
+        	.article-list{ background-color: #fff; padding: 10px 20px;}
+        	h3{color:#666}
+        	.mt10{margin-top:10px}
+        	/*.clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical>.btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after{ clear:none}*/
+         </style>
+
+		<div class="RedSea">
+		     <div class="navbar-wrapper stuckMenu isStuck">
+		     	<div class="container-fluid" style="width:1090px;height: 70px;">
+		     		<div class="navwrapper">
+		     			<div class="navbar navbar-inverse navbar-static-top" style="background-color:#f3f3f4;border:0;height: 50px;">
+		     				<div class="" style="background-color:#5cb85c;height:50px;color:#fff;padding-left:30px;border-radius:8px">
+		     					<div class="navbar-collapse collapse" style="height: 50px; line-height: 50px;">
+		     				    	<ul class="nav navbar-nav">
+		     				    		<li class="menuItem active"><a href="#home">首页</a></li>
+						                <li class="menuItem"><a href="#features">特色</a></li>
+						                <li class="menuItem"><a href="#updates">更新记录</a></li>
+						                <li class="menuItem"><a href="#installation">安装</a></li>
+						                <li class="menuItem"><a href="#one-pager">单页导航</a></li>
+						                <li class="menuItem"><a href="#extras">额外参数</a></li>
+						                <li class="menuItem"><a href="#wordpress">Wordpress</a></li>
+		     				    	</ul>
+		     					</div>
+		     				</div>
+		     			</div>
+		     		</div>
+		     	</div>
+		     </div> 
+		     <div id='' style="padding:60px 20px 20px 20px"> 
+			     <div id="home" style="" >
+			     	<h2>首页</h2>
+			     	<div style="margin:10px 0" class="well">
+			     		<h2>说明：</h2>
+						<span class="red1">引入js文件</span>	
+						<p>
+						    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:15px">script&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:15px">src</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:15px">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:15px">&quot;/RedseaPlatform/skins/library/stickUp.min.js&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:15px">script</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">&gt;</span>
+						</p>	
+						<span class="red1">修改 stickUp 插件的引用代码如下：</span>	
+						<p>
+						    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&lt;</span><span style="font-family: Consolas;color: rgb(35, 105, 182);font-size: 15px">script&nbsp;</span><span style="font-family: Consolas;color: rgb(203, 45, 1);font-size: 15px">type</span><span style="font-family: Consolas;color: rgb(56, 68, 75);font-size: 15px">=</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;text/javascript&quot;</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&gt;</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//initiating&nbsp;jQuery&nbsp;&nbsp;</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">jQuery(</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(</span><span style="font-family: Consolas;color: rgb(165, 120, 0);font-size: 15px">$</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">)&nbsp;{</span>
+						</p>
+						<p>
+						    <span style="font-family: 宋体;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;$(</span><span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">document</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).ready(&nbsp;</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">()&nbsp;{</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//为&nbsp;&#39;.navbar-wrapper&#39;&nbsp;class&nbsp;启用stickUp插件</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;.navbar-wrapper&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).stickUp({</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parts</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">{</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">0</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;home&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">1</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;features&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">2</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;news&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">3</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;installation&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">4</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;one-pager&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">5</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;extras&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">6</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;wordpress&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">7</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;contact&#39;</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">},</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemClass</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;menuItem&#39;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemHover</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&#39;active&#39;</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">});</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+						</p>
+						<p>
+						    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;});</span>
+						</p>
+						<p></p>
+						<p>
+						    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:15px">script</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">&gt;</span>
+						</p>
+						<p>
+						    <br/>
+						</p>
+						<p><span class="red1">ps 上面的数字标注的是元素出现的顺序。 </span></p>
+						<p><span class="red1">itemClass: 是每个导航菜单条目所对应的的class。 </span></p>
+						<p><span class="red1">itemHover: 是当菜单条目处于激活状态时所被赋予的class，用于修改其外观。 </span></p>	
+					</div>
+			     </div>
+			     <div id="features" style="height:600px;">
+			     	<h2>特色</h2>
+			     </div>
+			     <div id="updates" style="height:600px;">
+			     	<h2>更新记录</h2>
+			     </div>
+			     <div id="installation" style="height:600px;">
+			     	<h2>安装</h2>
+			     </div>
+			     <div id="one-pager" style="height:600px;">
+			     	<h2>单页导航</h2>
+			     </div>
+			     <div id="extras" style="height:600px;">
+			     	<h2>额外参数</h2>
+			     </div>
+			     <div id="wordpress" style="height:600px;">
+			     	<h2>Wordpress</h2>
+			     </div>
+		     </div>
+		     
+		</div>
+		<script type="text/javascript">
+		      jQuery(function($) {
+		        $(document).ready( function() {
+		          $('.navbar-wrapper').stickUp({
+		                        parts: {//这里与导航条对应，比较严格，不能少也不能多。
+		                          0:'home',//少了导致导航栏不可用，多了不能自动滚动
+		                          1:'features',
+		                          2: 'updates',
+		                          3: 'installation',
+		                          4: 'one-pager',
+		                          5: 'extras',
+		                          6: 'wordpress'
+		                        },
+		                        itemClass: 'menuItem',
+		                       	itemHover: 'active',
+		                        topMargin: 'auto'
+		                      });
+		            
+		           /* $(".navbar-collapse").css("height","50px");
+		            $("#home").css("margin-top","0");*/
+		        });
+		      });
+		 </script>

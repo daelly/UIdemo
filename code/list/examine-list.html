@@ -1,0 +1,270 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body {
+		background-color: #f3f4f6;
+	}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2,scrolltofixed");
+	}
+</script>
+<script>
+	$(function(){
+	        	$('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });  
+	
+	            $("#selectAll").on("ifChecked",function(){
+	                $('input:checkbox').iCheck('check');
+	            });
+	
+	            $("#selectAll").on("ifUnchecked",function(){
+	                $('input:checkbox').iCheck('uncheck');
+	            });
+	            
+	          
+	        });
+</script>
+
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1">
+		<!--列表头-->
+		<div class="RedSea-Title-1">
+			<div class="RedSea-Title-1-text"><span class="icon-group"></span>员工花名册</div>
+			<div class="RedSea-Title-1-tools">
+				<!--元件1-->
+				<div class="btn-group pull-right btn-group-sm">
+					<button type="button" class="btn btn-default but-border">新签合同</button>
+
+				</div>
+				<!--元件2-->
+				<div class="btn-group btn-group-sm pull-right mgr-10">
+					<button type="button" class="btn btn-default but-border">快捷操作</button>
+					<button type="button" class="btn btn-default but-border dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+				
+				<!--元件6-->
+				<div class="btn-group pull-right mgr-10 btn-group-sm">
+					<button type="button" class="btn btn-default">通用搜索</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+				<!--元件5-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 150px;">
+					<span class="input-group-addon" id="sizing-addon2">状态</span>
+					<select class="form-control">
+						<option>全部</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+				
+				<!--元件4-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 150px;">
+					<span class="input-group-addon" id="sizing-addon2">性别</span>
+					<select class="form-control">
+						<option>全部</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+				
+				<!--元件3-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 150px;">
+					<span class="input-group-addon" id="sizing-addon2">岗位</span>
+					<select class="form-control">
+						<option>全部</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+			</div>
+
+		</div>
+
+		<!--列表头end-->
+		<div class="RedSea-list-Division"></div>
+
+		<!--列表主体-->
+		<div class="RedSea-list-5 pd-10">
+			<!--一行-->
+			<div class="RedSea-list-5-t"><span>标题1<i>(2)</i></span></div>			
+			<ul class="RedSea-list-5-col4">
+				<li>
+					<dl>
+						<h1><i class="color-1">1</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				<li>
+					<dl>
+						<h1><i class="color-2">2</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				<li>
+					<dl>
+						<h1><i class="color-3">3</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				<li>
+					<dl>
+						<h1><i class="color-4">4</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				<li>
+					<dl>
+						<h1><i class="color-1">1</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+			</ul>
+
+<!--二行-->
+			<div class="RedSea-list-5-t"><span>标题1<i>(2)</i></span></div>			
+			<ul class="RedSea-list-5-col4">
+				<li>
+					<dl>
+						<h1><i class="color-1">1</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				<li>
+					<dl>
+						<h1><i class="color-2">2</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				<li>
+					<dl>
+						<h1><i class="color-3">3</i><span>最新动态</span></h1>
+						<h2>工公司最新动态</h2>
+						<h3>
+							<div class="btn-group btn-group-sm" role="group">
+							  <button type="button" class="btn btn-default">查看</button>
+							  <button type="button" class="btn btn-default">编辑</button>						 
+						</h3>
+					</dl>
+					
+				</li>
+				
+			</ul>
+
+
+
+
+
+		</div>
+
+		<!--列表主体end-->
+
+		<!--列表foot-->
+
+		<div class="RedSea-Foot-1">
+			<div class="RedSea-page-1">
+				<dl>
+					<dt><a><span class="icon-caret-left"></span>上一页</a><a>1</a><a>2</a><a>3</a><a>4</a><a>下一页<span class="icon-caret-right"></span></a></dt>
+					<dd>
+						<div class="btn-group pull-left mgr-10 btn-group-sm">
+							<button type="button" class="btn btn-default">10条</button>
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">10条</a></li>
+								<li><a href="#">20条</a></li>
+								<li><a href="#">30条</a></li>
+
+							</ul>
+						</div>
+					</dd>
+					<dd>
+						<span>共135条记录</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--列表footend-->
+
+	</div>
+	
+<script>
+		//下拉框
+	$('select').select2({
+		 	 minimumResultsForSearch: Infinity,
+		 	 width: 'resolve'
+	});
+</script>

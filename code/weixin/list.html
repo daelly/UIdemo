@@ -1,0 +1,113 @@
+<script>
+	if (typeof(requreLib) != "undefined") {
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+<style type="text/css">
+	body {
+		background-color: #f3f4f6;
+		
+	}
+</style>
+
+<div class="RedSea">
+	<div class="RedSea-work-tools">
+		<ul>
+			<li class="active">				
+				<span class="icon-edit"></span><a>我的微营销</a>								
+			</li>
+			<li>				
+				<span class="icon-pencil"></span><a>草稿库</a>
+			</li>
+			<li>				
+				<span class="icon-time"></span><a>模板库</a>
+			</li>
+		</ul>
+	</div>
+	<div class="pd-10 RedSea-work-Body-1" style="margin-bottom: 5px;">
+		<!--列表头-->
+		<div class="RedSea-Title-1">
+			<div class="RedSea-Title-1-text"><span class="icon-random"></span>我的微营销</div>
+			<div class="RedSea-Title-1-tools">
+				<div class="btn-group pull-right btn-group-sm mgr-10">
+					<input type="text" class="form-control input-sm inline-block pull-left" style="width: 120px;" placeholder="名称" />
+					<button class="btn btn-info btn-sm but-border" style="margin-left: -10px;"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+				<!--元件5-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 150px;">
+					<span class="input-group-addon" id="sizing-addon2">状态</span>
+					<select class="form-control">
+						<option>全部</option>						
+					</select>
+				</div>
+				
+				<!--元件4-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 150px;">
+					<span class="input-group-addon" id="sizing-addon2">类别</span>
+					<select class="form-control work-select">
+						<option label="112" value="全部">全部</option>
+						<option label="12" value="请假流程">请假流程</option>
+						<option label="3" value="入职流程">入职流程</option>						
+					</select>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--列表主体-->
+	<div class="RedSea-work-Body-1  RedSea-work-bd">
+		<div class="RedSea-work-list-t"><span class="icon-angle-right"></span>常用流程</div>
+		<div class="RedSea-list-5">
+			<ul class="RedSea-list-5-col4">
+				<li>
+					<dl>
+						<h1>
+							<img src="/RedseaPlatform/UIdemo/img/a1.jpg" width="100%" height="200px">
+						</h1>
+						<h2 style="min-height:initial">个人名片</h2>
+						<h3>
+								<div class="btn-group btn-group-sm" role="group">
+								  <button type="button" class="btn btn-default">查看</button>
+								  <button type="button" class="btn btn-default">编辑</button>		
+								</div>  				 
+						</h3>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	
+</div>
+
+<script>
+	$(document).on("click",".RedSea-work-tools li",function(){
+		$(".RedSea-work-tools li").removeClass("active");
+		$(this).addClass("active");	
+	})
+	$(document).ready(function() {
+		$('input').iCheck({
+			checkboxClass: 'icheckbox_minimal-blue',
+			radioClass: 'iradio_minimal-blue',
+		});
+		$('select').select2({
+			minimumResultsForSearch: Infinity
+		});	
+		
+		
+		function formatState (state) {
+		  if (!state.id) { return state.text; }
+		  var $state = $(
+		    '<span>' + state.text + '<i>('+ state.element.label.toLowerCase()+')</i></span>'
+		  );
+		  return $state;
+		};
+		
+		$(".work-select").select2({
+		  templateResult: formatState
+		});
+
+	})
+	
+	
+</script>

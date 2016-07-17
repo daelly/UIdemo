@@ -1,0 +1,9 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/03.png">
+  <Marks>
+    <RectMark x="267" y="45" color="16711935" offsetX="728" offsetY="576"/>
+    <TextMark x="251" y="96" color="16711935" offsetX="33" offsetY="23" defaultDirection="5" direction="5" textMaxWidth="131" text="RedSea-right-win&#xD;右边弹出图层样式"/>
+    <TextMark x="329" y="83" color="16711680" offsetX="22" offsetY="8" defaultDirection="10" direction="10" textMaxWidth="149" text="RedSea-right-win-tt dt"/>
+    <TextMark x="576" y="95" color="16711680" offsetX="174" offsetY="4" defaultDirection="10" direction="10" textMaxWidth="151" text="RedSea-right-win-tt dd"/>
+    <TextMark x="378" y="125" color="16711680" offsetX="103" offsetY="7" defaultDirection="9" direction="9" textMaxWidth="139" text="table-view  表格样式"/>
+  </Marks>
+</MKM>

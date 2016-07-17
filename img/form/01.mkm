@@ -1,0 +1,10 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/01.png">
+  <Marks>
+    <TextMark x="109" y="94" color="16711680" offsetX="79" offsetY="28" defaultDirection="9" direction="9" textMaxWidth="159" text=".RedSea .info-title > p  标题"/>
+    <TextMark x="50" y="102" color="16711680" offsetX="77" offsetY="77" defaultDirection="9" direction="9" textMaxWidth="203" text=".RedSea .info-title > p  i   图标"/>
+    <TextMark x="626" y="216" color="16711680" offsetX="50" offsetY="50" defaultDirection="9" direction="9" textMaxWidth="270" text=".RedSea .info-title > em  工具栏区域"/>
+    <TextMark x="834" y="215" color="16711680" offsetX="128" offsetY="41" defaultDirection="6" direction="6" textMaxWidth="194" text=".but-border蓝色边框按钮 "/>
+    <TextMark x="202" y="373" color="16711680" offsetX="69" offsetY="69" defaultDirection="9" direction="9" textMaxWidth="175" text=".line-2px 蓝色2像素下边框"/>
+    <TextMark x="766" y="349" color="16711680" offsetX="109" offsetY="26" defaultDirection="5" direction="5" textMaxWidth="198" text=".info-title .RedSea-Title-tabs"/>
+  </Marks>
+</MKM>

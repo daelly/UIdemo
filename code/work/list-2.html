@@ -1,0 +1,211 @@
+<script>
+	if (typeof(requreLib) != "undefined") {
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+<style type="text/css">
+	body {
+		background-color: #f3f4f6;
+	}
+</style>
+
+<div class="RedSea">
+	<div class="RedSea-work-tools">
+		<ul>
+			<li class="active">				
+				<span class="icon-edit"></span><a>新建流程</a>								
+			</li>
+			<li>				
+				<span class="icon-pencil"></span><a>我的申请</a>
+					
+			</li>
+			<li>				
+				<span class="icon-time"></span><a>我的待办</a>
+							
+			</li>
+			<li>				
+				<span class="icon-ok"></span><a>我的已办</a>
+							
+			</li>
+			<li>				
+				<span class="icon-calendar"></span><a>办结任务</a>
+						
+			</li>
+			<li>				
+				<span class="icon-reply"></span><a>我的抄送</a>
+							
+			</li>			
+		</ul>
+	</div>
+	<div class="pd-10 RedSea-work-Body-1" style="margin-bottom: 5px;">
+		<!--列表头-->
+		<div class="RedSea-Title-1">
+			<div class="RedSea-Title-1-text"><span class="icon-random"></span>新建流程</div>
+			<div class="RedSea-Title-1-tools">
+				<div class="btn-group pull-right btn-group-sm mgr-10">
+					<input type="text" class="form-control input-sm inline-block pull-left" style="width: 120px;" placeholder="名称" />
+					<button class="btn btn-info btn-sm but-border" style="margin-left: -10px;"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+				
+				<!--元件4-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 150px;">
+					<span class="input-group-addon" id="sizing-addon2">类别</span>
+					<select class="form-control work-select">
+						<option label="112" value="全部">全部</option>
+						<option label="12" value="请假流程">请假流程</option>
+						<option label="3" value="入职流程">入职流程</option>						
+					</select>
+				</div>
+				
+				
+				
+				
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width: 250px;padding-top: 5px;">
+					<label class="radio-inline">
+					  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 全部
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 已阅
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 未阅
+					</label>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	
+	
+	
+	<div class="pd-10 RedSea-Body-1">
+	<!--列表主体-->
+		<div class="RedSea-list-1">
+			<table id="tableHead" class="table table-bordered table-condensed table-hover table-center">				
+						<thead>
+						<tr>							
+							<th>序号</th>
+							<th>标题</th>
+							<th>申请人</th>
+							<th>当前环节</th>
+							<th>发起日期</th>
+							<th>流程名称</th>
+							<th>发送人</th>
+							<th>发送环节</th>
+							<th>时限要求</th>
+							<th>操作</th>
+							
+						</tr>
+						</thead>
+						<tbody>
+						<tr>							
+							<td>1</td>
+							<td><i title="超时" class="processStatus glyphicon glyphicon-bell status-danger"></i><a>入职申请 2016-03-30</a></td>
+							<td>李明丽</td>
+							<td><a href="">入职申请</a></td>
+							<td>2016-03-30 10:55</td>
+							<td>入职申请</td>
+							<td>马文忠</td>
+							<td>岗位分配</td>
+							
+							<td>2016-03-17 11:08</td>
+							<td class="editbut"><button type="button" class="btn btn-default btn-xs mgr-10"><span class="glyphicon glyphicon-trash"></span></button><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span></button></td>
+						</tr>
+						
+						
+						
+						</tbody>
+				</table>				
+		</div>
+		
+		<!--列表主体end-->
+	</div>
+		
+		
+		
+			
+		<!--列表foot-->
+		
+		<div class="RedSea-Foot-1" style="margin-top: 5px;">
+			<div class="RedSea-page-2"  style="padding-left: 10px;">
+				<dl>
+					<dt>
+						<nav>
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+												
+					</dt>
+					<dd>
+						<div class="btn-group pull-left mgr-10 btn-group-sm">
+							<button type="button" class="btn btn-default">10条</button>
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">10条</a></li>
+								<li><a href="#">20条</a></li>
+								<li><a href="#">30条</a></li>
+								
+							</ul>
+						</div>				
+					</dd>
+					<dd>
+						<span>共135条记录</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--列表footend-->
+	
+	
+
+</div>
+
+<script>
+	$(document).on("click",".RedSea-work-tools li",function(){
+		$(".RedSea-work-tools li").removeClass("active");
+		$(this).addClass("active");	
+	})
+	$(document).ready(function() {
+		$('input').iCheck({
+			checkboxClass: 'icheckbox_minimal-blue',
+			radioClass: 'iradio_minimal-blue',
+		});
+		$('select').select2({
+			minimumResultsForSearch: Infinity
+		});		
+	})
+	
+	
+function formatState (state) {
+  if (!state.id) { return state.text; }
+  var $state = $(
+    '<span>' + state.text + '<i>('+ state.element.label.toLowerCase()+')</i></span>'
+  );
+  return $state;
+};
+
+$(".work-select").select2({
+  templateResult: formatState
+});
+
+</script>

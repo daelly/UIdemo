@@ -1,0 +1,10 @@
+<MKM version="2.0" imageFileUrl="file:///E:/eclipse3.7/workspace/RedseaPlatform/WebRoot/UIdemo2/img/detail/02.png">
+  <Marks>
+    <TextMark x="271" y="74" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="100" text="info-title"/>
+    <TextMark x="254" y="147" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="157" text="RedSea-detail-3-db1-L&#xD;左边栏"/>
+    <TextMark x="804" y="192" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="204" text="RedSea-detail-3-db1-R&#xD;右边栏"/>
+    <TextMark x="580" y="150" color="16711680" offsetX="43" offsetY="14" defaultDirection="9" direction="9" textMaxWidth="145" text="RedSea-detail-3-db1-C&#xD;中间栏"/>
+    <TextMark x="689" y="258" color="255" offsetX="54" offsetY="4" defaultDirection="9" direction="9" textMaxWidth="245" text="RedSea-detail-3-db1-C-chart&#xD;图表区域&#xD;"/>
+    <TextMark x="124" y="555" color="255" offsetX="711" offsetY="13" defaultDirection="10" direction="10" textMaxWidth="100" text="table-view &#xD;表格样式"/>
+  </Marks>
+</MKM>

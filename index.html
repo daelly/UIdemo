@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>模板首页</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<!--jquery -->
+		<script src="/RedseaPlatform/skins/library/jquery/jquery-2.1.1.min.js"></script>
+		<!--bootstrap -->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/bootstrap.min.css">
+		<script src="/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+		<!--字体文件-->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/newstyle/css/iconfonts/iconfont.css" />				
+		<!--按需载入-->
+		<script src="/RedseaPlatform/skins/js/common/requreLib.js"></script>
+		
+		<link id="cssid" rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css" />
+		<!--百度地图-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xafuEGdN9tnpPF0mHjxybVfs"></script>
+		<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"/>
+		<script type="text/javascript" src="/RedseaPlatform/skins/js/common/pubfunction.js"></script>		
+		<!-- 引入layer模态框 -->
+		<script type="text/javascript" src="/RedseaPlatform/UIdemo/layer/layer.js"></script>
+
+	</head>
+
+	<body class="RedSea RedSea-index1">
+
+		<div id="navbar" class="RedSea-index1-navbar">
+				<a id="changeCss">切换css</a> 				
+				<a href="doc.html" target="blank">规范说明</a>
+				<a href="doc02.html" target="blank">色彩说明</a>
+				<a href="doc03.html" target="blank">按需载入使用说明</a>
+		</div>
+
+		<div class="RedSea-index1-container">
+
+			<!--左边菜单-->
+			<div class="RedSea-index1-sidebar">
+				<ul id="pjax-container">
+					<li>
+						<a data-pjax data-title="常用表格" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/tableList.html"><i class="icon-suitcase"></i>常用表格<b class="icon-caret-left"></b><s class="icon-angle-down"></s></a>
+						<ul>							
+							<li><a data-pjax data-title="常用表格列表-tabs" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/tableList2.html"><i class=" icon-caret-right"></i>常用表格列表-tabs<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="通讯录列表-表头1" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/addressBookList.html"><i class=" icon-caret-right"></i>通讯录列表-表头1<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="通讯录列表-表头2" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/addressBookList2.html"><i class=" icon-caret-right"></i>通讯录列表-表头2<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="通讯录列表-tabs" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/addressBookList3.html"><i class=" icon-caret-right"></i>通讯录列表-tabs<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="常用横向列表-表头1 " href="#Ajax|/RedseaPlatform/UIdemo2/code/list/myApplication.html"><i class=" icon-caret-right"></i>常用横向列表-表头1 <b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="常用横向列表-表头2 " href="#Ajax|/RedseaPlatform/UIdemo2/code/list/myApplication2.html"><i class=" icon-caret-right"></i>常用横向列表-表头2 <b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="常用消息列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/messageList_new.html"><i class=" icon-caret-right"></i>常用消息列表<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="常用消息列表-分栏菜单" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/messageList_new2.html"><i class=" icon-caret-right"></i>常用消息列表-分栏菜单<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="表单列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/examine-list.html"><i class=" icon-caret-right"></i>表单列表<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="项目审核列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/pm-list.html"><i class=" icon-caret-right"></i>项目审核列表<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="文件管理列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/fileManagementList.html"><i class=" icon-caret-right"></i>文件管理列表<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="任务标签列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/taskLableList.html"><i class=" icon-caret-right"></i>任务标签列表<b class="icon-caret-left"></b></a></li>	
+							<li><a data-pjax data-title="考试时间轴" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/time-axis.html"><i class=" icon-caret-right"></i>考试时间轴<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="复选列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/list/check-list.html"><i class=" icon-caret-right"></i>复选列表<b class="icon-caret-left"></b></a></li>
+						</ul>
+
+					</li>
+					<li>
+						<a data-pjax data-title="填写页面" href="#Ajax|/RedseaPlatform/UIdemo2/code/form/form-1.html"><i class="icon-suitcase"></i>填写页面<b class="icon-caret-left"></b><s class="icon-angle-down"></s></a>
+						<ul>
+							<li><a target="blank" data-pjax data-title="表单2－订单" href="openpage.html#Ajax|/RedseaPlatform/UIdemo2/code/form/form-2.html"><i class=" icon-caret-right"></i>表单2－订单<b class="icon-caret-left"></b></a></li>
+							<li><a target="blank" data-pjax data-title="表单3－花名册" href="openpage.html#Ajax|/RedseaPlatform/UIdemo2/code/form/form-3.html"><i class=" icon-caret-right"></i>表单3－花名册<b class="icon-caret-left"></b></a></li>
+							<li><a target="blank" data-pjax data-title="表单4－员工入职登记" href="openpage.html#Ajax|/RedseaPlatform/UIdemo2/code/form/form-4.html"><i class=" icon-caret-right"></i>表单4－员工入职登记<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="表单5－模态框" href="#Ajax|/RedseaPlatform/UIdemo2/code/form/form-5.html"><i class=" icon-caret-right"></i>表单5－模态框<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="表单6－弹出框" href="#Ajax|/RedseaPlatform/UIdemo2/code/form/form-6.html"><i class=" icon-caret-right"></i>表单6－弹出框<b class="icon-caret-left"></b></a></li>
+							
+						</ul>
+					</li>
+					
+					<li>
+						<a  data-pjax data-title="详情页面" href="#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-1.html"><i class="icon-suitcase"></i>详情页面<b class="icon-caret-left"></b><s class="icon-angle-down"></s></a>
+						<ul>
+							<li><a data-pjax data-title="详细页面-02" href="#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-2.html"><i class=" icon-caret-right"></i>详细页面-02<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="详细页面-03" href="#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-3.html"><i class=" icon-caret-right"></i>详细页面-03<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="详细页面-04" href="#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-4.html"><i class=" icon-caret-right"></i>详细页面-04<b class="icon-caret-left"></b></a></li>
+							<li><a target="blank" data-pjax data-title="详细页面-05" href="openpage.html#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-5.html"><i class=" icon-caret-right"></i>详细页面-05<b class="icon-caret-left"></b></a></li>
+							<li><a target="blank" data-pjax data-title="详细页面-06" href="openpage.html#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-6.html"><i class=" icon-caret-right"></i>详细页面-06<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="详细页面-07" href="#Ajax|/RedseaPlatform/UIdemo2/code/detail/detail-7.html"><i class=" icon-caret-right"></i>详细页面-07<b class="icon-caret-left"></b></a></li>
+							
+							
+						</ul>
+					</li>
+					
+					
+					<li>
+						<a data-pjax data-title="iframe页面" href="#iframe|/RedseaPlatform/UIdemo/code/index/index-2.html"><i class="icon-suitcase"></i>iframe页面<b class="icon-caret-left"></b></a>
+					</li>
+					<li>
+						<a data-pjax data-title="组件" href="#Ajax|inc/index.html?0"><i class="icon-suitcase"></i>组件<b class="icon-caret-left"></b><s class="icon-angle-down"></s></a>
+					
+							<ul>
+							<li><a data-pjax data-title="workday弹出层" href="#Ajax|/RedseaPlatform/UIdemo2/wdpop.html"><i class="icon-caret-right"></i>workday弹出层<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="进度条" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/modal.html"><i class="icon-caret-right"></i>模态框<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="进度条" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/progress.html"><i class="icon-caret-right"></i>进度条<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="图片延时加载" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/echo-js.html"><i class=" icon-caret-right"></i>图片延时加载<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="图片轮播" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/swipe.html"><i class=" icon-caret-right"></i>图片轮播<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="百度地图自动定位" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/mapAutoPositioning.html"><i class=" icon-caret-right"></i>百度地图自动定位<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="浮动组件stickup" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/fixedHead.html"><i class=" icon-caret-right"></i>浮动组件stickup<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="通用选择组件" href="#Ajax|/RedseaPlatform/UIdemo/code/components/choose_components.jsp"><i class=" icon-caret-right"></i>通用选择组件<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="下拉选择框" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/select2.jsp"><i class=" icon-caret-right"></i>下拉选择<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="异步下拉框" href="#Ajax|/RedseaPlatform/UIdemo/code/components/asyncselect.jsp"><i class=" icon-caret-right"></i>异步下拉框<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="自定义权限标签" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/customPermissionTag.jsp"><i class=" icon-caret-right"></i>自定义权限标签<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="html组件" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/htmlPlug.html"><i class=" icon-caret-right"></i>html组件<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="pubfunction使用说明" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/pubfunction_demo.html"><i class=" icon-caret-right"></i>pubfunction使用说明<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="头像展现" href="#Ajax|/RedseaPlatform/UIdemo/code/components/userPhoto.html"><i class=" icon-caret-right"></i>头像展现<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="百度UMeditor" href="#Ajax|/RedseaPlatform/UIdemo/code/components/UMeditor_demo.html"><i class=" icon-caret-right"></i>百度UMeditor<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="前端缓存" href="#Ajax|/RedseaPlatform/UIdemo/code/components/localStorage_demo.html"><i class=" icon-caret-right"></i>前端缓存<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="工作流API" href="#Ajax|/RedseaPlatform/UIdemo/code/components/workflow.html"><i class=" icon-caret-right"></i>工作流API<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="图片浏览" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/img_view.html"><i class=" icon-caret-right"></i>图片浏览<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="日历" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/date.html"><i class=" icon-caret-right"></i>日历<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="树形组件" href="#Ajax|/RedseaPlatform/UIdemo/code/components/ztree.jsp"><i class=" icon-caret-right"></i>树形组件<b class="icon-caret-left"></b></a></li>
+						    <li><a data-pjax data-title="右键菜单" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/context_menu.html"><i class=" icon-caret-right"></i>右键菜单<b class="icon-caret-left"></b></a></li>
+						    <li><a data-pjax data-title="选项卡、面板" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/tab.html"><i class=" icon-caret-right"></i>选项卡<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="表单验证" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/validate.html"><i class=" icon-caret-right"></i>表单验证<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="表单向导" href="#Ajax|/RedseaPlatform/UIdemo2/code/Plug/form-wizard.html"><i class=" icon-caret-right"></i>表单向导<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="图标" href="#Ajax|/RedseaPlatform/UIdemo/code/icon.html"><i class=" icon-caret-right"></i>图标<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="自定义图标" href="#Ajax|/RedseaPlatform/UIdemo/code/components/Custom-icon.html"><i class=" icon-caret-right"></i>自定义图标<b class="icon-caret-left"></b></a></li>
+							<li><a target="blank" data-pjax data-title="主流UI模板性能测试" href="/RedseaPlatform/demo/tmplTest.html"><i class=" icon-caret-right"></i>主流UI模板性能测试<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="压缩上传" href="#iframe|/RedseaPlatform/UIdemo2/template/template_edit.jsp"><i class=" icon-caret-right"></i>压缩上传<b class="icon-caret-left"></b></a></li>
+						</ul>				
+					</li>
+					<li>
+						<a data-pjax data-title="工作流程" href="#Ajax|inc/index.html?3"><i class="icon-suitcase"></i>工作流程<b class="icon-caret-left"></b><s class="icon-angle-down"></s></a>
+						<ul>
+							<li><a data-pjax data-title="列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/work/list.html"><i class="icon-caret-right"></i>列表<b class="icon-caret-left"></b></a></li>
+							<li><a data-pjax data-title="列表2" href="#Ajax|/RedseaPlatform/UIdemo2/code/work/list-2.html"><i class="icon-caret-right"></i>列表2<b class="icon-caret-left"></b></a></li>
+							<li><a target="blank" data-title="表单历史" href="/RedseaPlatform/UIdemo2/code/work/form-01.html"><i class="icon-caret-right"></i>表单历史<b class="icon-caret-left"></b></a></li>
+						</ul>				
+					</li>
+					<li>
+						<a data-pjax data-title="微信列表" href="#Ajax|inc/index.html?4"><i class="icon-suitcase"></i>微信列表<b class="icon-caret-left"></b><s class="icon-angle-down"></s></a>
+						<ul>
+							<li><a data-pjax data-title="列表" href="#Ajax|/RedseaPlatform/UIdemo2/code/weixin/list.html"><i class="icon-caret-right"></i>列表<b class="icon-caret-left"></b></a></li>
+						</ul>				
+					</li>
+					
+					
+					
+					
+				</ul>
+
+			</div>
+
+			<!--右边边内容-->
+			<div class="RedSea-index1-main-content">
+				<div class="RedSea-index1-breadcrumbs">
+					<dl><dt><span class="icon-home"></span><a href="#Ajax|inc/index.html">首页</a></dt>
+						<dd></dd>
+					</dl>
+
+				</div>
+				<div class="RedSea-index1-page-content" id="loaddiv">
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!--加载jquery.pjax.js-->
+		<script type="text/javascript" src="/RedseaPlatform/skins/library/jquery.pjax.js"></script>
+		<script>
+			//query.pjax 初始化Ajex 页面链接
+			//$(document).pjax('a[data-pjax]', '#pjax-container');
+			//$(document).pjax('a', '.RedSea-index1-breadcrumbs');
+			$(document).pjax('a[target!=blank]', 'body');
+			
+			window.addEventListener("hashchange", geturl);
+			//获得hash链接
+			function geturl() {
+				var hash = location.hash;
+				var url = hash.replace("#", "").split("|");
+				if (url[0] === "Ajax") {
+					loadAjax(url[1]);
+				} else if (url[0] === "iframe") {
+					loadIframe(url[1]);
+				} else {
+					loaddefault();
+				}
+				//设置标题
+				setTitle(url[1]);
+			}
+			//Ajax 加载页面
+			function loadAjax(url) {
+				$("#loaddiv").load(url,function(responseText,textStatus,XMLHttpRequest){
+					if(typeof(checkLoadUrlSession) == "function")
+						checkLoadUrlSession(responseText,textStatus,XMLHttpRequest); 
+					if(top.hideload){
+						top.hideload();
+					}
+				});
+			}
+			//iframe 加载页面
+			function loadIframe(url) {
+				$("#loaddiv").html("<iframe style='width: 100%; height: 600px;border: none;' src=" + url + "></iframe>")
+			}
+
+			function loaddefault() {
+				$("#loaddiv").load("inc/index.html");
+			}
+			//更改标题和面包屑
+			function setTitle(url) {
+				var linkObj = $("#pjax-container [href$='" + url + "']:first");
+				$("a").removeClass("active");
+				linkObj.addClass("active");
+				//设置上级show
+				linkObj.parents("ul").show();
+				//设置面包屑
+				var barhtml = ""
+				var par = linkObj.parentsUntil("#pjax-container")
+				for (i = 0; i < par.length; i++) {
+					if (par.eq(i).get(0).tagName == "UL") {} else {
+						var title = par.eq(i).find("a:first").attr("data-title");
+						var url = par.eq(i).find("a:first").attr("href");
+						barhtml = ("<span class=\"icon-angle-right\"></span><a href=\"" + url + "\">" + title + "</a>") + barhtml;
+					}
+				}
+				$(".RedSea-index1-breadcrumbs dd").html(barhtml);
+				//设置标题
+				document.title = linkObj.attr("data-title");
+			}
+			//载入默认页
+			$(document).ready(function() {
+				var url = geturl();
+			})
+			$(".RedSea-index1-sidebar>ul>li").click(function() {
+				if ($(this).find("ul").length > 0) {
+					$(".RedSea-index1-sidebar>ul>li>ul").hide();
+					$(this).find("ul").show();
+				}
+			})
+		</script>
+		
+		
+		
+		<script>
+		$(document).ready(function(){
+				
+			$("#changeCss").click(function(){
+			
+			var href=$("#cssid").attr("href");			
+			if("/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css"==href){			
+				$("#cssid").attr("href","/RedseaPlatform/skins/style/css/hr-soft-v1/red.css");
+			}else{
+				$("#cssid").attr("href","/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css");
+			}
+			
+		
+		})
+			
+		})
+		</script>
+	</body>
+
+</html>

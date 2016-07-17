@@ -1,0 +1,18 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%88%97%e8%a1%a8%e6%a0%87%e6%b3%a8/02.png">
+  <Marks>
+    <TextMark x="48" y="81" color="255" offsetX="945" offsetY="60" defaultDirection="9" direction="9" textMaxWidth="252" text=".RedSea-Title-1  表头1"/>
+    <TextMark x="62" y="302" color="255" offsetX="937" offsetY="23" defaultDirection="10" direction="10" textMaxWidth="142" text=".RedSea-Title2  表头2"/>
+    <TextMark x="44" y="536" color="255" offsetX="964" offsetY="44" defaultDirection="10" direction="10" textMaxWidth="156" text=".RedSea-Title3   表头3"/>
+    <TextMark x="101" y="72" color="16711935" offsetX="90" offsetY="32" defaultDirection="9" direction="9" textMaxWidth="189" text="RedSea-Title-1-text  标题"/>
+    <TextMark x="416" y="54" color="16711935" offsetX="545" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="190" text=" RedSea-Title-1-tools　工具栏"/>
+    <TextMark x="442" y="99" color="16711680" offsetX="53" offsetY="36" defaultDirection="9" direction="9" textMaxWidth="346" text=".input-group　pull-right   mgr-10   input-group-sm&#xD; bootstrap 组件　右对齐"/>
+    <TextMark x="995" y="145" color="16711680" offsetX="50" offsetY="11" defaultDirection="6" direction="6" textMaxWidth="321" text="btn　btn-default　but-border&#xD;bootstrap 按钮　蓝色边框样式"/>
+    <TextMark x="79" y="206" color="16711935" offsetX="926" offsetY="11" defaultDirection="9" direction="9" textMaxWidth="884" text="RedSea-Title-2-tools"/>
+    <TextMark x="115" y="292" color="16711935" offsetX="179" offsetY="14" defaultDirection="10" direction="10" textMaxWidth="198" text="RedSea-Title-2-pyLink"/>
+    <TextMark x="80" y="232" color="16711680" offsetX="41" offsetY="9" defaultDirection="9" direction="9" textMaxWidth="100" text="pull-left　左对齐　"/>
+    <TextMark x="111" y="415" color="16711935" offsetX="687" offsetY="37" defaultDirection="9" direction="9" textMaxWidth="313" text=".RedSea-Title-tabs         bootstrap 选卡组"/>
+    <TextMark x="1034" y="517" color="16711935" offsetX="629" offsetY="44" defaultDirection="6" direction="6" textMaxWidth="337" text="RedSea-Title-3-tools"/>
+    <TextMark x="140" y="427" color="16711680" offsetX="80" offsetY="19" defaultDirection="9" direction="9" textMaxWidth="144" text="RedSea-Title-3-text"/>
+    <TextMark x="1062" y="413" color="16711680" offsetX="284" offsetY="10" defaultDirection="5" direction="5" textMaxWidth="182" text="选卡项　nav nav-tabs "/>
+  </Marks>
+</MKM>

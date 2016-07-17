@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		 <meta name="renderer" content="webkit">
+		<title>模板首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<!--jquery -->
+		<script src="/RedseaPlatform/skins/library/jquery/jquery-2.1.1.min.js"></script>
+	
+		<!--bootstrap -->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/bootstrap.min.css">
+		<script src="/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+		<!--字体文件-->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/newstyle/css/iconfonts/iconfont.css" />
+		<!-- 左侧树 -->
+		<script	src="/RedseaPlatform/skins/library/zTree/jquery.ztree.all.min-3.5.js" type="text/javascript"></script>
+		<link href="/RedseaPlatform/skins/library/zTree/css/zTreeStyle/zTreeNewStyle.css" rel="stylesheet" type="text/css" />				
+			
+			
+		<!--按需载入-->
+		<script src="/RedseaPlatform/skins/js/common/requreLib.js"></script>		
+
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css" />
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/newIndex2.css" />
+	    
+	    <!-- iCheck -->
+	    <link href="/RedseaPlatform/skins/library/iCheck-master/skins/minimal/blue.css" rel="stylesheet">
+        <script type="text/javascript" src="/RedseaPlatform/skins/library/iCheck-master/icheck.min.js"></script>
+	   
+	    <!-- myDate97 -->
+	    <script type="text/javascript" src="/RedseaPlatform/skins/library/My97DatePicker/WdatePicker.js"></script>
+	</head>
+
+	<body class="RedSea RedSea-index2 ">
+	
+	<!--头部-->
+	<div class="RedSea-index2-head " style="position: static;">
+			<div class="RedSea-index2-head-L">
+				<div class="RedSea-index2-head-icon">					
+					<div class="newindexMenu">
+						<a>
+							<i class="iconfont icon-caidan"></i>
+						</a>
+						<div class="newindexMenusub">
+							<div class="sub-wap">							
+									<div class="popover bottom" style="display: block;">
+								      <div class="arrow" style="left: 30px;top:-20px"></div>     
+								    </div>
+								    
+								    
+								 <div class="sub-meun-border">
+								 	<div class="sub-meun-border-L">
+								 		<div class="sub-meun-border-L-sc">
+								 			<h1 class="index2-search"><i class="iconfont icon-sousuo"></i><input type="text" name="" id="" value="" placeholder="请输入菜单名称"/></h1>
+								 		</div>
+								 		<div class="sub-meun-border-L-bt">
+								 			<em>
+								 				<a id="prev" class="icon-angle-left"></a>
+								 				<a id="next" class="icon-angle-right"></a>
+								 			</em>
+								 			
+								 		</div>
+								 		<div class="sub-meun-border-L-me" style="white-space:nowrap;">
+								 			<ul class="menu-show">
+								 				<li class="active"><a data-id="menu-01"><i class="iconfont icon-kehuguanli"></i>人力资源管理</a></li>
+								 				<li><a data-id="menu-02"><i class="iconfont icon-kehuguanli"></i>劳动力管理</a></li>
+								 				<li><a data-id="menu-03"><i class="iconfont icon-kehuguanli"></i>现场管理</a></li>
+								 				<li><a data-id="menu-04"><i class="iconfont icon-kehuguanli"></i>决策分析</a></li>
+								 				<li><a data-id="menu-05"><i class="iconfont icon-kehuguanli"></i>系统管理</a></li>
+								 				<li><a data-id="menu-06"><i class="iconfont icon-kehuguanli"></i>平台配置</a></li>
+								 				<li><a data-id="menu-07"><i class="iconfont icon-kehuguanli"></i>车辆管理</a></li>
+								 				<li><a data-id="menu-08"><i class="iconfont icon-kehuguanli"></i>红海OA系统</a></li>
+								 				<li><a data-id="menu-09"><i class="iconfont icon-kehuguanli"></i>任务流程</a></li>								 				
+								 			</ul>
+								 			<ul>
+								 				<li><a data-id="menu-01"><i class="iconfont icon-kehuguanli"></i>22222222</a></li>
+								 				<li><a data-id="menu-02"><i class="iconfont icon-kehuguanli"></i>劳动力管理</a></li>
+								 				<li><a data-id="menu-03"><i class="iconfont icon-kehuguanli"></i>现场管理</a></li>
+								 				<li><a data-id="menu-04"><i class="iconfont icon-kehuguanli"></i>决策分析</a></li>
+								 				<li><a data-id="menu-05"><i class="iconfont icon-kehuguanli"></i>系统管理</a></li>
+								 				<li><a data-id="menu-06"><i class="iconfont icon-kehuguanli"></i>平台配置</a></li>
+								 				<li><a data-id="menu-07"><i class="iconfont icon-kehuguanli"></i>车辆管理</a></li>
+								 				<li><a data-id="menu-08"><i class="iconfont icon-kehuguanli"></i>红海OA系统</a></li>
+								 				<li><a data-id="menu-09"><i class="iconfont icon-kehuguanli"></i>任务流程</a></li>								 				
+								 			</ul>
+								 			
+								 			<ul>
+								 				<li><a data-id="menu-01"><i class="iconfont icon-kehuguanli"></i>33333333</a></li>
+								 				<li><a data-id="menu-02"><i class="iconfont icon-kehuguanli"></i>劳动力管理</a></li>
+								 				<li><a data-id="menu-03"><i class="iconfont icon-kehuguanli"></i>现场管理</a></li>
+								 				<li><a data-id="menu-04"><i class="iconfont icon-kehuguanli"></i>决策分析</a></li>
+								 				<li><a data-id="menu-05"><i class="iconfont icon-kehuguanli"></i>系统管理</a></li>
+								 				<li><a data-id="menu-06"><i class="iconfont icon-kehuguanli"></i>平台配置</a></li>
+								 				<li><a data-id="menu-07"><i class="iconfont icon-kehuguanli"></i>车辆管理</a></li>
+								 				<li><a data-id="menu-08"><i class="iconfont icon-kehuguanli"></i>红海OA系统</a></li>
+								 				<li><a data-id="menu-09"><i class="iconfont icon-kehuguanli"></i>任务流程</a></li>								 				
+								 			</ul>
+								 			<ul>
+								 				<li><a data-id="menu-01"><i class="iconfont icon-kehuguanli"></i>444444444</a></li>
+								 				<li><a data-id="menu-02"><i class="iconfont icon-kehuguanli"></i>劳动力管理</a></li>
+								 				<li><a data-id="menu-03"><i class="iconfont icon-kehuguanli"></i>现场管理</a></li>
+								 				<li><a data-id="menu-04"><i class="iconfont icon-kehuguanli"></i>决策分析</a></li>
+								 				<li><a data-id="menu-05"><i class="iconfont icon-kehuguanli"></i>系统管理</a></li>
+								 				<li><a data-id="menu-06"><i class="iconfont icon-kehuguanli"></i>平台配置</a></li>
+								 				<li><a data-id="menu-07"><i class="iconfont icon-kehuguanli"></i>车辆管理</a></li>
+								 				<li><a data-id="menu-08"><i class="iconfont icon-kehuguanli"></i>红海OA系统</a></li>
+								 				<li><a data-id="menu-09"><i class="iconfont icon-kehuguanli"></i>任务流程</a></li>								 				
+								 			</ul>
+								 			
+								 		</div>
+								 	</div>
+								 	<div class="sub-meun-border-R">
+								 		<div id="slimScroll">
+								 			
+								 			<ul id="loadmenu">
+								 				
+								 			</ul>
+								 		</div>								 		
+								 	</div>
+								</div>
+							</div>							
+						</div>					
+					</div>
+					<a class="treeButton"><i class="iconfont icon-tree"></i></a>
+					<a><i class="iconfont icon-shouye02"></i></a>
+				</div>
+				<div class="RedSea-index2-head-S">
+					<em><i class="iconfont icon-sousuo"></i><s><input type="text" placeholder="关键字搜索"/></s></em>
+					
+				</div>
+			</div>
+			<div class="RedSea-index2-head-R">
+				<dl>					
+					<dt>
+						<img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2437197995,3356662035&fm=58"/>
+						<s>99+</s>
+					</dt>
+					<dd><span>李子宣</span></dd>
+					
+					<ul style="z-index: 9999;">
+						<li><a href="#">提醒<span>99+</span></a></li>
+						<li><a href="#">个人信息</a></li>
+						<li><a href="#">个人设置</a></li>
+						<li><a href="#">我的考勤</a></li>
+						<li><a href="#">签到/签退</a></li>
+						<li><a href="#">退出系统</a></li>
+					</ul>
+				</dl>
+				
+			</div>
+			<div class="RedSea-index2-head-C">
+				<a href="#" style="background-image: url('/RedseaPlatform/skins/style/image/hr-soft-v1/workToday-logo.png');"></a>
+			</div>			
+		</div>
+		
+		<div class="newIndex">
+			<div class="newIndexLeft">
+				<div class="newIndexTree">
+					<div style="position:relative;padding:5px">
+						<input class="form-control" id="search_stru_tips"  onclick='inputThis(this,event);' type="text"/>
+						<span class="glyphicon glyphicon-search" style="color:#6E7BF5;color: #6E7BF5;position: absolute;right: 12px;top: 15px;cursor: pointer;"></span>
+					</div>
+					<ul id="tree" class="ztree" data-toggle="context" data-target="#context-menu"  style="height: 100%; background:#fff;overflow: auto;border: 1px solid #D7D7D7;width:　30%;"></ul>
+				</div>
+				
+			</div>		
+			<div class="newIndexRight">
+				<div id="loaddiv" style="">
+					
+				</div>
+				
+				
+			</div>
+		</div>
+	<div id="menu-01" style="display: none;">
+		<li>
+			<h1>
+				<i>1</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a class="active" href="#Ajax|/RedseaPlatform/UIdemo2/code/newindex/org.html">组织机构</a> <a href="#Ajax|/RedseaPlatform/UIdemo2/code/newindex/wd-pop.html">员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+		<li>
+			<h1>
+				<i>2</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a>组织机构</a> <a >员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+		<li>
+			<h1>
+				<i>3</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a>组织机构</a> <a>员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+		<li>
+			<h1>
+				<i>4</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a>组织机构</a> <a>员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+		<li>
+			<h1>
+				<i>5</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a>组织机构</a> <a>员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+		<li>
+			<h1>
+				<i>6</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a>组织机构</a> <a>员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+		<li>
+			<h1>
+				<i>7</i><span>员工管理</span>
+			</h1>
+			<h2>
+				<a>组织机构</a> <a>员工花册</a> <a>员工异动</a> <a>生日祝福</a> <a>员工关系图</a> <a>黑名单</a>
+			</h2>
+		</li>
+	</div>
+	<script type="text/javascript" src="/RedseaPlatform/skins/newstyle/js/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript">
+		//滚动条插件配置
+		$(function() {
+			$("#slimScroll").slimScroll({
+				width : '364px', //可滚动区域宽度
+				height : '500px', //可滚动区域高度 
+				size : '6px',
+				opacity : .4,
+				color : '#000' //滚动条颜色
+			});
+		});
+	</script>
+		<!--加载jquery.pjax.js-->
+	<script type="text/javascript" src="/RedseaPlatform/skins/library/jquery.pjax.js"></script>
+	
+	<script>
+		//query.pjax 初始化Ajex 页面链接
+		//$(document).pjax('a[data-pjax]', '#pjax-container');
+		//$(document).pjax('a', '.RedSea-index1-breadcrumbs');
+		$(document).pjax('a[target!=blank]', 'body');
+
+		window.addEventListener("hashchange", geturl);
+		//获得hash链接
+		function geturl() {
+			var hash = location.hash;
+			var url = hash.replace("#", "").split("|");
+			if (url[0] === "Ajax") {
+				loadAjax(url[1]);
+			} else if (url[0] === "iframe") {
+				loadIframe(url[1]);
+			} else {
+				loaddefault();
+			}
+			//设置标题
+			setTitle(url[1]);
+		}
+		//Ajax 加载页面
+		function loadAjax(url) {
+			$("#loaddiv").load(url);
+		}
+		//iframe 加载页面
+		function loadIframe(url) {
+			$("#loaddiv").html(
+					"<iframe style='width: 100%; height: 600px;border: none;' src="
+							+ url + "></iframe>")
+		}
+
+		function loaddefault() {
+			$("#loaddiv").load("desktop.html");
+		}
+		//载入默认页
+		$(document).ready(function() {
+			var url = geturl();
+		})
+		$(".treeButton").click(function() {
+			$("body").toggleClass("showTree");
+		})
+		$(".newindexMenu > a").click(function() {
+			$("body").toggleClass("showMenu");
+		})
+		//菜单切换
+		$("#loadmenu").html($("#menu-01").html());
+		$(".sub-meun-border-L-me>ul>li>a").click(
+				function() {
+					var dataID = $(this).attr("data-id");
+					$(this).parents(".sub-meun-border-L-me").find("li")
+							.removeClass("active");
+					$(this).parents("li").addClass("active");
+					alert(dataID);
+				})
+		$(document).on("click", ".sub-meun-border-R li h2 a", function() {
+			$(this).parents("ul").find("a").removeClass("active");
+			$(this).addClass("active");
+		})
+		$(".sub-meun-border-L-bt em a").click(function() {
+			var ul = $(".sub-meun-border-L-me ul");
+			var index = $(".sub-meun-border-L-me ul.menu-show").index();
+
+			if ($(this).attr("id") == "prev") {
+				if (index != 0) {
+					ul.removeClass("menu-show")
+					ul.eq(index - 1).addClass("menu-show");
+					ul.eq(index - 1).hide();
+					ul.eq(index - 1).fadeIn();
+					ul.eq(index - 1).attr("style", "");
+					index = index - 1;
+				}
+			} else {
+				if (index < ul.length - 1) {
+					ul.removeClass("menu-show")
+					ul.eq(index + 1).addClass("menu-show");
+					ul.eq(index + 1).hide();
+					ul.eq(index + 1).fadeIn();
+					ul.eq(index + 1).attr("style", "");
+					index = index + 1;
+				}
+			}
+		})
+	</script>	
+	
+	<script>
+		var banKey = "parentStruId";
+		var display = "4";
+		var firstLeafNode;
+		var curTreeUrl = "/PtStructure.mc?method=tree&noPost=7";
+		var openNode = true;
+		var zTreeOnAsyncSuccessClick = true;
+		function GetQueryString(requestUrl, name) {
+			var reg = new RegExp("(^|[&?])" + name + "=([^&]*)(&|$)");
+			var r = requestUrl.match(reg);
+			if (r != null)
+				return unescape(r[2]);
+			return null;
+		}
+		//自动选中最近点击的节点。 通过cookie 获取struId ，再进行展开
+		var overBeforeClick = function(treeId, treeNode) {
+
+			//单击展开节点
+			zTree.expandNode(treeNode, openNode, false, true);
+			if (openNode == false) {
+				openNode = true;
+			} else {
+				openNode = false;
+			}
+		};
+
+		/**
+		 * 默认展开第一个叶子节点
+		 */
+		function defaultExpand() {
+			try {
+				//获取节点
+				var myNode = zTree.getNodes();
+				//判断是否有子节点
+				if (myNode != null && myNode.length > 0) {
+					var aryNode = zTree.transformToArray(zTree.getNodes());
+					if (aryNode.length <= 30) { //根节点
+						zTree.expandAll(true);
+					}
+					//是叶子节点
+					if (!myNode[0].children
+							|| myNode[0].children.length == 0
+							|| (myNode[0].orgTypeCode == "41" || myNode[0].orgTypeCode == "42")) {
+						//选中节点
+						//zTree.selectNode(myNode[0],false);
+						zTree.expandNode(myNode[0], true, false, true, false);
+						firstLeafNode = myNode[0];
+						//触发节点的点击事件
+						//setting.callback.beforeClick("tree",myNode[0]);
+						//overBeforeClick("tree",myNode[0]);
+					} else {
+						//非叶子节点
+						var curNode = myNode[0];
+						do {
+							//展开节点
+							zTree.expandNode(curNode, true, false, true, false);
+							/* if(display != null && display != "" && curNode.orgTypeCode == display){
+								//如果节点到指定的显示类型，不再查找
+								break;
+							} */
+							//检查是否父节点
+							if (curNode != null && curNode.isParent) {
+								//获取子节点
+								curNode = curNode.children[0];
+							}
+
+							if (curNode != null
+									&& (curNode.orgTypeCode == "41" || curNode.orgTypeCode == "42")) {
+								break;
+							}
+
+						} while (curNode != null && curNode.isParent)//如果非叶子节点,一直展开
+						//选中节点
+						zTree.selectNode(curNode, false);
+						firstLeafNode = curNode;
+						//触发节点的点击事件
+						//setting.callback.beforeClick("tree",curNode);
+						//overBeforeClick("tree",curNode);
+					}
+
+				}
+			} catch (e) {
+				alert(e);
+			}
+		};
+
+		/**
+		 * 展开某个树节点
+		 * @param 查找树节点的key
+		 * @param propKey noeData的属性key值
+		 * @param nodeData
+		 * @param focusOrNot
+		 * @param triggerClick  是否触发点击事件
+		 */
+		function expandTree(nodeKey, propKey, nodeData, focusOrNot,
+				triggerClick) {
+			$(".curSelectedNode").removeClass("curSelectedNode");
+			if (nodeData != null && nodeData.length > 0) {
+				var expNode = null;
+				//获取需要展开的节点
+				$.each(nodeData,
+						function(idx, obj) {
+							var foundValue = obj[propKey];
+							if (foundValue != null) {
+								expNode = zTree.getNodeByParam(nodeKey,
+										foundValue, null);
+								if (expNode != null) {
+									zTree.expandNode(expNode, true, true,
+											false, false);
+									zTree.selectNode(expNode, true);
+									//setting.callback.beforeClick("tree",expNode);
+									if (triggerClick) {
+										overBeforeClick("tree", expNode);
+									}
+
+								}
+							}
+							if (idx > 20) { //最多只能展开20个
+								return;
+							}
+						});
+			}
+		}
+
+		function zTreeOnAsyncSuccess(event, treeId, treeNode, msg) {
+			defaultExpand();
+		}
+
+		//构建树形结构的基本参数
+		var setting = {
+			//显示效果参数配置
+			view : {
+				dblClickExpand : true,
+				showLine : true,
+				selectedMulti : false
+			},
+			//配置是否不使用缓存
+			cache : true,
+			//数据字段匹配配置
+			data : {
+				simpleData : {
+					enable : true,
+					idKey : "struId",
+					pIdKey : "parentStruId",
+					rootPId : ""
+				},
+				//显示值配置
+				key : {
+					name : "orgAlias"
+				}
+			},
+			//	//数据来源配置异步加载
+			//	async: {
+			//		//enable: currentUserOrgJsonAry == null ? true : false ,
+			//		enable:  true  ,
+			//		url:contextPath+"/PtStructure.mc?method=tree&noPost=7",
+			//		type:"get"
+			//	},
+			callback : {
+				//点击事件回调函数
+				onAsyncSuccess : zTreeOnAsyncSuccess,
+				beforeAsync : function() {
+
+				},
+				onAsyncError : function() {
+					loadIframe.window.onAsyncError();
+				},
+				beforeClick : overBeforeClick
+			}
+		};
+
+		function reloadTree() {
+			zTree.destroy();
+			zTreeOnAsyncSuccessClick = false;
+			zTree = $.fn.zTree.init($("#tree"), setting);
+		}
+
+		var treeDatas = [ {
+			"struId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001",
+			"orgAlias" : "广州红海网络科技开发有限公司",
+			"parentStruId" : "04ed6ed9-e5f6-48b3-9bc4-1254b2551136",
+			"orgTypeCode" : "41",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005",
+			"orgAlias" : "研发中心",
+			"parentStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "73856393-2bb5-411e-a886-d96a357e1f5e",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00006",
+			"orgAlias" : "公共服务部",
+			"parentStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "9a77c952-74e4-43ac-82f5-75390475023c",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00007",
+			"orgAlias" : "在线产品维护部",
+			"parentStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "c26fe8cf-8273-4fd7-87c7-0621dbdcbeaf",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00008",
+			"orgAlias" : "技术服务部",
+			"parentStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "5dea96df-5ccd-4fd8-977e-4e49625ea320",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00011",
+			"orgAlias" : "产品测试部",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "9761b018-cacd-412b-99a2-3780c89d296f",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00001",
+			"orgAlias" : "产品设计部",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "dcc7a627-394d-4ee4-8e45-0eb78a93aaa8",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00002",
+			"orgAlias" : "产品研发组",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "9b9c8f26-99a7-457d-8f83-e72dc848d0ac",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00003",
+			"orgAlias" : "软件开发部",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "95e2520a-b8c4-4602-ba78-a02af038c0e4",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00004",
+			"orgAlias" : "开发一组",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "e312a8e3-91c8-4e63-b427-67b2cb465cfd",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00005",
+			"orgAlias" : "移动组",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "2e059d63-ac32-4e96-b436-21ab2f2fafeb",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00007",
+			"orgAlias" : "开发三组",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "03c1e16f-008b-40f1-9b46-6138e4fb4496",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00008",
+			"orgAlias" : "函件处理岗",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "02192885-1959-41a5-ad50-5601781afd92",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00009",
+			"orgAlias" : "网络服务器管理部",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "0f0acc6e-e403-4adb-9880-e3a634db77a3",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00005-00010",
+			"orgAlias" : "综合组",
+			"parentStruId" : "9c6971e5-6f61-4e6d-923e-6125a8a9af44",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "32b4e0bf-3f49-4ce3-9037-cab7fd48ff7a",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00007-00001",
+			"orgAlias" : "数据库组",
+			"parentStruId" : "9a77c952-74e4-43ac-82f5-75390475023c",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		}, {
+			"struId" : "04ac2835-b4f7-4fb0-8491-99f03727f094",
+			"rootId" : "tech",
+			"struTreeCode" : "tech-00001-00007-00002",
+			"orgAlias" : ".Net开发组",
+			"parentStruId" : "9a77c952-74e4-43ac-82f5-75390475023c",
+			"orgTypeCode" : "4",
+			"belongUnitStruId" : "ae117b0d-3f6b-4c3f-9049-61f18a2183e6",
+			"isHistory" : ""
+		} ];
+
+		$(function() {
+			//树初始化
+			zTree = $.fn.zTree.init($("#tree"), setting, treeDatas);
+
+			//展开节点
+			defaultExpand();
+		});
+	</script>
+	</body>
+</html>

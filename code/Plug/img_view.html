@@ -1,0 +1,1259 @@
+<script>
+	if (typeof (requreLib) != "undefined") {
+		requreLib.setplugs("jqueryui");
+	}
+</script>
+<script type="text/javascript">
+	$(function() {
+		//双击看大图事件
+		$(".showImg").dblclick(function() {
+			var k = $(this).find("img").attr("num");
+			var md = "#img_tp_" + k;
+			var ml = "#img_li_" + k;
+			$(".active").removeClass("active");
+			$(md).addClass("active");
+			$(ml).addClass("active");
+			$("#img1").modal('show');
+		});
+		//拖拽
+		$("#draggable").draggable();
+	})
+	//滚轮放大图片
+	function bigimg(i) {
+		var zoom = parseInt(i.style.zoom, 10) || 100;
+		zoom += event.wheelDelta / 12;
+		if (zoom > 0)
+			i.style.zoom = zoom + '%';
+		return false;
+	}
+</script>
+<style type="text/css">
+.well{
+	margin:10px 0;
+}
+.wrap {
+	clear: both;
+	width: 1100px;
+	padding: 10px 0 10px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.t_left {
+	float: left;
+	width: 203px;
+	border: solid 1px #d3dfeb;
+	background: #f5f5f5;
+}
+
+.t_right {
+	float: right;
+	width: 880px;
+}
+
+.namebox {
+	clear: both;
+	width: 205px;
+	text-align: center;
+	padding: 15px 0 15px;
+	line-height: 27px;
+	font-size: 14px;
+	color: #444;
+	overflow: hidden;
+}
+
+.namepic {
+	border: solid 2px #e2ecf8;
+	border-radius: 100%;
+	width: 90px;
+	height: 90px;
+	margin: 0 auto;
+	background: #fff;
+	font-size: 45px;
+	color: #999;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.namebox .namepic img {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.Titles span {
+	color: #999;
+}
+
+.block_list ul {
+	list-style: none;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.block_list ul li {
+	float: left;
+	margin: 15px 15px 0 15px;
+	font-size: 16px;
+}
+
+.archives {
+	clear: both;
+	width: 877px;
+	padding: 0 0 20px;
+	overflow: hidden;
+}
+
+.archives .file_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.archives .file_list li {
+	float: left;
+	text-align: center;
+	width: 156px;
+	height: 200px;
+	margin: 30px 25px 0px;
+	list-style: none;
+	border: 3px solid #fff;
+	padding: 0;
+	position: relative;
+}
+
+.archives .file_list li img {
+	max-width: 150px;
+	max-height: 194px;
+	border: solid 1px #ddd;
+	padding: 3px;
+}
+
+.archives .file_list li div {
+	line-height: 35px;
+	font-size: 14px;
+	color: #333;
+	height: 35px;
+	overflow: hidden;
+	width: 150px;
+	font-size: 14px;
+}
+
+.block_list ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+.block_list ul li {
+	float: left;
+	margin: 15px 15px 0 15px;
+	font-size: 16px;
+}
+
+.small_title {
+	clear: both;
+	font-size: 16px;
+	line-height: 41px;
+	height: 41px;
+	border-bottom: solid 1px #ccc;
+	color: #1e3287;
+	padding: 0 0 0 5px;
+}
+
+.icon_list {
+	clear: both;
+	padding: 15px 0 0;
+}
+
+.archives .icon_list ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.archives .icon_list ul li {
+	float: left;
+	text-align: center;
+	margin: 10px 15px;
+	list-style: none;
+	position: relative;
+	border: 3px solid #fff;
+	padding: 0;
+}
+
+.archives .icon_list ul li img {
+	width: 95px;
+	height: 85px;
+}
+
+.archives .icon_list ul li div {
+	line-height: 25px;
+	text-align: center;
+	width: 95px;
+	font-size: 12px;
+	height: 22px;
+	overflow: hidden;
+}
+
+.showImg {
+	cursor: pointer;
+}
+
+.carousel-inner img {
+	margin: 0 auto;
+}
+</style>
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1 ">
+		<!--列表头-->
+		<div class="RedSea-Title-3">
+			<div class="RedSea-Title-3-clear">
+				<div class="RedSea-Title-tabs">
+					<div class="RedSea-Title-3-text">
+						<span class="icon-group"></span>图片浏览
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表头end-->
+		<!-- Tab panes -->
+		<div class="RedSea-list-1">
+			<div class="wrap">
+				<div class="t_left">
+					<div class="namebox" id="nameBox" role="data-content">
+						<div class="namepic">
+							<img id="imgUrl" src="" alt="" onError="javascript:this.src='/RedseaPlatform/skins/style/images/noImage.png';" onload="adapt(this)" />
+						</div>
+						<!--namepic end-->
+						<div class="theme_title">李大钊</div>
+						<div class="text_name">530129197801184860</div>
+						<div class="text_name">所属部门：产品设计部</div>
+						<div class="text_name">所属岗位：设计</div>
+					</div>
+					<!--namebox end-->
+				</div>
+				<!--t_left end-->
+				<div class="t_right">
+					<div class="navheader">
+						<span style="display: inline-block; float: left; line-height: 34px;"><span class="glyphicon glyphicon-floppy-save"></span> 档案录入&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<div style="width: 53px; float: left;">
+							<div>
+								<span id="spanButtonPlaceHolder"></span> <input id="btnCancel" type="button" value="Cancel All Uploads" onclick="swfu.cancelQueue();" disabled="disabled"
+									style="margin-left: 2px; font-size: 8pt; height: 29px; display: none;" />
+								<!-- 			<div onclick="upload()">上传</div> -->
+							</div>
+						</div>
+						<span class="choose_but"> <span class="btn-group btn-group-sm"> <a class="btn btn-primary btn-xs" id="showRight">分类</a></span>
+						</span> <span class="choose_but"> <span class="btn-group btn-group-sm"> <a class="btn btn-default btn-xs" href="javascript:viod(0);" onclick="resetFileType()">全部重置</a></span>
+						</span> <span class="choose_but"> <span class="btn-group btn-group-sm"> <a class="btn btn-default btn-xs" href="javascript:deleteMoreFile()">批量删除</a></span>
+						</span> <span class="choose_but"> <span class="btn-group btn-group-sm"> <a class="btn btn-default btn-xs"
+								href="javascript:window.opener.searchData();window.close();">返回</a></span>
+						</span> <span class="bg-danger  time_title" style="display: inline-block; padding: 5px;">【双击图片可查看大图】</span>
+					</div>
+					<!--chBox end-->
+					<form name="searchForm" method="post" class="form-search" action="" id="searchForm">
+						<div class="archives">
+							<div class="small_title">图片</div>
+							<ul id="file_list" class="file_list">
+								<li class="showImg"><img num="0" src="/RedseaPlatform/UIdemo/img/a1.jpg" /></li>
+								<li class="showImg"><img num="1" src="/RedseaPlatform/UIdemo/img/a2.jpg" /></li>
+								<li class="showImg"><img num="2" src="/RedseaPlatform/UIdemo/img/a3.jpg" /></li>
+							</ul>
+							<div class="small_title">文件</div>
+							<div class="icon_list">
+								<ul id="icon_list">
+									<li><img src="/RedseaPlatform/UI/dagl/images/doc.png" /></li>
+									<li><img src="/RedseaPlatform/UI/dagl/images/xls.png" /></li>
+									<li><img src="/RedseaPlatform/UI/dagl/images/txt.png" /></li>
+								</ul>
+							</div>
+						</div>
+						<!--archives end-->
+					</form>
+				</div>
+				<!--t_right end-->
+			</div>
+			<div class="modal fade" id="sub_modal" tabindex="-2" role="dialog" aria-labelledby="sub_ifrLabel">
+				<div class="modal-dialog" style="width: 500px;">
+					<div class="modal-content">
+						<!-- 头部 -->
+						<div class="modal-header" style="padding: 10px 15px;">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModal2Label" style="color: black;">
+								<span class="glyphicon glyphicon-copyright-mark"></span> 上传进度
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="fieldset flash" id="fsUploadProgress">
+								<span class="legend">上传进度</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 右边的滑动栏 -->
+			<div class="modal fade" id="img1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; top: 50px;">
+				<div class="modal-dialog" onmousewheel="return bigimg(this)" class="ui-widget-content" id="draggable" style="cursor: move;">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div id="myCarousel1" class="carousel slide">
+								<ol class="carousel-indicators" id="indicators">
+									<li data-target="#myCarousel1" data-slide-to="0" class="active" id="img_li_0"></li>
+									<li data-target="#myCarousel1" data-slide-to="1" id="img_li_1"></li>
+									<li data-target="#myCarousel1" data-slide-to="2" id="img_li_2"></li>
+								</ol>
+								<div class="carousel-inner" id="inner">
+									<div class="item active" id="img_tp_0">
+										<img src="/RedseaPlatform/UIdemo/img/a1.jpg" />
+										<div class="carousel-caption">图一</div>
+									</div>
+									<div class="item " id="img_tp_1">
+										<img src="/RedseaPlatform/UIdemo/img/a2.jpg" />
+										<div class="carousel-caption">图二</div>
+									</div>
+									<div class="item" id="img_tp_2">
+										<img src="/RedseaPlatform/UIdemo/img/a3.jpg" />
+										<div class="carousel-caption">图三</div>
+									</div>
+								</div>
+								<a class="carousel-control left" role="button" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a> <a
+									class="carousel-control right" role="button" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="img1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog" onmousewheel="return bigimg(this)" class="ui-widget-content" id="draggable" style="cursor: move;">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div id="myCarousel1" class="carousel slide">
+								<ol class="carousel-indicators" id="indicators"></ol>
+								<div class="carousel-inner" id="inner"></div>
+								<a class="carousel-control left" role="button" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a> <a
+									class="carousel-control right" role="button" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="well">
+				<span class="red1">使用说明：按需加载对应js，并在js中调用</span>				
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">script</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">if</span><span style="font-family: Consolas;font-size: 15px">&nbsp;(</span><span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">typeof</span><span style="font-family: Consolas;font-size: 15px">&nbsp;(requreLib)&nbsp;!=&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;undefined&quot;</span><span style="font-family: Consolas;font-size: 15px">)&nbsp;{</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">requreLib.setplugs(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;jqueryui&quot;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">script</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">script</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">type</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;text/javascript&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(</span><span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">function</span><span style="font-family: Consolas;font-size: 15px">()&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,95);font-size:15px">//双击看大图事件</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;.showImg&quot;</span><span style="font-family: Consolas;font-size: 15px">).dblclick(</span><span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">function</span><span style="font-family: Consolas;font-size: 15px">()&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">var</span><span style="font-family: Consolas;font-size: 15px">&nbsp;k&nbsp;=&nbsp;$(</span><span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">this</span><span style="font-family: Consolas;font-size: 15px">).find(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;img&quot;</span><span style="font-family: Consolas;font-size: 15px">).attr(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;num&quot;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">var</span><span style="font-family: Consolas;font-size: 15px">&nbsp;md&nbsp;=&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;#img_tp_&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;+&nbsp;k;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">var</span><span style="font-family: Consolas;font-size: 15px">&nbsp;ml&nbsp;=&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;#img_li_&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;+&nbsp;k;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;.active&quot;</span><span style="font-family: Consolas;font-size: 15px">).removeClass(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;active&quot;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(md).addClass(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;active&quot;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(ml).addClass(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;active&quot;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;#img1&quot;</span><span style="font-family: Consolas;font-size: 15px">).modal(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&#39;show&#39;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">});</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,95);font-size:15px">//拖拽</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">$(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;#draggable&quot;</span><span style="font-family: Consolas;font-size: 15px">).draggable();</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">})</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,95);font-size:15px">//滚轮放大图片</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">function</span><span style="font-family: Consolas;font-size: 15px">&nbsp;bigimg(i)&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">var</span><span style="font-family: Consolas;font-size: 15px">&nbsp;zoom&nbsp;=&nbsp;parseInt(i.style.zoom,&nbsp;10)&nbsp;||&nbsp;100;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">zoom&nbsp;+=&nbsp;event.wheelDelta&nbsp;/&nbsp;12;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">if</span><span style="font-family: Consolas;font-size: 15px">&nbsp;(zoom&nbsp;&gt;&nbsp;0)</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">i.style.zoom&nbsp;=&nbsp;zoom&nbsp;+&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&#39;%&#39;</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">return</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">false</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">script</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <br/>
+				</p>
+				<span class="red1">相关html代码</span>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">form</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">name</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;searchForm&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">method</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;post&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;form-search&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">action</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;searchForm&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;archives&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;small_title&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">图片</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ul</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;file_list&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;file_list&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;showImg&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">img</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">num</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;0&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;/RedseaPlatform/UIdemo/img/a1.jpg&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">/&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;showImg&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">img</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">num</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;1&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;/RedseaPlatform/UIdemo/img/a2.jpg&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">/&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;showImg&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">img</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">num</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;2&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;/RedseaPlatform/UIdemo/img/a3.jpg&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">/&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;small_title&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">文件</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon_list&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ul</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon_list&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">img</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;/RedseaPlatform/UI/dagl/images/doc.png&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">/&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">img</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;/RedseaPlatform/UI/dagl/images/xls.png&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">/&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">img</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;/RedseaPlatform/UI/dagl/images/txt.png&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">/&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,95,191);font-size:15px">&lt;!--archives&nbsp;end--&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">form</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <br/>
+				</p>
+				<span class="red1">模态框代码</span>
+				<div class="modal fade" id="img1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				    <div class="ui-widget-content" onmousewheel="return bigimg(this)" id="draggable" style="cursor: move;">
+				        <div class="modal-content">
+				            <div class="modal-body">
+				                <div id="myCarousel1" class="carousel slide">
+				                    <ol class="carousel-indicators" id="indicators"></ol><a class="carousel-control left" role="button" href="http://#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a> <a class="carousel-control right" role="button" href="http://#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;modal&nbsp;fade&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;img1&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">tabindex</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;-1&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">role</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;dialog&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">aria-labelledby</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;myModalLabel&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">aria-hidden</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;true&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">style</span><span style="font-family: Consolas;font-size: 15px">=&quot;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">display</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;modal-dialog&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">onmousewheel</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;return&nbsp;bigimg(this)&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;ui-widget-content&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;draggable&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">style</span><span style="font-family: Consolas;font-size: 15px">=&quot;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">cursor</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">move</span><span style="font-family: Consolas;font-size: 15px">;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;modal-content&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;modal-body&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;myCarousel1&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;carousel&nbsp;slide&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ol</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;carousel-indicators&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;indicators&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ol</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;carousel-inner&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;inner&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;carousel-control&nbsp;left&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">role</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;button&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;#myCarousel1&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">data-slide</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;prev&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;glyphicon&nbsp;glyphicon-chevron-left&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">aria-hidden</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;true&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;carousel-control&nbsp;right&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">role</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;button&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;#myCarousel1&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">data-slide</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;next&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;glyphicon&nbsp;glyphicon-chevron-right&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">aria-hidden</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;true&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>	
+				<span class="red1">相关css样式</span>
+				<p>
+				    <br/>
+				</p><style type="text/css">.wrap {
+					clear: both;
+					width: 1100px;
+					padding: 10px 0 10px;
+					overflow: hidden;
+					margin: 0 auto;
+				}
+				
+				.t_left {
+					float: left;
+					width: 203px;
+					border: solid 1px #d3dfeb;
+					background: #f5f5f5;
+				}
+				
+				.t_right {
+					float: right;
+					width: 880px;
+				}
+				
+				.namebox {
+					clear: both;
+					width: 205px;
+					text-align: center;
+					padding: 15px 0 15px;
+					line-height: 27px;
+					font-size: 14px;
+					color: #444;
+					overflow: hidden;
+				}
+				
+				.namepic {
+					border: solid 2px #e2ecf8;
+					border-radius: 100%;
+					width: 90px;
+					height: 90px;
+					margin: 0 auto;
+					background: #fff;
+					font-size: 45px;
+					color: #999;
+					display: inline-block;
+					overflow: hidden;
+				}
+				
+				.namebox .namepic img {
+					width: 100%;
+					margin: 0;
+					padding: 0;
+				}
+				
+				.Titles span {
+					color: #999;
+				}
+				
+				.block_list ul {
+					list-style: none;
+					overflow: hidden;
+					margin: 0;
+					padding: 0;
+				}
+				
+				.block_list ul li {
+					float: left;
+					margin: 15px 15px 0 15px;
+					font-size: 16px;
+				}
+				
+				.archives {
+					clear: both;
+					width: 877px;
+					padding: 0 0 20px;
+					overflow: hidden;
+				}
+				
+				.archives .file_list {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+				
+				.archives .file_list li {
+					float: left;
+					text-align: center;
+					width: 156px;
+					height: 200px;
+					margin: 30px 25px 0px;
+					list-style: none;
+					border: 3px solid #fff;
+					padding: 0;
+					position: relative;
+				}
+				
+				.archives .file_list li img {
+					max-width: 150px;
+					max-height: 194px;
+					border: solid 1px #ddd;
+					padding: 3px;
+				}
+				
+				.archives .file_list li div {
+					line-height: 35px;
+					font-size: 14px;
+					color: #333;
+					height: 35px;
+					overflow: hidden;
+					width: 150px;
+					font-size: 14px;
+				}
+				
+				.block_list ul {
+					list-style: none;
+					overflow: hidden;
+				}
+				
+				.block_list ul li {
+					float: left;
+					margin: 15px 15px 0 15px;
+					font-size: 16px;
+				}
+				
+				.small_title {
+					clear: both;
+					font-size: 16px;
+					line-height: 41px;
+					height: 41px;
+					border-bottom: solid 1px #ccc;
+					color: #1e3287;
+					padding: 0 0 0 5px;
+				}
+				
+				.icon_list {
+					clear: both;
+					padding: 15px 0 0;
+				}
+				
+				.archives .icon_list ul {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+				}
+				
+				.archives .icon_list ul li {
+					float: left;
+					text-align: center;
+					margin: 10px 15px;
+					list-style: none;
+					position: relative;
+					border: 3px solid #fff;
+					padding: 0;
+				}
+				
+				.archives .icon_list ul li img {
+					width: 95px;
+					height: 85px;
+				}
+				
+				.archives .icon_list ul li div {
+					line-height: 25px;
+					text-align: center;
+					width: 95px;
+					font-size: 12px;
+					height: 22px;
+					overflow: hidden;
+				}
+				
+				.showImg {
+					cursor: pointer;
+				}
+				
+				.carousel-inner img {
+					margin: 0 auto;
+				}</style>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">style</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">type</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;text/css&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.wrap</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">clear</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">both</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">1100px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">10px&nbsp;0&nbsp;10px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0&nbsp;auto</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.t_left</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">float</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">left</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">203px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">solid&nbsp;1px&nbsp;#d3dfeb</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">background</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#f5f5f5</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.t_right</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">float</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">right</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">880px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.namebox</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">clear</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">both</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">205px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">text-align</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">center</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">15px&nbsp;0&nbsp;15px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">line-height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">27px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">14px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">color</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#444</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.namepic</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">solid&nbsp;2px&nbsp;#e2ecf8</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border-radius</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">100%</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">90px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">90px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0&nbsp;auto</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">background</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#fff</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">45px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">color</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#999</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">display</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">inline-block</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.namebox</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.namepic</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">img</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">100%</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.Titles</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">span</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">color</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#999</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.block_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.block_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">float</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">left</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">15px&nbsp;15px&nbsp;0&nbsp;15px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">16px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">clear</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">both</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">877px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0&nbsp;0&nbsp;20px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.file_list</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.file_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">float</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">left</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">text-align</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">center</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">156px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">200px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">30px&nbsp;25px&nbsp;0px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">3px&nbsp;solid&nbsp;#fff</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">position</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">relative</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.file_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">img</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">max-width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">150px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">max-height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">194px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">solid&nbsp;1px&nbsp;#ddd</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">3px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.file_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">div</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">line-height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">35px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">14px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">color</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#333</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">35px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">150px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">14px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.block_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.block_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">float</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">left</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">15px&nbsp;15px&nbsp;0&nbsp;15px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">16px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.small_title</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">clear</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">both</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">16px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">line-height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">41px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">41px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border-bottom</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">solid&nbsp;1px&nbsp;#ccc</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">color</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">#1e3287</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0&nbsp;0&nbsp;0&nbsp;5px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.icon_list</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">clear</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">both</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">15px&nbsp;0&nbsp;0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.icon_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.icon_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">float</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">left</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">text-align</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">center</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">10px&nbsp;15px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">list-style</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">none</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">position</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">relative</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">border</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">3px&nbsp;solid&nbsp;#fff</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">padding</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.icon_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">img</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">95px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">85px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.archives</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.icon_list</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">div</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">line-height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">25px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">text-align</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">center</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">width</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">95px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">font-size</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">12px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">height</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">22px</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">overflow</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">hidden</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.showImg</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">cursor</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">pointer</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;font-size:15px">&nbsp;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(63,127,127);font-style:italic;font-size:15px">.carousel-inner</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-weight:bold;font-size:15px">img</span><span style="font-family: Consolas;font-size: 15px">&nbsp;{</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">margin</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">0&nbsp;auto</span><span style="font-family: Consolas;font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">style</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+				</p>			
+			</div>
+		</div>
+	</div>
+</div>

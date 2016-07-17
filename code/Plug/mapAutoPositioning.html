@@ -1,0 +1,428 @@
+
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xafuEGdN9tnpPF0mHjxybVfs"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"/>-->
+
+<style type="text/css">
+	body{background-color: ;}
+	.input-group .form-control{z-index: 0;}
+</style>
+<script>
+	/****************活动地点地图的的全局变量定义begin******************/
+	var longitude_partyPlace;
+	var latitude_partyPlace;
+	var province_partyPlace;
+	var city_partyPlace;
+	var downtown_partyPlace;
+	var town_partyPlace;
+	var addr_partyPlace;
+	/*****************活动地点地图的的全局变量定义end*****************/
+	
+	$(function(){
+			var addr=null;
+	    	
+	    	// 百度地图API功能
+	    	function G(id) {
+	    		return document.getElementById(id);
+	    	}
+	
+	    	var map = new BMap.Map("l-map");
+	    	map.centerAndZoom(addr==null?"广州":addr,13);  // 初始化地图,设置城市和地图级别。
+	    	map.enableScrollWheelZoom();//启动鼠标滚轮缩放地图
+			//map.enableKeyboard();//启动键盘操作地图
+	    	var geoc = new BMap.Geocoder();
+	
+	    	var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+	    		{"input" : "suggestId"
+	    		,"location" : map
+	    	});
+	    	
+	    	ac.setInputValue(addr==null?"":addr);
+	    	
+	    	
+	    	ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+	    		var str = "";
+	    		var _value = e.fromitem.value;
+	    		var value = "";
+	    		if (e.fromitem.index > -1) {
+	    			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+	    		}    
+	    		str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+	    		
+	    		value = "";
+	    		if (e.toitem.index > -1) {
+	    			_value = e.toitem.value;
+	    			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+	    		}    
+	    		str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+	    		G("searchResultPanel").innerHTML = str;
+	    	});
+	
+	    	var myValue;
+	    	ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+	    		var _value = e.item.value;
+	    		myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+	    		G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+	    		
+	    		setPlace();
+	    		
+	    		// 将地址解析结果显示在地图上,并调整地图视野
+				geoc.getPoint(myValue, function(point){
+					if (point) {
+						longitude_partyPlace = point.lng;//经度
+						latitude_partyPlace = point.lat;//纬度
+						geoc.getLocation(point, function(rs){
+							var addComp = rs.addressComponents;
+							//将数据写到全局变量
+							province_partyPlace = addComp.province;//省
+							city_partyPlace = addComp.city;//市
+							downtown_partyPlace = addComp.district;//区
+							town_partyPlace = addComp.street;//街
+							addr_partyPlace = myValue;//显示的地址
+						}); 
+					}else{
+						modal("您选择地址没有解析到结果!"+myValue,-1);
+					}
+				}, "");
+	    	});
+	    	
+	
+	    	function setPlace(){
+	    		map.clearOverlays();    //清除地图上所有覆盖物
+	    		function myFun(){
+	    			var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+	    			map.centerAndZoom(pp, 18);
+	    			map.addOverlay(new BMap.Marker(pp));    //添加标注
+	    		}
+	    		var local = new BMap.LocalSearch(map, { //智能搜索
+	    		  onSearchComplete: myFun
+	    		});
+	    		local.search(myValue);
+	    	}
+			//把地址信息填回到文本
+			$("#confirmLocation").click(function(){
+				addr_update = true;
+				if(addr_update){
+						$("input[name='jingdu']").val(longitude_partyPlace);
+						$("input[name='weidu']").val(latitude_partyPlace);
+						$("input[name='sheng']").val(province_partyPlace);
+						$("input[name='shi']").val(city_partyPlace);
+						$("input[name='qu']").val(downtown_partyPlace);
+						$("input[name='adress']").val(addr_partyPlace);
+					}
+				
+			})
+				
+			
+	})
+</script>
+  <div class="RedSea">
+	    <div class="">
+	    	<div class="input-group">
+	    		<input type="text" class="form-control" id="suggestId" placeholder="请输入地址"/>
+	    		<span class="input-group-btn">
+	    			<button class="btn btn-default" id="applyMapSearchBtn"><span  class="icon-search" ></span></button>
+	    			<button class="btn btn-default" id="confirmLocation">确定</button>
+	    		</span>
+	    	</div>
+	    	<div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;z-index: 99999;"></div>
+	    	<div class="clearfix" style="height: 60px;">
+		    	<div class="input-group mgt-10 pull-left" style="width: 140px;">
+		    		<span class="input-group-addon">经度</span>
+		    		<input type="text" class="form-control" name="jingdu"/>
+		    	</div>
+		    	<div class="input-group mgt-10 pull-left mgl-10" style="width: 140px;">
+		    		<span class="input-group-addon">纬度</span>
+		    		<input type="text" class="form-control" name="weidu"/>
+		    	</div>
+		    	<div class="input-group mgt-10 pull-left mgl-10" style="width: 140px;">
+		    		<span class="input-group-addon">省</span>
+		    		<input type="text" class="form-control" name="sheng"/>
+		    	</div>
+		    	<div class="input-group mgt-10 pull-left mgl-10" style="width: 140px;">
+		    		<span class="input-group-addon">市</span>
+		    		<input type="text" class="form-control" name="shi"/>
+		    	</div>
+		    	<div class="input-group mgt-10 pull-left mgl-10" style="width: 140px;">
+		    		<span class="input-group-addon">区</span>
+		    		<input type="text" class="form-control" name="qu"/>
+		    	</div>
+		    	<div class="input-group mgt-10 pull-left mgl-10" style="width: 360px;">
+		    		<span class="input-group-addon">详细地址</span>
+		    		<input type="text" class="form-control" name="adress"/>
+		    	</div>
+	    	</div>
+	    	
+	    </div>
+	    <div id="l-map" style="width:100%; height: 400px; background-color: #fff;">22</div>
+	    <div class="mgt-20">
+	    	<h3>说明</h3>
+	    	<div style="margin:10px 0" class="well">
+				<span class="red1">引入百度地图api及css文件(本样例的api和css引在index.html页面)</span>	
+				<p><br/>
+				    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&lt;</span><span style="font-family: Consolas;color: rgb(35, 105, 182);font-size: 15px">script&nbsp;</span><span style="font-family: Consolas;color: rgb(203, 45, 1);font-size: 15px">type</span><span style="font-family: Consolas;color: rgb(56, 68, 75);font-size: 15px">=</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;text/javascript&quot;&nbsp;</span><span style="font-family: Consolas;color: rgb(203, 45, 1);font-size: 15px">src</span><span style="font-family: Consolas;color: rgb(56, 68, 75);font-size: 15px">=</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=xafuEGdN9tnpPF0mHjxybVfs&quot;</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&gt;&lt;/</span><span style="font-family: Consolas;color: rgb(35, 105, 182);font-size: 15px">script</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&gt;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:15px">link&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:15px">rel</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:15px">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:15px">&quot;stylesheet&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:15px">href</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:15px">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:15px">&quot;http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:15px">/&gt;</span>
+				</p>
+				<p style="text-align: center;">
+				    <br/>
+				</p>
+				<span class="red1">百度地图初始化</span>	
+				<p>
+				    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px"></span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;new&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">BMap.Map(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;l-map&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">.centerAndZoom(addr</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">==</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">null</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">?</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;广州&quot;</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addr,</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">13</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">);&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//&nbsp;初始化地图,设置城市和地图级别。</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">.enableScrollWheelZoom();</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//启动鼠标滚轮缩放地图</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//map.enableKeyboard();//启动键盘操作地图</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;&nbsp;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">geoc&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;new&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">BMap.Geocoder();</span>
+				</p>
+				<p></p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">ac&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;new&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">BMap.Autocomplete(&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//建立一个自动完成的对象</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">{</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input&quot;</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;:</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;suggestId&quot;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;location&quot;</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;:</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(60,122,3);font-size:15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style=";font-family:Consolas;color:rgb(8,8,8);font-size:15px">});</span>
+				</p>
+				<p>
+				    <br/>
+				</p>
+				<span class="red1">鼠标放在下拉列表上的事件</span>
+				<p>
+			    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+				</p>
+					<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">ac.setInputValue(addr</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">==</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">null</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">?</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&quot;</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addr);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">ac.addEventListener(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;onhighlight&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,&nbsp;</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(</span><span style="font-family: Consolas;color: rgb(165, 120, 0);font-size: 15px">e</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">)&nbsp;{&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//鼠标放在下拉列表上的事件</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">str&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">e.fromitem.value;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">if&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(e.fromitem.index&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">&gt;&nbsp;-</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">1</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">)&nbsp;{</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.province&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.city&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.district&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.street&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.business;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">str&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;FromItem&lt;br&nbsp;/&gt;index&nbsp;=&nbsp;&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">e.fromitem.index&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&lt;br&nbsp;/&gt;value&nbsp;=&nbsp;&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">value;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">if&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(e.toitem.index&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">&gt;&nbsp;-</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">1</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">)&nbsp;{</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">e.toitem.value;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.province&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.city&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.district&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.street&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.business;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">str&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+=&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&lt;br&nbsp;/&gt;ToItem&lt;br&nbsp;/&gt;index&nbsp;=&nbsp;&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">e.toitem.index&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&lt;br&nbsp;/&gt;value&nbsp;=&nbsp;&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">value;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">G(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;searchResultPanel&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).innerHTML&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">str;</span>
+				</p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(8,8,8);font-size:15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style=";font-family:Consolas;color:rgb(8,8,8);font-size:15px">});</span>
+				</p>
+				<p>
+				    <br/>
+				</p>
+							<span class="red1">鼠标点击下拉列表后的事件,地址回填到文本</span>	
+							<p>
+				    <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">myValue;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">ac.addEventListener(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;onconfirm&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,&nbsp;</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(</span><span style="font-family: Consolas;color: rgb(165, 120, 0);font-size: 15px">e</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//鼠标点击下拉列表后的事件</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">e.item.value;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">myValue&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.province&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.city&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.district&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.street&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">_value.business;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">G(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;searchResultPanel&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).innerHTML&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;onconfirm&lt;br&nbsp;/&gt;index&nbsp;=&nbsp;&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">e.item.index&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&lt;br&nbsp;/&gt;myValue&nbsp;=&nbsp;&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">myValue;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">setPlace();</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//&nbsp;将地址解析结果显示在地图上,并调整地图视野</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">geoc.getPoint(myValue,&nbsp;</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(</span><span style="font-family: Consolas;color: rgb(165, 120, 0);font-size: 15px">point</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">){</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">if&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(point)&nbsp;{</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">longitude_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">point.lng;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//经度</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">latitude_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">point.lat;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//纬度</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">geoc.getLocation(point,&nbsp;</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(</span><span style="font-family: Consolas;color: rgb(165, 120, 0);font-size: 15px">rs</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">){</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addComp&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">rs.addressComponents;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//将数据写到全局变量</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">province_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addComp.province;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//省</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">city_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addComp.city;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//市</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">downtown_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addComp.district;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//区</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">town_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addComp.street;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//街</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addr_partyPlace&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">myValue;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//显示的地址</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">});&nbsp;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">else</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">{</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">modal(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;您选择地址没有解析到结果!&quot;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">+</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">myValue,</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">-</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">1</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">},&nbsp;</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">});</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+				</p>
+				<p></p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function&nbsp;</span><span style="font-family: Consolas;color: rgb(219, 120, 0);font-size: 15px">setPlace</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(){</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">.clearOverlays();&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//清除地图上所有覆盖物</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function&nbsp;</span><span style="font-family: Consolas;color: rgb(219, 120, 0);font-size: 15px">myFun</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(){</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; <span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">pp&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">local.getResults().getPoi(</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">0</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).point;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//获取第一个智能搜索的结果</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; <span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">.centerAndZoom(pp,&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">18</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; <span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">.addOverlay(</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">new&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">BMap.Marker(pp));&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//添加标注</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">var&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">local&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;new&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">BMap.LocalSearch(</span><span style="font-family: Consolas;color: rgb(60, 122, 3);font-size: 15px">map</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">,&nbsp;{&nbsp;</span><span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//智能搜索</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;font-size: 15px">&nbsp;&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">onSearchComplete</span><span style="font-family: Consolas;color: rgb(62, 75, 83);font-size: 15px">:&nbsp;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">myFun</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">});</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;<span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">local.search(myValue);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(149, 163, 171);font-size: 15px">//把地址信息填回到文本</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;#confirmLocation&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).click(</span><span style="font-family: Consolas;color: rgb(54, 75, 192);font-size: 15px">function</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(){</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">addr_update&nbsp;</span><span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">=&nbsp;</span><span style="font-family: Consolas;color: rgb(155, 28, 235);font-size: 15px">true</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">;</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(87, 121, 9);font-size: 15px">if</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">(addr_update){</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input[name=&#39;jingdu&#39;]&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).val(longitude_partyPlace);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input[name=&#39;weidu&#39;]&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).val(latitude_partyPlace);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input[name=&#39;sheng&#39;]&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).val(province_partyPlace);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input[name=&#39;shi&#39;]&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).val(city_partyPlace);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input[name=&#39;qu&#39;]&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).val(downtown_partyPlace);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">$(</span><span style="font-family: Consolas;color: rgb(36, 140, 133);font-size: 15px">&quot;input[name=&#39;adress&#39;]&quot;</span><span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">).val(addr_partyPlace);</span>
+				</p>
+				<p>
+				    <span style="font-family: Consolas;color: rgb(8, 8, 8);font-size: 15px">}</span>
+				</p>
+				<p></p>
+				<p>
+				    <span style=";font-family:Consolas;color:rgb(8,8,8);font-size:15px">})</span>
+				</p>
+				<p>
+				    <br/>
+				</p>
+			</div>
+	    </div>
+  </div>
+	 

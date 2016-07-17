@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			code{background-color: #f5f5f5;border:#e1e1e8 solid 1px;display: block;padding: 20px;}
+			td{border:#eee solid 1px;padding: 10px;}
+		</style>
+	</head>
+	<body>
+	<div style="min-width: 1200px;">
+		<h3>wdpop使用说明</h1>
+		<h4>1、页面按需加载入 slimscroll和wdpop两个插件</h2>		
+		<code>			
+			<p>
+    &lt;script&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br/>&nbsp;&nbsp;&nbsp; if(typeof(requreLib)!=&quot;undefined&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; requreLib.setplugs(&quot;wdpop&quot;);<br/>&nbsp;&nbsp;&nbsp; }<br/>&lt;/script&gt; <br/>
+</p>		
+		</code>
+		
+		<h4>２、页面加入按钮　</h2>		
+		<code>			
+<p>
+    &lt;div class=&quot;wd-pop wd-pop-btn&quot; data-down data-width=&quot;740&quot;  data-url=&quot;/RedseaPlatform/UIdemo2/code/form/form-1.html&quot; data-title=&quot;国际新闻&quot;&gt;&lt;/div&gt;
+</p>	
+		
+		</code>
+		class="wd-pop wd-pop-btn"（wd-pop-btn 可选项，为按钮样式）'<br />
+		data-width='图层宽度（可不指定,默认值：500）'<br />		
+		data-url='图层加载的页面地址(必须指定)'<br />
+		data-title='图层的标题（可不指定,默认值：为空）'<br />
+		data-down 可选项加上则代表是下拉菜单，在click元素下方展示
+		<br />
+		<a href="/RedseaPlatform/UIdemo2/code/newindex/index.html#Ajax|/RedseaPlatform/UIdemo2/code/newindex/wd-pop.html">查看样例页面</a>
+		<br />
+		
+		<img src="/RedseaPlatform/skins/style/image/hr-soft-v1/wd-pop.png" style="margin-top: 30px;"/>
+	
+	
+	
+	
+	
+	
+	
+		<h4>3、动态添加　</h2>		
+		<code>			
+			<p>
+			    &lt;script type=&quot;text/javascript&quot;&gt;<br/>&nbsp;&nbsp; &nbsp;$(&quot;button&quot;).addClass(&quot;wd-pop&quot;);<br/>&nbsp;&nbsp; &nbsp;$(&quot;button&quot;).attr(&quot;data-url&quot;,&quot;/RedseaPlatform/UIdemo2/code/newindex/inc/head-pic.html&quot;);&nbsp;&nbsp; &nbsp;<br/>&lt;/script&gt;
+			</p>
+					
+		</code>
+		通过jquery选择器来设置，图层属性。
+	
+	
+	</body>
+</html>

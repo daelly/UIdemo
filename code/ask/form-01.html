@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<!--jquery -->
+		<script src="/RedseaPlatform/skins/library/jquery/jquery-2.1.1.min.js"></script>
+		
+			
+		<!--bootstrap -->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/bootstrap.min.css">
+		<script src="/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+					
+		<link href="/RedseaPlatform/skins/js/common/ueditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+		
+		<script type="text/javascript" charset="utf-8" src="/RedseaPlatform/skins/js/common/ueditor/umeditor-ask.config.js"></script>
+		<script type="text/javascript" src="/RedseaPlatform/skins/js/common/ueditor/umeditor.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/RedseaPlatform/skins/js/common/ueditor/lang/zh-cn/zh-cn.js"></script> 	
+						
+						
+			
+			
+			
+			
+			
+			
+			
+		<!--字体文件-->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/newstyle/css/iconfonts/iconfont.css" />
+		<link id="cssid" rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css" />
+		<link id="cssid" rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/ask.css" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<style type="text/css">
+		table{width: 100%;}
+		table,td{border:none}
+		td{padding: 6px;}
+	</style>
+	</head>
+
+	<body class="RedSea RedSea-ask">		
+		<div class="RedSea-ask-930">
+			<div class="RedSea-ask-form-tools">
+				<button class="btn btn-default btn-sm" onclick="mbModal('radio')"><i class="icon-circle-blank"></i>单选</button>
+				<button class="btn btn-default btn-sm" onclick="mbModal('check')"><i class=" icon-check"></i>多选</button>
+				<button class="btn btn-default btn-sm" onclick="mbModal('textbox')"><i class=" icon-text-width"></i>填空</button>
+				<button class="btn btn-default btn-sm" onclick="mbModal('array')"><i class=" icon-th"></i>阵列</button>
+				<button class="btn btn-default btn-sm" onclick="mbModal('slider')"><i class=" icon-resize-horizontal"></i>滑动条</button>
+				<button class="btn btn-default btn-sm" onclick="mbModal('sort')"><i class=" icon-filter"></i>排序</button>
+			</div>
+			
+			
+			<!---->
+			<div class="RedSea-ask-form-bd">
+				<!--标题-->
+				<div class="ask-title ask-hover" data-toggle="modal" data-target="#myModal">
+					<div class="ask-title-H1" id="title">你最喜欢的电影</div>
+					<div class="ask-title-H2" id="sub-title">2016年你最喜欢的电影是，仅限国产动作片！</div>					
+				</div>	
+				
+						
+			
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		</div>
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<script type="text/javascript" id="ask-bm-radio">
+						<div class="ask-bm">
+							<h1>1、请在些输入问题</h1>
+							<ul>
+								<li><input type="radio" name="" id="" value="选项" /> <lable>选项</lable></li>
+								<li><input type="radio" name="" id="" value="选项" /> <lable>选项</lable></li>
+							</ul>					
+						</div>					
+				</script>
+				
+				
+				<script type="text/javascript" id="ask-bm-check">
+					<div class="ask-bm">
+						<h1>1、请在些输入问题</h1>
+						<ul>
+							<li><input type="checkbox" name="" id="" value="选项" /> <lable>选项</lable></li>
+							<li><input type="checkbox" name="" id="" value="选项" /> <lable>选项</lable></li>
+						</ul>					
+					</div>
+				</script>
+				
+				<script type="text/javascript" id="ask-bm-sort">
+					<div class="ask-bm ask-sort-img">
+						<h1>1、请在些输入问题</h1>
+						<ul>
+							<li><input type="checkbox" name="" id="" value="选项" /> <lable>选项</lable></li>
+							<li><input type="checkbox" name="" id="" value="选项" /> <lable>选项</lable></li>
+						</ul>
+						<img src="/RedseaPlatform/skins/style/image/hr-soft-v1/ask/ask-pic-01.png">
+					</div>
+				</script>
+				
+				
+				<script type="text/javascript"  id="ask-bm-text">
+					<div class="ask-bm">
+						<h1>1、请在些输入问题</h1>
+						<ul>
+							<li><lable>选项</lable><input type="text" name="" id="" value="选项" /> </li>
+							<li><lable>选项</lable><input type="text" name="" id="" value="选项" /></li>
+						</ul>					
+					</div>
+				</script>
+				
+				<script type="text/javascript" id="ask-temp-Control">
+					<tr>
+								<td><input type="text" value="选项"/></td>
+								<td><input type="checkbox" name="tk" id="" value="" /> <em style="display: none;">必填 <input type="checkbox" name="bt" id="" value=""  /></em></td>
+								<td>
+									<button class="btn btn-xs btn-default bt-plus"><i class="icon-plus"></i></button>
+									<button class="btn btn-xs btn-default bt-minus"><i class="icon-minus"></i></button>
+									<button class="btn btn-xs btn-default bt-up"><i class="icon-circle-arrow-up"></i></button>
+									<button class="btn btn-xs btn-default bu-down"><i class="icon-circle-arrow-down"></i></button>
+								</td>
+							</tr>
+				</script>
+	
+	
+	
+	
+	<!--模板模态框-->
+	<div class="modal fade selet2-100" id="mbModal" style="margin-top: 50px;">
+		<div class="modal-dialog" style="width: 1000px;">
+			<div class="modal-content">
+				<!-- 头部 -->
+				<div class="modal-header" style="padding:10px 15px;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModal2Label"><span class="icon-bookmark-empty" style="margin-right: 10px;"></span>新建问券
+		 		</h4>
+				</div>
+				<div class="modal-body">
+					<div class="temp-list"></div>
+					<div class="temp-option">
+						<dl>
+							<dt><script id="tempT" name="tempT" type="text/plain" style="width:580px;height:80px;"></script></dt>
+							<dd><em><input type="checkbox" name="" id="" value="" />关联逻辑：当前面题目选中某些选项时才出现此题</em></dd>
+						</dl>							
+					</div>
+					
+					<div class="temp-Control">
+						<table border="" cellspacing="" cellpadding="" class="table table-bordered table-condensed table-hover table-center">
+							<thead>
+							<tr>
+								<th style="width: 200px;">选项文字</th>
+								<th>可填空</th>
+								<th style="width: 150px;">操作</th>
+							</tr>
+							</thead>
+							<tbody></tbody>
+							
+						</table>
+						
+					</div>						
+				</div>
+				<!-- 底部按钮 -->
+				<div class="modal-footer" style="padding:10px 15px;">
+					<button type="button" class="btn btn-primary" onclick="addask()">确认</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+
+			</div>
+		</div>
+	</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+	<!--标题模态框-->
+	<div class="modal fade selet2-100" id="myModal" style="margin-top: 50px;">
+		<div class="modal-dialog" style="width: 700px;">
+			<div class="modal-content">
+				<!-- 头部 -->
+				<div class="modal-header" style="padding:10px 15px;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModal2Label"><span class="icon-bookmark-empty" style="margin-right: 10px;"></span>标题描述修改
+		 		</h4>
+				</div>
+				<div class="modal-body">
+						<table border="" cellspacing="" cellpadding="">							
+							<tr>
+								<td style="width:80px ;">问卷标题:</td>
+								<td><input type="text" style="width: 100%;" id="title-text"/></td>
+							</tr>
+							<tr>
+								<td>问卷说明:</td>
+								<td>
+									 <div style="min-height: 210px;margin-top:3px;">
+										<script id="container" name="content" type="text/plain" style="width:580px;height:210px;"></script>
+									 </div>									
+								</td>
+							</tr>
+						</table>
+				</div>
+				<!-- 底部按钮 -->
+				<div class="modal-footer" style="padding:10px 15px;">
+					<button type="button" class="btn btn-primary" id="forbid" onclick="setTitle()">确认提交</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+
+			</div>
+		</div>
+	</div>		
+		<script type="text/javascript">
+			//页面标题设置
+			var um = UM.getEditor('container');			
+			function setTitle(){
+				var Title=$("#title-text").val();
+				var subTitle=UM.getEditor('container').getContent();				
+				$("#title").html(Title);
+				$("#sub-title").html(subTitle);
+				$('#myModal').modal('hide');				
+			}		
+		
+			
+			//选项标题设置
+			var tempT = UM.getEditor('tempT');
+			UM.getEditor('tempT').setContent('请在些输入问题标题');
+			UM.getEditor('tempT').addListener('selectionchange', function(){				
+				$(".temp-list .ask-bm h1").html(UM.getEditor('tempT').getContent());				
+			})
+			
+			//可填空
+			$(document).on("click",".temp-Control table input[name='tk']",function(){
+				var index = $(".temp-Control tr").index($(this).closest('tr'));
+				$(this).parents("td").find("em").toggle();				
+				if($(".temp-list li").eq(index-1).find("input:text").length<1){
+					$(".temp-list li").eq(index-1).append("<input type='text'/>");
+				}else{
+					$(".temp-list li").eq(index-1).find("input:text").remove();
+					$(".temp-list li").eq(index-1).find("em").remove();
+					$(this).parents("td").find("em input").removeAttr("checked");
+				}				
+			})
+			
+			
+			//必填
+			$(document).on("click",".temp-Control table input[name='bt']",function(){
+				var index = $(".temp-Control tr").index($(this).closest('tr'));							
+				if($(".temp-list li").eq(index-1).find("em").length<1){					
+					$(".temp-list li").eq(index-1).append("<em>*</em>");
+				}else{
+					$(".temp-list li").eq(index-1).find("em").remove();
+				}				
+			})
+			
+			
+			
+			
+			
+			//新增选项
+			$(document).on("click",".bt-plus",function(){
+				$(this).parents("table").find("tr:last").after($("#ask-temp-Control").html());
+				$(".temp-list .ask-bm li:last").after("<li>"+$(".temp-list .ask-bm li:last").html()+"</li>");
+				$(".temp-list .ask-bm li:last lable").text("选项");
+				$(".temp-list .ask-bm li:last em").remove();
+				$(".temp-list .ask-bm li:last input:text").remove();
+				
+			})
+			
+			//删除选项
+			$(document).on("click",".bt-minus",function(){				
+				var index = $(".temp-Control tr").index($(this).closest('tr'));
+				if($(".temp-Control tr").length>3){
+					$(this).parents("tr").remove();
+					$(".temp-list li").eq(index-1).remove();
+				}else{
+					alert("最少要用两个选项");
+				}				
+			})
+			
+			//向上移动选项
+			$(document).on("click",".bt-up",function(){				
+				var index = $(".temp-Control tr").index($(this).closest('tr'));
+				if(index <= 1){
+					alert("已经是最顶");
+				}else{
+					 $(this).parents("tr").prev().before($(this).parents("tr"));
+					 $(".temp-list li").eq(index-1).prev().before( $(".temp-list li").eq(index-1));
+				}				
+			})
+			
+			
+			//向下移动选项
+			$(document).on("click",".bu-down",function(){				
+				var index = $(".temp-Control tr").index($(this).closest('tr'));
+				if(index >=  $(".temp-Control tr").length -1){
+					alert("已经是最下了");
+				}else{
+					 $(this).parents("tr").next().after($(this).parents("tr"));
+					 $(".temp-list li").eq(index-1).next().after( $(".temp-list li").eq(index-1));
+				}				
+			})
+			
+			
+			//文本框内容变化时
+			$(document).on("change","input:text",function(){				
+				var index = $(".temp-Control tr").index($(this).closest('tr'));
+				$(".temp-list li").eq(index-1).find("lable").text($(this).val());
+			})
+			
+			
+			
+			
+			//打开选项模态框
+			function mbModal(type){
+				$(".temp-Control table td").parents("tr").remove();
+				if(type=='radio'){
+					$(".temp-list").html($("#ask-bm-radio").html());
+
+					var tempLen = $(".temp-list li").length;
+					for(i=0;i<tempLen;i++){						
+						$(".temp-Control table tbody").append($("#ask-temp-Control").html());
+					}					
+				}
+				if(type=='check'){
+					$(".temp-list").html($("#ask-bm-check").html());					
+					var tempLen = $(".temp-list li").length;
+					for(i=0;i<tempLen;i++){						
+						$(".temp-Control table tbody").append($("#ask-temp-Control").html());
+					}					
+				}
+				if(type=='sort'){
+					$(".temp-list").html($("#ask-bm-sort").html());					
+					var tempLen = $(".temp-list li").length;
+					for(i=0;i<tempLen;i++){						
+						$(".temp-Control table tbody").append($("#ask-temp-Control").html());
+					}					
+				}	
+								
+				$('#mbModal').modal('show');	
+			}	
+			
+			
+			//向页面插入选项
+			function addask(){
+				$(".RedSea-ask-form-bd").append($(".temp-list").html());
+				$('#mbModal').modal('hide');
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

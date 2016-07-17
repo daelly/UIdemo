@@ -1,0 +1,10 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%88%97%e8%a1%a8%e6%a0%87%e6%b3%a8/03.png">
+  <Marks>
+    <TextMark x="20" y="104" color="16711680" offsetX="55" offsetY="21" defaultDirection="9" direction="9" textMaxWidth="228" text="table-striped  表格隔行 背景色"/>
+    <TextMark x="472" y="158" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="272" text="iconfont icon-xingzuonan　男性图标"/>
+    <TextMark x="479" y="201" color="16711680" offsetX="25" offsetY="15" defaultDirection="9" direction="9" textMaxWidth="231" text="iconfont icon-xingzuonv　女性图标"/>
+    <TextMark x="1080" y="167" color="16711680" offsetX="25" offsetY="25" defaultDirection="6" direction="6" textMaxWidth="171" text="操作按钮　&#xD;&lt;td class=&quot;editbut&quot;>"/>
+    <TextMark x="1005" y="151" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="5" textMaxWidth="239" text="glyphicon glyphicon-trash　删除图标"/>
+    <TextMark x="1040" y="153" color="16711680" offsetX="114" offsetY="51" defaultDirection="5" direction="5" textMaxWidth="232" text="glyphicon glyphicon-edit编辑图标　"/>
+  </Marks>
+</MKM>

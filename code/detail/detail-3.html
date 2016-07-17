@@ -1,0 +1,106 @@
+<meta charset="utf-8">
+<style type="text/css">
+
+	body{background-color: #f3f4f6;}
+</style>
+
+<div class="RedSea">
+	<div class="RedSea-Body-4">
+		
+		<!--详情1-->
+		<div class="RedSea-detail-1">
+			<div class="RedSea-detail-1-tt">大众全新途观明年国内发布 随后将上市</div>
+			<div class="RedSea-detail-1-bd">				
+				　　外观方面,全新途观将采用最新家族式的设计风格,看起来显得更加阳刚,整体造型相比现款可谓焕然一新。细节方面,新车采用了三横幅镀铬进气格栅,与之连为一体的是全新设计的大面积前大灯,内部引入了LED光源。尺寸方面,全新途观轴距达到了2681mm,相比现款增长77mm,后排乘坐空间和行李厢容积(615升)都有了进步提升。
+			</div>
+			<div class="RedSea-detail-1-ti">
+				<p>国土资源局</p>
+				<p>2015年12月25日</p>
+			</div>			
+			<div class="RedSea-detail-1-fe">
+				<a><i class="icon-paper-clip"></i>会议精神．xls</a>				
+			</div>			
+			<div class="RedSea-detail-1-au">
+				<em>
+					<span><i class="icon-user"></i>处理人：杨碧红</span>
+					<span><i class="icon-copy"></i>抄送人： 郑丹琦 </span>
+					<span><i class="icon-pencil"></i>创建人：李明丽</span>
+					<span><i class="icon-tag"></i>标签： 一般事务 重要程度高</span>
+				</em>
+				李明丽发布于　2015-10-12 18:18:33
+			</div>			
+		</div>
+		
+		<!--回复列表-->
+		<div class="RedSea-Reply-1" style="margin-top: 100px;">
+			<div class="RedSea-Reply-1-tt"><span>回复列表</span></div>
+			<div class="RedSea-Reply-1-bd">
+				<ul>
+					<li>
+						<dl>
+							<dt><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=354684324,9237889&fm=116&gp=0.jpg"/></dt>
+							<dd>
+								<h1><span>王道泳</span><b>已完成</b><em>2015-10-15 14:20</em></h1>
+								<h2><span>看起来显得更加阳刚,整体造型相比现款可谓焕然一新</span></h2>
+							</dd>
+						</dl>						
+					</li>
+					
+				</ul>
+		
+			</div>
+			<div class="RedSea-Reply-1-form">
+			
+				<div class="RedSea-Reply-1-form-3"><dl class="RedSea-form-seltap"><dt>抄送人</dt><dd><em class="eq1"><span>张三峰<i class=" icon-remove"></i></span></em><em class="eq2"><a><i class="icon-plus"></i>选择抄送人</a></em></dd></dl>	</div>
+				<div class="RedSea-Reply-1-form-4">
+					<dl id="upfile" class="RedSea-form-seltap"><dt>附件</dt><dd><em class="eq1"></em><em class="eq2"><a><i class="icon-plus"></i>增加附件</a></em></dd></dl>											
+					<input id="hidfile" type="file" style="display:none">
+				</div>
+				
+				<div class="RedSea-Reply-1-form-1"><textarea placeholder="回复评论"></textarea></div>
+				<div class="RedSea-Reply-1-form-2"><button class="btn btn-primary btn-sm">回复</button><button class="btn btn-default btn-sm">关闭</button></div>
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$(".RedSea-form-seltap dd .eq2 a").click(function(){
+			if($(this).parents("dl").attr("id")=="upfile"){
+				$('#hidfile').click();					
+			}else{
+				$(this).parents("dd").find(".eq1").append("<span>张三峰<i class=\" icon-remove\"></i></span>")
+			}
+			
+			
+		})
+		
+		$('#hidfile').change(function() {   
+		 $("#upfile dd .eq1").append("<span>"+$(this).val()+"<i class=\' icon-remove\'></i></span>") 
+		});
+		
+		
+		$(document).on("click",".RedSea-form-seltap dd .eq1 span i",function(){
+			$(this).parents("span").remove();
+		})
+		
+		 $('select').select2({
+		 	 minimumResultsForSearch: Infinity
+		 });
+	})
+		
+	
+</script>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<!--jquery -->
+		<script src="/RedseaPlatform/skins/library/jquery/jquery-2.1.1.min.js"></script>
+		<!--bootstrap -->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/bootstrap.min.css">
+		<script src="/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+		<!--字体文件-->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/newstyle/css/iconfonts/iconfont.css" />
+		<script src="/RedseaPlatform/skins/js/common/echarts-2.2.2/build/dist/echarts.js"></script>
+		
+		
+		<link id="cssid" rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css" />
+		<link id="cssid" rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/ask.css" />
+	</head>
+
+	<body class="RedSea RedSea-ask">		
+		<div class="RedSea-ask-930">
+			<div class="RedSea-ask-an02">
+				
+				<div class="RedSea-ask-an02-T">
+					 1、您入职红海年限： <span>[单选题]</span> 
+				</div>
+				
+				<div class="RedSea-ask-an02-B">
+					<table class="table table-bordered table-condensed table-hover table-center">
+						<tr>
+							<th style="width: 30%;">选项</th>
+							<th style="width: 10%;">小计</th>
+							<th style="width: 60%;">比例</th>
+						</tr>
+						<tr>
+							<td>一年以下</td>
+							<td>654</td>
+							<td class="RedSea-ask-pro">
+								<dl>
+									<dt>
+										<div class="progress">
+										  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+										    <span class="sr-only">20% Complete</span>
+										  </div>
+										</div>
+									</dt>
+									<dd>33.33%</dd>
+								</dl>
+							</td>
+						</tr><tr>
+							<td>一年以下</td>
+							<td>654</td>
+							<td class="RedSea-ask-pro">
+								<dl>
+									<dt>
+										<div class="progress">
+										  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+										    <span class="sr-only">20% Complete</span>
+										  </div>
+										</div>
+									</dt>
+									<dd>33.33%</dd>
+								</dl>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="RedSea-ask-an02-F">				
+					<button class="btn btn-default btn-sm pull-right mgl-10" data-css="chart4">线状图</button>					
+					<button class="btn btn-default btn-sm pull-right mgl-10" data-css="chart3">折线图</button>
+					<button class="btn btn-default btn-sm pull-right mgl-10" data-css="chart2">柱状图</button>
+					<button class="btn btn-default btn-sm pull-right mgl-10" data-css="chart1">饼状图</button>
+				</div>
+				
+				
+				<div class="RedSea-ask-an02-chart">
+					<div class="RedSea-ask-an02-chart-list chart1">
+						<div id="chart-01" class="echart-bd"></div>						
+					</div>		
+					
+					<div class="RedSea-ask-an02-chart-list chart2">
+						<div id="chart-02" class="echart-bd"></div>						
+					</div>	
+					
+					
+					<div class="RedSea-ask-an02-chart-list chart3">
+						<div id="chart-03" class="echart-bd"></div>						
+					</div>	
+					
+					<div class="RedSea-ask-an02-chart-list chart4">
+						<div id="chart-04" class="echart-bd"></div>						
+					</div>	
+					
+					
+				</div>
+				
+				
+				
+				
+				
+			</div>
+
+
+		</div>
+		
+		
+		
+		
+		
+		<script src="analysis.js"></script>
+		<script>
+			require.config({
+		            paths: {
+		                echarts: '/RedseaPlatform/skins/js/common/echarts-2.2.2/build/dist'
+		            }
+		        });
+		        require(
+		            [
+		                'echarts',
+		                'echarts/theme/macarons',
+		                'echarts/chart/bar',
+		                'echarts/chart/line',
+		                'echarts/chart/pie',
+		                'echarts/chart/funnel',
+		                'echarts/chart/gauge'
+		                
+		                // 使用柱状图就加载bar模块，按需加载
+		                
+		            ],
+		            function (ec,theme) {
+		                // 基于准备好的dom，初始化echarts图表
+		               var chart1 = ec.init(document.getElementById('chart-01'),theme); 
+		               chart1.setOption(option1); 
+		               
+		               var chart2 = ec.init(document.getElementById('chart-02'),theme); 
+		               chart2.setOption(option2); 
+		               var chart3 = ec.init(document.getElementById('chart-03'),theme); 
+		               chart3.setOption(option3);  
+		               var chart4 = ec.init(document.getElementById('chart-04'),theme); 
+		               chart4.setOption(option4); 
+		             
+		              }   
+		                             
+		        );
+		        
+		      
+		</script>
+				
+		
+		<script>
+		$(".RedSea-ask-an02-F button").click(function(){
+			var chart=$(this).attr("data-css");
+			$(this).toggleClass("but-bgc");
+			$(this).parents(".RedSea-ask-an02").find("."+chart).toggle();
+			
+			
+			
+			//
+			
+		})
+		</script>
+		
+		
+		
+		
+		
+		
+		
+
+	</body>
+
+</html>

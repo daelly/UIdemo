@@ -1,0 +1,9 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e6%a0%87%e6%b3%a8/03.png">
+  <Marks>
+    <TextMark x="491" y="32" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="168" text=".RedSea-w700px&#xD;表单宽度和背景色"/>
+    <TextMark x="115" y="28" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="222" text=".RedSea-form-1-tt  标题"/>
+    <TextMark x="103" y="76" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="241" text=".RedSea-form-1-bd > table&#xD;表格基本样式"/>
+    <TextMark x="245" y="170" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="217" text=".RedSea-form-1-bd > table >thead>tr>th&#xD;表头样式"/>
+    <TextMark x="265" y="363" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="233" text=".RedSea-form-seltap　　元件增加　&#xD;"/>
+  </Marks>
+</MKM>

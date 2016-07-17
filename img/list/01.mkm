@@ -1,0 +1,11 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%88%97%e8%a1%a8%e6%a0%87%e6%b3%a8/01.png">
+  <Marks>
+    <RectMark x="19" y="55" color="255" offsetX="1174" offsetY="505"/>
+    <TextMark x="203" y="45" color="255" offsetX="77" offsetY="24" defaultDirection="9" direction="9" textMaxWidth="155" text=".RedSea  命名空间"/>
+    <RectMark x="32" y="123" color="16711935" offsetX="1151" offsetY="421"/>
+    <TextMark x="202" y="113" color="16711935" offsetX="55" offsetY="22" defaultDirection="9" direction="9" textMaxWidth="888" text=".RedSea-Body-1  背景白色无边框　　||    .RedSea-Body-2   背景透明无边框　　||    .RedSea-Body-3   背景白色　1像素边框　带投影  宽度990px"/>
+    <TextMark x="167" y="187" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="202" text=".RedSea-Title-1  表头"/>
+    <TextMark x="170" y="272" color="16711680" offsetX="31" offsetY="27" defaultDirection="9" direction="9" textMaxWidth="197" text=".RedSea-list-1 列表主体"/>
+    <TextMark x="457" y="427" color="16711680" offsetX="92" offsetY="32" defaultDirection="10" direction="10" textMaxWidth="228" text=".RedSea-Foot-1 列表分页"/>
+  </Marks>
+</MKM>

@@ -1,0 +1,10 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%88%97%e8%a1%a8%e6%a0%87%e6%b3%a8/04.png">
+  <Marks>
+    <RectMark x="33" y="66" color="255" offsetX="1145" offsetY="460"/>
+    <TextMark x="166" y="64" color="255" offsetX="38" offsetY="28" defaultDirection="9" direction="9" textMaxWidth="281" text="RedSea-Body-2 背景透明"/>
+    <RectMark x="47" y="188" color="16711935" offsetX="1109" offsetY="326"/>
+    <TextMark x="455" y="184" color="16711935" offsetX="122" offsetY="47" defaultDirection="9" direction="9" textMaxWidth="279" text="RedSea-list-2　列表"/>
+    <TextMark x="508" y="180" color="16711935" offsetX="58" offsetY="18" defaultDirection="9" direction="9" textMaxWidth="201" text="RedSea-list-striped　隔行换色"/>
+    <TextMark x="1016" y="224" color="16711680" offsetX="163" offsetY="16" defaultDirection="5" direction="5" textMaxWidth="161" text="but-border　按钮边框样式"/>
+  </Marks>
+</MKM>

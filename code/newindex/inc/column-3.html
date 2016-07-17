@@ -1,0 +1,119 @@
+
+<div class="newindex-from-list">
+	<div class="newIndexColumn column-3">
+		<ul id="showInfo">
+			<li>
+				<h1>标题
+					<s class="icon-list">
+						<div class="column-menu">
+							<a href="javascript:editInfo()">编辑</a>
+							<a href="">删除</a>							
+						</div>
+					</s>
+				</h1>
+			</li>
+			<li><label>姓名：</label><em id="info_name" type="text">李子宣</em></li>
+			<li><label>性别：</label><em id="info_sex" type="radio">男</em></li>
+			<li><label>员工号：</label><em id="info_no" type="text">6288</em></li>
+			<li><label>入职时间：</label><em id="info_workDate" type="date">2016-05-20</em></li>
+			<li><label>岗位名称：</label><em id="info_postName" type="text">UI设计师</em></li>
+			<li><label>用工类型：</label><em id="info_workType" type="select">代缴商业保险</em></li>
+			<li><label>工作经验：</label><em id="info_workTime" type="text">6年</em></li>
+			<!-- <li style="padding-left:220px;margin-top:20px;display:none" id="operBtn">
+			   <button type="button" onclick="saveInfo()" class="btn btn-info btn-sm">保存</button>&nbsp;&nbsp;
+			   <button type="button" onclick="" class="btn btn-default btn-sm">取消</button>
+			</li> -->
+		</ul>
+	    <ul  style="display:none"  id="editInfo">
+			<li>
+				<h1>标题 </h1>
+			</li>
+			<li><label>姓名：</label><em><input type="text" name="info_name"  value="" /></em></li>
+			<li><label>性别：</label><em><span><input type="radio" name="info_sex" id="man" value="男">男</span>
+			                          <span style="margin-left:14px"><input type="radio" name="info_sex" id="woman" value="女">女</span>
+			                      </em></li>
+			<li><label>员工号：</label><em><input type="text" name="info_no" id="" value="" /></em></li>
+			<li><label>入职时间：</label><em><input type="text" name="info_workDate"  value="" onClick="WdatePicker()"/></li>
+			<li><label>岗位名称：</label><em><input type="text" name="info_postName"  value="" /></em></li>
+			<li><label>用工类型：</label><em><select name="info_workType">
+			                               <option value="代缴商业保险">代缴商业保险</option>
+			                               <option value="代缴商业保险1">代缴商业保险1</option>
+			                               <option value="代缴商业保险2">代缴商业保险2</option>
+			                             </select>
+			                         </em></li>
+			<li><label>工作经验：</label><em><input type="text" name="info_workTime" value="" /></em></li>
+			<li style="padding-left:220px;margin-top:20px">
+			   <button type="button" onclick="saveInfo()" class="btn btn-info btn-sm">保存</button>&nbsp;&nbsp;
+			   <button type="button" onclick="$('#editInfo').hide();$('#showInfo').show();" class="btn btn-default btn-sm">取消</button>
+			</li>
+		</ul>
+		
+		<ul>
+			<li><h1>标题 <s class="iconfont icon-NI-bianji"></s></h1></li>
+			<li><label>姓名：</label><em>李子宣</em></li>
+			<li><label>性别：</label><em>男</em></li>
+			<li><label>员工号：</label><em>6288</em></li>
+			<li><label>入职时间：</label><em>2015.1.5</em></li>
+			<li><label>岗位名称：</label><em>UI设计师</em></li>
+			<li><label>用工类型：</label><em>代缴商业保险</em></li>
+			<li><label>工作经验：</label><em>6年</em></li>
+		</ul>
+		<ul>
+			<li><h1>标题 <s class="iconfont icon-NI-bianji"></s></h1></li>
+			<li><label>姓名：</label><em>李子宣</em></li>
+			<li><label>性别：</label><em>男</em></li>
+			<li><label>员工号：</label><em>6288</em></li>
+			<li><label>入职时间：</label><em>2015.1.5</em></li>
+			<li><label>岗位名称：</label><em>UI设计师</em></li>
+			<li><label>用工类型：</label><em>代缴商业保险</em></li>
+			<li><label>工作经验：</label><em>6年</em></li>
+		</ul>
+	</div>
+	
+	
+	
+	<div class="newIndexColumn column-3">
+	    <ul id="showContractInfo">
+			<li><h1>合同 <s class="iconfont icon-NI-bianji" onclick="editContractInfo()"></s></h1></li>
+			<li><label>合同类型：</label><em>固定期</em></li>
+			<li><label>协议类型：</label><em>劳动合同</em></li>
+			<li><label>试用期：</label><em>2016-01-02 至 2016-04-02 共3个月</em></li>
+			<li><label>试用期状态：</label><em>未转正</em></li>
+			<li><label>合同期：</label><em>2016-01-02 至 2018-12-31 共36个月</em></li>
+			<li><label>签约工资：</label><em>2000</em></li>
+			<li><label>签约时间：</label><em>2016-01-02</em></li>
+	        <li><label>签署地：</label><em>广州</em></li>
+			<li><label>解除时间：</label><em>2016-01-02</em></li>
+			<li><label>解除原因：</label><em>帅到没朋友</em></li>
+			<li><label>备注：</label><em>部门重构部门重构部门重构部门重构部门重构部门重构部门重构部门重构部门重构</em></li>
+		</ul>
+	    <ul  style="display:none"  id="editContractInfo">
+			<li>
+				<h1>合同 </h1>
+			</li>
+			<li><label>姓名：</label><em><input type="text" name="info_name"  value="" /></em></li>
+			<li><label>性别：</label><em><span><input type="radio" name="info_sex" id="man" value="男">男</span>
+			                          <span style="margin-left:14px"><input type="radio" name="info_sex" id="woman" value="女">女</span>
+			                      </em></li>
+			<li><label>员工号：</label><em><input type="text" name="info_no" id="" value="" /></em></li>
+			<li><label>入职时间：</label><em><input type="text" name="info_workDate"  value="" onClick="WdatePicker()"/></li>
+			<li><label>岗位名称：</label><em><input type="text" name="info_postName"  value="" /></em></li>
+			<li><label>用工类型：</label><em><select name="info_workType">
+			                               <option value="代缴商业保险">代缴商业保险</option>
+			                               <option value="代缴商业保险1">代缴商业保险1</option>
+			                               <option value="代缴商业保险2">代缴商业保险2</option>
+			                             </select>
+			                         </em></li>
+			<li><label>工作经验：</label><em><input type="text" name="info_workTime" value="" /></em></li>
+			<li style="padding-left:220px;margin-top:20px">
+			   <button type="button" onclick="saveEdit()" class="btn btn-info btn-sm">保存</button>&nbsp;&nbsp;
+			   <button type="button" onclick="$('#editInfo').hide();$('#showInfo').show();" class="btn btn-default btn-sm">取消</button>
+			</li>
+		</ul>
+		
+		
+		
+	</div>
+	
+</div>
+

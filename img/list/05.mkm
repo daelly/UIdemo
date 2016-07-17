@@ -1,0 +1,13 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%88%97%e8%a1%a8%e6%a0%87%e6%b3%a8/05.png">
+  <Marks>
+    <TextMark x="415" y="169" color="16711680" offsetX="118" offsetY="15" defaultDirection="9" direction="9" textMaxWidth="411" text="RedSea-list-Division 分栏间隔"/>
+    <RectMark x="55" y="177" color="255" offsetX="1096" offsetY="342"/>
+    <TextMark x="467" y="522" color="255" offsetX="54" offsetY="18" defaultDirection="10" direction="10" textMaxWidth="172" text="RedSea-row　分栏主体"/>
+    <RectMark x="58" y="180" color="16711935" offsetX="190" offsetY="310"/>
+    <TextMark x="68" y="484" color="16711935" offsetX="48" offsetY="32" defaultDirection="9" direction="9" textMaxWidth="172" text="RedSea-row-l　左边栏"/>
+    <RectMark x="257" y="180" color="16711935" offsetX="885" offsetY="319"/>
+    <TextMark x="418" y="194" color="16711935" offsetX="164" offsetY="12" defaultDirection="10" direction="10" textMaxWidth="253" text="RedSea-row-r　右边栏"/>
+    <TextMark x="309" y="240" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="229" text="iconfont icon-mail　邮件图标"/>
+    <TextMark x="314" y="284" color="16711680" offsetX="28" offsetY="13" defaultDirection="9" direction="9" textMaxWidth="312" text="iconfont icon-mailopen　已读过的图标"/>
+  </Marks>
+</MKM>

@@ -1,0 +1,417 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+ 
+<div class="RedSea">
+
+	<div class="selet2-100 RedSea-Body-3">
+		<div class="info-title">
+			<p class="line-2px"><i class="icon-building"></i>基本信息</p>
+			<em>
+			<div class="RedSea-Title-tabs">
+					
+					<ul class="nav nav-tabs" id="myTabs">
+					  <li role="presentation" class="pull-right active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">首页</a></li>
+					  <li role="presentation" class="pull-right"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">简介</a></li>
+					  <li role="presentation" class="pull-right"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">消息</a></li>
+					</ul>
+										
+				</div>
+			
+		</em>
+		</div>
+		<div class="mt10 clearfix">
+			<form id="cust_info_form" name="form1" method="post" action="/OutWork/PtFjk.mc?method=upload" enctype="multipart/form-data" border="0">
+
+				<table class="table-edit table-block" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="left" nowrap="" width="120"><span class="red1">* </span>身份证号
+							</td>
+							<td width="180px">
+								<input class="form-control" id="idcard" name="idcard" value="210203198704154346" onblur="idCardVali(this.value);" validate="required,isCardNo" type="text">
+								<input id="idCardValidator" value="1" type="hidden">
+								<input id="ajaxIdCardValidator" value="0" type="hidden">
+							</td>
+							<td class="title" width="120">政治面貌
+							</td>
+							<td width="150px">
+								<select class="form-control" id="polity" name="polity">
+									<option value="01">中共党员</option>
+									<option value="02">中共预备党员</option>
+									<option value="03">共青团员</option>
+									<option value="04">民革会员</option>
+									<option value="05">民盟盟员</option>
+									<option value="06">民建会员</option>
+									<option value="07">民进会员</option>
+									<option value="08">农工党党员</option>
+									<option value="09">致公党党员</option>
+									<option value="10">九三学社社员</option>
+									<option value="11">台盟盟员</option>
+									<option value="12">无党派民主人士</option>
+									<option value="13">群众</option>
+
+								</select>
+							</td>
+							<td id="upload-img" colspan="2" rowspan="5" style="border:1px solid #e1e1e1;text-align: center;">
+								<input onchange="ajaxSubmitForm();" name="fj_file" id="fj_file" style="display: none;" type="file">
+								<img src="/RedseaPlatform/skins/style/images/noImage.png" height="160" width="140">
+								<div style="text-align:center;">
+									<input id="onuploadbtn" onclick="$('#fj_file').click();" value="上传图片" class="btn btn-success" type="button"><span id="scjd" jindu="0" style="margin-bottom:2px;"></span>
+								</div>
+								<input id="pic_herfUrl" name="pictureFile" value="" type="hidden">
+							</td>
+						</tr>
+						<tr>
+							<td class="left"><span class="red1">* </span>姓名
+							</td>
+							<td>
+								<input class="form-control" id="staffName" name="staffName" validate="required" value="冷梦安" type="text">
+							</td>
+							<td class="title"><span class="red1">* </span>民族
+							</td>
+							<td>
+								<select class="form-control" name="nation" id="nation">
+									<option value="1">汉族</option>
+									<option value="2">蒙古族</option>
+									<option value="3">回族</option>
+									<option value="4">藏族</option>
+									<option value="5">维吾尔族</option>
+									<option value="6">苗族</option>
+									<option value="7">彝族</option>
+									<option value="8">壮族</option>
+									<option value="9">布依族</option>
+									<option value="10">朝鲜族</option>
+									<option value="11">满族</option>
+									<option value="12">侗族</option>
+									<option value="13">瑶族</option>
+									<option value="14">白族</option>
+									<option value="15">土家族</option>
+									<option value="16">哈尼族</option>
+									<option value="17">哈萨克族</option>
+									<option value="18">傣族</option>
+									<option value="19">黎族</option>
+									<option value="20">傈傈族</option>
+									<option value="21">佤族</option>
+									<option value="22">畲族</option>
+									<option value="23">高山族</option>
+									<option value="24">拉祜族</option>
+									<option value="25">水族</option>
+									<option value="26">东乡族</option>
+									<option value="27">纳西族</option>
+									<option value="28">景颇族</option>
+									<option value="29">柯尔克孜族</option>
+									<option value="30">土族</option>
+									<option value="31">达翰尔族</option>
+									<option value="32">仫佬族</option>
+									<option value="33">羌族</option>
+									<option value="34">布朗族</option>
+									<option value="35">撒拉族</option>
+									<option value="36">毛南族</option>
+									<option value="37">仡佬族</option>
+									<option value="38">锡伯族</option>
+									<option value="39">阿昌族</option>
+									<option value="40">普米族</option>
+									<option value="41">塔吉克族</option>
+									<option value="42">怒族</option>
+									<option value="43">乌孜别克族</option>
+									<option value="44">俄罗斯族</option>
+									<option value="45">鄂温克族</option>
+									<option value="46">德昂族</option>
+									<option value="47">保安族</option>
+									<option value="48">裕固族</option>
+									<option value="49">京族</option>
+									<option value="50">塔塔尔族</option>
+									<option value="51">独龙族</option>
+									<option value="52">鄂伦春族</option>
+									<option value="53">赫哲族</option>
+									<option value="54">门巴族</option>
+									<option value="55">珞巴族</option>
+									<option value="56">基诺族</option>
+
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="title">员工号</td>
+							<td>
+								<input class="form-control" name="baseCode" value="893778" type="text">
+							</td>
+
+							<td class="title"><span class="red1">* </span>户口性质
+							</td>
+							<td>
+								<select class="form-control" id="registProperty" name="registProperty">
+									<option value="外地农村">外地农村</option>
+									<option value="外地城镇">外地城镇</option>
+									<option value="本地农村">本地农村</option>
+									<option value="本地城镇">本地城镇</option>
+
+								</select>
+							</td>
+
+						</tr>
+						<tr>
+							<td class="left"><span class="red1">* </span>入职时间
+							</td>
+							<td>
+								<input class="form-control" id="joinDate" name="joinDate" readonly="readonly" value="2013-04-14" onclick="WdatePicker()" type="text">
+							</td>
+							<td class="title"><span class="red1">* </span>婚姻状况
+							</td>
+							<td>
+								<select class="form-control" name="marriage" id="marriage">
+									<option value="10">未婚</option>
+									<option value="20">已婚</option>
+									<option value="30">丧偶</option>
+									<option value="40">离婚</option>
+									<option value="90">未说明的婚姻状况</option>
+
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="left"><span class="red1">* </span>岗位名称
+							</td>
+							<td>
+								<input class="form-control" id="postAliasName" name="postAliasName" validate="required" value="普通员工" type="text">
+							</td>
+							<td class="title"><span class="red1">* </span>最高学历
+							</td>
+							<td>
+								<select class="form-control" name="highEdu" id="education">
+									<option value="">请选择</option>
+									<option value="10">博士后</option>
+									<option value="11">博士</option>
+									<option value="12">硕士</option>
+									<option value="13">研究生毕业</option>
+									<option value="14">研究生结业</option>
+									<option value="21">本科</option>
+									<option value="31">大专</option>
+									<option value="40">中专中技</option>
+									<option value="50">技校</option>
+									<option value="61">高中</option>
+									<option value="62">职高</option>
+									<option value="70">初中</option>
+									<option value="80">小学</option>
+									<option value="90">文盲或半文盲</option>
+									<option value="99">其他</option>
+
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">用工类型</td>
+							<td>
+								<select class="form-control" id="identity" name="identity" tabindex="7" value="">
+									<option value="" selected="selected">--请选择--</option>
+									<option value="1">劳务派遣</option>
+									<option value="2">事务代理</option>
+									<option value="3">业务外包</option>
+									<option value="4">代发工资</option>
+									<option value="5">实习生</option>
+									<option value="6">退休返聘</option>
+									<option value="7">代缴社保</option>
+									<option value="8">代缴公积金</option>
+									<option value="9">代缴商业保险</option>
+									<option value="10">境外劳务派遣</option>
+									<option value="11">岗位外包</option>
+									<option value="12">劳务承揽</option>
+
+								</select>
+							</td>
+							<td class="title">健康状况</td>
+							<td>
+								<select class="form-control" id="health" name="health">
+									<option value="1">健康或良好</option>
+									<option value="2">一般或较弱</option>
+									<option value="3">有慢性病</option>
+									<option value="6">残疾</option>
+
+								</select>
+							</td>
+							<td class="title" nowrap="nowrap">姓名拼音</td>
+							<td>
+								<input class="form-control" id="nameSpell" name="nameSpell" value="" type="text">
+							</td>
+
+						</tr>
+						<tr>
+							<td class="left">
+								直接上司
+							</td>
+							<td>
+								<div style="position: relative;">
+									<input class="form-control" id="principalStaffName" name="principalStaffName" data-toggle="tooltip" value="柳翼" readonly="readonly" type="text">
+									<input class="input" id="principalStaffId" name="principalStaffId" value="21cc97b4-1045-44f4-9524-1f98bf6fee44" type="hidden">
+									<span class="input-inner" style="left:64px;top:7px;position: absolute;">
+							<a href="javascript:delPrincipalInfo()" class="i-trash" style="margin:0px;padding:0px;" title="删除"></a>
+							<a id="principalStaff" tabindex="8" class="i-search" title="选择"></a>
+						</span>
+								</div>
+							</td>
+							<td class="title">开卡银行</td>
+							<td>
+								<div style="">
+									<div style="">
+										<input class="form-control" id="bankName" name="bankName" value="" type="hidden">
+										<input class="form-control" id="bankNameText" name="bankNameText" autocomplete="off" data-provide="typeahead" placeholder="" type="text">
+										<ul class="typeahead dropdown-menu" style="top: 38px; left: 8px; display: none;">
+										</ul>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+							</td>
+
+							<td class="title">出生日期 </td>
+							<td>
+								<input class="form-control" id="birthday" name="birthday" readonly="readonly" onclick="WdatePicker()" value="1987-05-23" type="text">
+							</td>
+
+						</tr>
+						<tr>
+							<td class="left"><span class="red1">* </span>手机号码
+							</td>
+							<td>
+								<input class="form-control" id="mobilePhone" validate="required,phone" onblur="validatePhone()" name="mobilePhone" value="18377219919" type="text">
+							</td>
+							<td class="title">银行帐号</td>
+							<td>
+								<input class="form-control" id="bankAccount" name="bankAccount" value="" type="text">
+							</td>
+							<td class="title">性别</td>
+							<td>
+								<select class="form-control" name="sex" id="sex">
+									<option value="1">男</option>
+									<option value="2">女</option>
+
+								</select>
+							</td>
+						</tr>
+						<tr>
+
+							<td class="title">居住地址</td>
+							<td colspan="3">
+								<input class="form-control" id="livePlace" name="livePlace" value="" type="text">
+							</td>
+							<td class="title">籍贯</td>
+							<td>
+								<input class="form-control" id="nativePlace" name="nativePlace" value="辽宁省 大连市 西岗区	 " type="text">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table-edit table-block" width="100%">
+					<tbody>
+						<tr>
+							<td class="left" width="120">电子邮箱</td>
+							<td style="width: 180px;">
+								<input class="form-control" id="email" name="email" value="" type="text">
+							</td>
+							<td class="title" width="120">紧急联系人</td>
+							<td style="width: 150px;">
+								<input class="form-control" id="cellPerson" name="callPerson" value="" type="text">
+							</td>
+							<td class="title" nowrap="nowrap" width="110">紧急联系人电话</td>
+							<td>
+								<input style="padding:6px 6px;" class="form-control" id="callPhone" name="callPhone" value="" type="text">
+							</td>
+
+						</tr>
+						<tr>
+							<td class="title">家庭电话</td>
+							<td>
+								<input class="form-control" id="telPhone" name="telPhone" value="" type="text">
+							</td>
+							<td class="title">家庭地址</td>
+							<td colspan="3">
+								<input class="form-control" id="familyAddress" name="familyAddress" value="" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="title" nowrap="">入党团日期</td>
+							<td>
+								<input class="form-control" id="polityDate" onclick="WdatePicker()" name="polityDate" value="" type="text">
+							</td>
+							<td class="title" nowrap="">毕业学校</td>
+							<td>
+								<input class="form-control" id="graSchool" name="graSchool" value="" type="text">
+								<input name="eduId" value="" type="hidden">
+							</td>
+							<td class="title" nowrap="">毕业时间</td>
+							<td>
+								<input class="form-control" id="graTime" onclick="WdatePicker()" name="eduEDate" value="" type="text">
+							</td>
+						</tr>
+						<tr>
+
+							<td class="left" nowrap="">参加工作时间</td>
+							<td>
+								<input class="form-control" id="workDate" onclick="WdatePicker()" name="workDate" value="" type="text">
+							</td>
+							<td class="title">入职前工龄</td>
+							<td>
+								<input class="form-control" id="workAge" name="workAge" placeholder="年" value="0" type="text">
+							</td>
+							<td class="title">国籍</td>
+							<td>
+								<select class="form-control" name="fromNation" id="fromNation">
+									<option value="0">中国大陆</option>
+									<option value="1">香港</option>
+									<option value="2">澳门</option>
+									<option value="3">台湾</option>
+									<option value="4">美国</option>
+									<option value="5">英国</option>
+
+								</select>
+							</td>
+						</tr>
+
+					</tbody>
+
+					
+				</table>
+
+				<div class="table-edit" style=" width:100%; text-align:center;">
+					<button class="btn btn-success btn-sm" type="button" id="cust-info-save">保存</button>
+					<button class="btn btn-default btn-sm" type="button" onclick="back()">返回</button>
+				</div>
+			</form>
+
+		</div>
+
+	</div>
+</div>
+<script>
+	//下拉框
+	$('select').select2({
+		 	// minimumResultsForSearch: Infinity,
+		 	// width: 'resolve'
+	});
+
+	
+	//iCheck
+	$(function(){
+	        	 $('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });	          
+	 });
+	
+	//Switch	
+	$(".switchs").bootstrapSwitch();
+</script>
+<script>
+	$('#myTabs a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+</script>

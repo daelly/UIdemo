@@ -1,0 +1,28 @@
+<script>
+	if (typeof (requreLib) != "undefined") {
+		requreLib.setplugs("");
+	}
+	$(function() {
+		$("#dateDiv").load("/RedseaPlatform/UIdemo/code/components/date.jsp");
+	});
+</script>
+<link rel="stylesheet" href="/RedseaPlatform/UIdemo/css/style.min.css">
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1 ">
+		<!--列表头-->
+		<div class="RedSea-Title-3">
+			<div class="RedSea-Title-3-clear">
+				<div class="RedSea-Title-tabs">
+					<div class="RedSea-Title-3-text">
+						<span class="icon-group"></span>日历
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表头end-->
+		<!-- Tab panes -->
+		<div class="RedSea-list-1">
+			<div id="dateDiv"></div>
+		</div>
+	</div>
+</div>

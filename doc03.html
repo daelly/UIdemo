@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			code{background-color: #f5f5f5;border:#e1e1e8 solid 1px;display: block;padding: 20px;}
+			td{border:#eee solid 1px;padding: 10px;}
+		</style>
+	</head>
+	<body>
+	<div style="min-width: 1200px;">
+		<h3>按需载入使用说明</h1>
+		<h4>1、主页面加入 requreLib.js</h2>		
+		<code>			
+			&lt;script src=&quot;/RedseaPlatform/skins/js/common/requreLib.js&quot;&gt;&lt;/script&gt;			
+		</code>
+		
+		<h4>2、在ajax加载页面里加入以下代码</h2>		
+		<code>			
+				&lt;script&gt;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br/>&nbsp;&nbsp; &nbsp;if(typeof(requreLib)!=&quot;undefined&quot;){<br/>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;requreLib.setplugs(&quot;icheck,select2&quot;);<br/>&nbsp;&nbsp; &nbsp;}<br/>&lt;/script&gt;	
+		</code>
+		
+		<h4>或</h2>		
+		<code>			
+				<p>
+    &lt;script&gt;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br/>&nbsp;&nbsp; &nbsp;if(typeof(requreLib)!=&quot;undefined&quot;){<br/>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;requreLib.setplugs(&quot;icheck,select2,http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js,/RedseaPlatform/skins/library/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js&quot;);<br/>&nbsp;&nbsp; &nbsp;}<br/>&lt;/script&gt;
+</p>	
+		</code>
+	</div>
+		
+	<h4>3、已经定好的插件</h2>			
+		<table>
+			<tr>
+				<td>jqueryui</td>
+				<td>icheck</td>
+				<td>select2</td>
+				<td>slimscroll</td>
+				<td>echarts</td>
+			</tr>
+			<tr>
+				<td>WdatePicker</td>
+				<td>bootswitch</td>
+				<td>scrolltofixed</td>
+				<td>jValidate</td>
+				<td>RedseaMessageBox</td>
+			</tr>
+			<tr>
+				<td>layer 加载有问题</td>
+				<td>intro</td>
+				<td>pubfunction</td>
+				<td>ueditor Ajax加载有问题</td>
+				<td>animate</td>
+			</tr>
+		</table>
+		
+		
+		
+		<br><br><br><br><br>
+		
+		<h3>不刷新改变URL: jquery.pjax.js</h3>
+		<h4>1、主页面加入 jquery.pjax.js 插件</h2>		
+		<code>			
+			    &lt;script type=&quot;text/javascript&quot; src=&quot;/RedseaPlatform/skins/library/jquery.pjax.js&quot;&gt;&lt;/script&gt;			
+		</code>
+		
+		<h4>2、通过选择器来设置那些内容，不进行跳转页面</h2>		
+		<code>			
+			      &lt;script&gt;<br/>&nbsp;&nbsp; &nbsp;$(document).pjax(&#39;a[target!=blank]&#39;, &#39;body&#39;);<br/>&lt;/script&gt;		
+		</code>
+		
+		<h4>3、设置链接地址</h2>	
+		<code>			
+			     <p>
+    &lt;a href=&quot;#Ajax|/RedseaPlatform/UIdemo2/code/list/tableList2.html&quot;&gt;常用表格列表&lt;/a&gt;<br/>&lt;a href=&quot;#iframe|/RedseaPlatform/UIdemo/code/index/index-2.html&quot;&gt;iframe页面&lt;/a&gt;<br/>&lt;a href=&quot;openpage.html#Ajax|/RedseaPlatform/UIdemo2/code/form/form-2.html target=&quot;blank&quot;&quot;&gt;表单2－订单&lt;/a&gt;<br/>&lt;a href=&quot;doc02.html&quot; target=&quot;blank&quot;&gt;色彩说明&lt;/a&gt;
+</p>
+		</code>
+		
+	</body>
+</html>

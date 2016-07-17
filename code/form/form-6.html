@@ -1,0 +1,166 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+ 
+ 
+<div class="RedSea">
+	
+	
+	<div class="RedSea-pop2 RedSea-w700px pd-20">
+		<form action="" class="form-inline">
+		<div class="RedSea-pop2-tt"><span><i class="icon-globe"></i>请假申请单</span> <em class="iconfont icon-chahao"></em></div>
+		<div class="RedSea-pop2-bd">
+			<table class="mgt-20">				
+				<tbody>					
+					<tr>
+						<td width="100px">新签员工<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<dl class="RedSea-form-seltap"><dd style="margin-left: 0px;"><em class="eq1"><span>张三峰<i class=" icon-remove"></i></span></em><em class="eq2"><a><i class="icon-plus"></i>选择审批人</a></em></dd></dl>	
+						</td>
+					</tr>
+					<tr>
+						<td >合同类型<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<select name="">
+								<option value="">固定期</option>
+							</select>	
+						</td>
+					</tr>
+					<tr>
+						<td >协议类型<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<select name="">
+								<option value="">劳动合同</option>
+							</select>	
+						</td>
+					</tr>
+					<tr>
+						<td width="100px">试用期<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<input type="" name="" id="" value="2016-1-2 " class="form-control" /> 至
+							<input type="" name="" id="" value="2016-3-2 " class="form-control" /> 共3个月
+						</td>
+					</tr>
+					<tr>
+						<td>试用期工资<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<input type="" name="" id="" value="2016-1-2 " class="form-control" /> 
+							
+						</td>
+					</tr>
+					<tr>
+						<td >合同期<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<input type="" name="" id="" value="2016-4-2 " class="form-control" /> 至
+							<input type="" name="" id="" value="2016-12-2 " class="form-control" /> 共3个月
+						</td>
+					</tr>
+					<tr>
+						<td >转正工资<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<input type="" name="" id="" value="2016-1-2 " class="form-control" /> 
+							
+						</td>
+					</tr>
+					<tr>
+						<td >签订时间<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<input type="" name="" id="" value="2016-1-2 " class="form-control" /> 
+							
+						</td>
+					</tr>
+					<tr>
+						<td >签署地<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<select name="">
+								<option value="">广州</option>
+							</select>
+							
+						</td>
+					</tr>
+					<tr>
+						<td >备注<span style="color: red;margin-left: 5px;">*</span></td>
+						<td>
+							<textarea name="" rows="5" cols="60"></textarea>
+						</td>
+					</tr>
+				
+				
+				
+				
+				
+				
+				</tbody>
+			</table>
+			
+			
+			
+			
+			
+			
+			
+				
+		</div>
+		
+		<div class="RedSea-pop2-ft mgt-20" style="text-align: right;">
+			
+					<button type="button" class="btn btn-default but-Block">提交</button>
+					<button type="button" class="btn btn-default">关闭</button>
+			
+		</div>
+		
+		
+		</form>
+
+	</div>
+</div>
+
+
+<script>
+
+	
+		
+		$('select').select2({
+			
+		 	 minimumResultsForSearch: Infinity
+		 }); 
+	
+		
+
+
+$(document).ready(function(){
+	$(".RedSea-form-seltap dd .eq2 a").click(function(){
+			if($(this).parents("dl").attr("id")=="upfile"){
+				$('#hidfile').click();					
+			}else{
+				$(this).parents("dd").find(".eq1").append("<span>张三峰<i class=\" icon-remove\"></i></span>")
+			}
+			
+			
+		})
+		
+		$('#hidfile').change(function() {   
+		 $("#upfile dd .eq1").append("<span>"+$(this).val()+"<i class=\' icon-remove\'></i></span>") 
+		});
+		
+		
+		$(document).on("click",".RedSea-form-seltap dd .eq1 span i",function(){
+			$(this).parents("span").remove();
+		})
+})
+
+
+
+
+
+	
+		
+	
+</script>

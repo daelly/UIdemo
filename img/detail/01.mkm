@@ -1,0 +1,19 @@
+<MKM version="2.0" imageFileUrl="file:///E:/eclipse3.7/workspace/RedseaPlatform/WebRoot/UIdemo2/img/detail/01.png">
+  <Marks>
+    <RectMark x="41" y="62" color="255" offsetX="1059" offsetY="795"/>
+    <TextMark x="186" y="47" color="255" offsetX="101" offsetY="21" defaultDirection="9" direction="9" textMaxWidth="272" text="RedSea-Body-4  白色背景带边框 无投影"/>
+    <TextMark x="790" y="147" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="209" text="RedSea-detail-1-tt  标题"/>
+    <TextMark x="149" y="191" color="16711680" offsetX="71" offsetY="17" defaultDirection="9" direction="9" textMaxWidth="202" text="RedSea-detail-1-bd 内容"/>
+    <TextMark x="974" y="297" color="16711680" offsetX="146" offsetY="9" defaultDirection="5" direction="5" textMaxWidth="244" text="RedSea-detail-1-ti 时间和发布人"/>
+    <TextMark x="167" y="351" color="16711680" offsetX="56" offsetY="13" defaultDirection="9" direction="9" textMaxWidth="252" text="RedSea-detail-1-fe  附件"/>
+    <TextMark x="144" y="400" color="16711680" offsetX="640" offsetY="15" defaultDirection="10" direction="10" textMaxWidth="218" text="RedSea-detail-1-au   标签等信息"/>
+    <RectMark x="88" y="435" color="16711935" offsetX="969" offsetY="108"/>
+    <TextMark x="187" y="465" color="16711680" offsetX="52" offsetY="15" defaultDirection="9" direction="9" textMaxWidth="239" text="RedSea-Reply-1-tt  回复列表标题"/>
+    <RectMark x="117" y="488" color="16711680" offsetX="913" offsetY="47"/>
+    <TextMark x="361" y="486" color="16711680" offsetX="460" offsetY="23" defaultDirection="9" direction="9" textMaxWidth="189" text="RedSea-Reply-1-bd 列表主体"/>
+    <RectMark x="100" y="557" color="1118481" offsetX="948" offsetY="228"/>
+    <TextMark x="163" y="780" color="1118481" offsetX="80" offsetY="46" defaultDirection="10" direction="10" textMaxWidth="243" text="RedSea-Reply-1-form   回复表单"/>
+    <TextMark x="423" y="584" color="16711680" offsetX="87" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="206" text="RedSea-form-seltap  抄送标签"/>
+    <TextMark x="395" y="624" color="16711680" offsetX="231" offsetY="9" defaultDirection="9" direction="9" textMaxWidth="231" text="RedSea-form-seltap 抄送标签"/>
+  </Marks>
+</MKM>

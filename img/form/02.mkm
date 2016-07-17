@@ -1,0 +1,9 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%a1%ab%e5%86%99%e6%a0%87%e6%b3%a8/2.png">
+  <Marks>
+    <TextMark x="125" y="84" color="16711680" offsetX="25" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="318" text="&lt;table class=&quot;c-table&quot; width=&quot;100%&quot;>"/>
+    <TextMark x="128" y="406" color="16711680" offsetX="91" offsetY="37" defaultDirection="9" direction="9" textMaxWidth="401" text="&lt;table class=&quot;table-view&quot; border=&quot;0&quot; width=&quot;100%&quot;>"/>
+    <TextMark x="121" y="740" color="16711680" offsetX="98" offsetY="71" defaultDirection="9" direction="9" textMaxWidth="433" text="&lt;table class=&quot;table-edit table-block&quot; border=&quot;0&quot; width=&quot;100%&quot;>"/>
+    <RectMark x="7" y="3" color="16711680" offsetX="1001" offsetY="312"/>
+    <TextMark x="447" y="13" color="16711680" offsetX="101" offsetY="4" defaultDirection="10" direction="10" textMaxWidth="168" text="RedSea-Body-3&#xD;边框投影"/>
+  </Marks>
+</MKM>

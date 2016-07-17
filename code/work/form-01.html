@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>模板首页</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<!--jquery -->
+		<script src="/RedseaPlatform/skins/library/jquery/jquery-2.1.1.min.js"></script>
+		<!--bootstrap -->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/bootstrap.min.css">
+		<script src="/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+		<!--字体文件-->
+		<link rel="stylesheet" href="/RedseaPlatform/skins/library/bootstrap-3.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/newstyle/css/iconfonts/iconfont.css" />				
+		
+		<link rel="stylesheet" href="/RedseaPlatform/demo/mermaid-master/mermaid.css" />
+		<script src="/RedseaPlatform/demo/mermaid-master/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/RedseaPlatform/demo/mermaid-master/mermaidAPI.js" type="text/javascript" charset="utf-8"></script>
+			
+		<script src="/RedseaPlatform/skins/newstyle/js/jquery-scrolltofixed-min.js"></script>	
+		<script src="/RedseaPlatform/skins/newstyle/js/jquery.slimscroll.min.js" type="text/javascript" charset="utf-8"></script>
+		<link id="cssid" rel="stylesheet" type="text/css" href="/RedseaPlatform/skins/style/css/hr-soft-v1/Scene.css" />
+		
+		<style type="text/css">
+			.navbar{display: none;}
+		</style>
+
+	</head>
+	<style type="text/css">
+		body {background-color: #f3f4f6;}
+		.RedSea-row-l{width: 250px;}
+		.RedSea-row-r{margin-left: 260px;}
+		.RedSea-leftmenu-1 ul{border:none;}
+		.RedSea-leftmenu-1 #sScroll{border:solid 1px #eee}
+		.RedSea-leftmenu-1 h4{position:relative;display: block;min-height: 40px; padding: 0px 10px;overflow: hidden;}
+		.RedSea-leftmenu-1 h4 a{color:#555;border-radius:3px 3px 0px 0;padding:6px 10px;position:absolute;bottom:-1px;display:inline-block;border:solid 1px #eee;}
+		.RedSea-leftmenu-1 h4>.active{color: #eb9316;background-color: #f9f9f9;}
+		.RedSea-leftmenu-1 h4 a i{margin-right: 5px;}
+		.RedSea-leftmenu-1 h4 a:hover{text-decoration: none;}
+		.RedSea-leftmenu-1 h4 a:first-child{left:0px;}
+		.RedSea-leftmenu-1 h4 a:last-child{left:97px;}
+		.RedSea-leftmenu-1 h2,.RedSea-leftmenu-1 h3{min-height: 500px;}
+		.RedSea-leftmenu-1 h3{text-align: center;}
+		.RedSea-leftmenu-1 h2 a{font-size: 16px;}
+		.RedSea-leftmenu-1 h2 a:hover{text-decoration: none;}
+		.RedSea-leftmenu-1 h2 a span{float: right;}
+		.RedSea-leftmenu-1 h2 a s{margin-right: 5px;font-weight: 600;color: #888;font-family: arial;}
+		.RedSea-leftmenu-1 h2 a .icon-ok{color: green;}
+		.RedSea-leftmenu-1 h2 a .icon-minus-sign{color: red;}
+		.RedSea-leftmenu-1 h2 a .icon-bookmark-empty{color:blue;}
+		
+		
+		
+		.RedSea-row-r h3{font-size: 24px;margin-top: 20px;}
+		#graphDiv g{color: #000;}
+		#graphDiv .node{cursor: pointer;}
+		
+		
+	</style>
+
+
+	<body class="RedSea RedSea-index1">
+		
+
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1" style="overflow: hidden;">				
+				<div class="RedSea-row" style="margin-top: 0px;min-height: 600px;">
+					<div class="RedSea-row-l" id="tbFixed">
+						<div class="RedSea-leftmenu-1" style="margin-top: -5px;">
+							<ul>
+								<li>
+									<h4><a data-h="h2"><i class="icon-star-empty"></i>流程步骤</a><a data-h="h3" class="active"><s class="icon-random"></s>流程图</a></h4>
+									<div id="sScroll">
+									<h2 style="display: none;">
+										<a data-url="/RedseaPlatform/UIdemo2/code/form/form-2.html" class="lm-active"><s>1.</s>个人审批事务<span class="icon-ok"></span></a>
+										<a data-url="http://localhost:8080/RedseaPlatform/WorkformEngine.mc?method=goToWorkFlow&formId=a4669b2e-3e6e-486a-ad13-7377eac74412&hasHead=null&businessKey=f5c4d68e-4db6-4233-87e2-5211db135ec2&processId=fc85e87b-e562-47cc-b41b-eed7e6370761&taskId=e897eb64-95ff-41f2-80f2-d11284a6fcfc&currentState=ACCEPTED&reqType=WAIT&systemId=null"><s>2.</s>系统提醒<span class="icon-minus-sign"></span></a>
+										<a data-url="/RedseaPlatform/UIdemo2/code/form/form-4.html"><s>3.</s>事务审批<span class="icon-bookmark-empty"></span></a>
+										
+									</h2>
+									<h3>
+										<div id="graphDiv">
+										
+										</div>
+									</h3>
+									</div>
+								</li>
+								
+							</ul>
+							
+							
+						</div>
+						
+						
+						
+						
+						
+					</div>
+					<div class="RedSea-row-r">
+						
+							
+		
+								
+					</div>
+				</div>
+
+
+	</div>
+	
+	
+			<script>
+				$(document).ready(function(){	
+					$(".RedSea-row-r").load($(".RedSea-leftmenu-1 ul li h2 .lm-active").attr("data-url"));
+					$(".RedSea-leftmenu-1 ul li h2 a").click(function(){
+						$(".RedSea-leftmenu-1 ul li h2 a").removeClass("lm-active");
+						$(this).addClass("lm-active");	
+						var url=$(this).attr("data-url");
+						$(".RedSea-row-r").load(url);
+					})	
+					
+					$(".RedSea-leftmenu-1 h4 a").click(function(){
+						$(".RedSea-leftmenu-1 h4 a").removeClass("active");
+						$(this).addClass("active");
+						$(".RedSea-leftmenu-1 h2").hide();
+						$(".RedSea-leftmenu-1 h3").hide();
+						$(".RedSea-leftmenu-1").find($(this).attr('data-h')).show();
+						
+					})
+					
+					
+				 	$(function() {
+				 		$('#tbFixed').scrollToFixed({});
+					    $("#sScroll").slimScroll({
+					        width: 'auto', //可滚动区域宽度
+					        height: '500px', //可滚动区域高度 
+					        size: '6px',
+					    });
+					});
+					
+				})
+				
+		
+			</script>
+			
+			<script type="text/javascript">				   
+				   $(function(){
+				    	var data = $("#data").val();    	
+				        $("#graphDiv").html(data);
+				    	mermaid.init($("#graphDiv"));    
+				    	
+				   });										
+					
+					$(document).on("click","#graphDiv .node",function(){						
+						alert($(this).attr("id"));
+					})
+					 
+					 $(document).on("click","#graphDiv .edgePath",function(){						
+						$(this).remove();
+					})
+					    
+					    
+					 $(document).on("mouseover","#graphDiv .node",function(){						
+						var left=$(this).offset().left+80;
+						var top=$(this).offset().top;
+						$(".svg-menu").show();
+						$(".svg-menu").css({"left":left,"top":top});						
+					 })   
+					 
+					  $(document).on("mouseout","#graphDiv .node",function(){						
+						
+						$(".svg-menu").hide();
+												
+					 })  
+			    	
+			</script>
+			
+			<textarea id="data" style="display: none;">
+				graph TB;    
+				   ID1(工伤待遇申报)-->ID2(事故报告);
+				   ID2-->ID3(工伤备案受理);
+				   ID3-->ID4(工伤认定资料收集);
+				   ID4-->ID5((结束));
+				   style ID1 fill:#f9f,stroke:#333,stroke-width:4px;
+    			   style ID2 fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5;
+			</textarea>
+			
+			
+			<div class="svg-menu" style="position: absolute;z-index: 1000;background-color: red;width: 100px;height: 100px;top:0px;left:0px;display: none;">
+				
+			</div>
+			
+		</body>
+
+</html>

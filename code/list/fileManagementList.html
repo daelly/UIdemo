@@ -1,0 +1,166 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+
+ <script>
+	$(function(){
+	        	$('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });  
+	
+	            $("#selectAll").on("ifChecked",function(){
+	                $('input:checkbox').iCheck('check');
+	            });
+	
+	            $("#selectAll").on("ifUnchecked",function(){
+	                $('input:checkbox').iCheck('uncheck');
+	            });
+	            
+	          
+	        });
+</script>
+		
+
+<div class="RedSea RedSea-file-m-list">
+	<div class="action-bar clearfix">
+		<div class="pull-left">
+			<button class="btn btn-default btn-sm but-border mgr-10"><span class="glyphicon glyphicon-open"></span> 上传文件</button>
+			<button class="btn btn-default btn-sm but-border mgr-10"><span class="glyphicon glyphicon-pencil"></span> 撰写文章</button>
+			<button class="btn btn-default btn-sm but-border mgr-10"><span class="glyphicon glyphicon-folder-open"></span> 新建文件夹</button>
+		</div>
+		<div class="pull-right">
+			<div class="input-group input-group-sm" style="width: 220px;">
+				<input type="text" class="form-control" />
+				<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+			</div>
+		</div>
+	</div>
+	<div class="list-con mgt-20">
+		<div class="list-con-title clearfix">
+			<span class="pull-left">全部文件</span>
+			<span class="btn-group btn-group-xs pull-right">
+				<button type="button" class="btn btn-default "><span class="glyphicon glyphicon-th-list"></span></button>
+				<button type="button" class="btn btn-default "><span class="glyphicon glyphicon-th-large"></span></button>
+			</span>
+		</div>
+		
+		<div class="list-con-table mgt-10">
+			<table width="100%" class=" table-striped ">
+				<thead>
+					<tr>
+						<th width="40px"><input type="checkbox" id="selectAll"/></th>
+						<th width="500px">文件名 
+							<span class="th-span">已选择 2 个文件/文件夹</span>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-share"></span> 分享
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-trash"></span> 删除
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-tasks"></span> 移动到
+							</button>
+						</th>
+						<th></th>
+						<th width="120px" class="text-center">浏览次数</th>
+						<th width="120px" class="text-center">大小</th>
+						<th width="120px" class="text-center">修改日期</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="40px"><input type="checkbox" id="selectAll"/></td>
+						<td width="200px"><a>项目管理文件1</a></td>
+						<td class="text-right">
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-share"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-download-alt"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-collapse-down"></span>
+							</button>
+						</td>
+						<td width="120px" class="text-center">2</td>
+						<td width="120px" class="text-center">10kb</td>
+						<td width="120px" class="text-center">2015-12-10</td>
+					</tr>
+					<tr>
+						<td width="40px"><input type="checkbox" id="selectAll"/></td>
+						<td width="200px"><a>项目管理文件1</a></td>
+						<td class="text-right">
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-share"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-download-alt"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-collapse-down"></span>
+							</button>
+						</td>
+						<td width="120px" class="text-center">2</td>
+						<td width="120px" class="text-center">10kb</td>
+						<td width="120px" class="text-center">2015-12-10</td>
+					</tr>
+					<tr>
+						<td width="40px"><input type="checkbox" id="selectAll"/></td>
+						<td width="200px"><a>项目管理文件1</a></td>
+						<td class="text-right">
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-share"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-download-alt"></span>
+							</button>
+							<button type="button" class="btn btn-default btn-xs but-border">
+								<span class="glyphicon glyphicon-collapse-down"></span>
+							</button>
+						</td>
+						<td width="120px" class="text-center">2</td>
+						<td width="120px" class="text-center">10kb</td>
+						<td width="120px" class="text-center">2015-12-10</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

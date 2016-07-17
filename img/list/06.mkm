@@ -1,0 +1,13 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Administrator/Desktop/%e5%88%97%e8%a1%a8%e6%a0%87%e6%b3%a8/06.png">
+  <Marks>
+    <RectMark x="7" y="129" color="255" offsetX="1089" offsetY="231"/>
+    <TextMark x="143" y="131" color="255" offsetX="32" offsetY="21" defaultDirection="9" direction="9" textMaxWidth="221" text="RedSea-list-5  列表５"/>
+    <RectMark x="25" y="174" color="16711935" offsetX="1064" offsetY="176"/>
+    <TextMark x="161" y="169" color="16711935" offsetX="25" offsetY="21" defaultDirection="9" direction="9" textMaxWidth="296" text="RedSea-list-5-col4　一行四列"/>
+    <TextMark x="53" y="214" color="16711680" offsetX="95" offsetY="13" defaultDirection="9" direction="9" textMaxWidth="100" text="color-1"/>
+    <TextMark x="318" y="208" color="16711680" offsetX="89" offsetY="6" defaultDirection="9" direction="9" textMaxWidth="100" text="color-2"/>
+    <TextMark x="584" y="207" color="16711680" offsetX="80" offsetY="10" defaultDirection="9" direction="9" textMaxWidth="100" text="color-3"/>
+    <TextMark x="851" y="206" color="16711680" offsetX="68" offsetY="8" defaultDirection="9" direction="9" textMaxWidth="100" text="color-4"/>
+    <TextMark x="776" y="394" color="16711680" offsetX="53" offsetY="10" defaultDirection="10" direction="10" textMaxWidth="218" text="RedSea-page-1　分页"/>
+  </Marks>
+</MKM>

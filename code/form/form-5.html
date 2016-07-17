@@ -1,0 +1,173 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2");
+	}
+</script>
+ 
+<div class="RedSea">
+
+	<div class="modal fade selet2-100" id="myModal" style="margin-top: 50px;">
+		<div class="modal-dialog" style="width: 700px;">
+
+			<div class="modal-content">
+
+				<!-- 头部 -->
+				<div class="modal-header" style="padding:10px 15px;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModal2Label"><span class="glyphicon glyphicon-ok-circle"></span> 新签合同：闵高畅
+		 		</h4>
+				</div>
+				<div class="modal-body">
+
+					<table width="100%" class="table-view">
+						<tbody>
+							<tr>
+								<td width="102">合同类型</td>
+								<td width="235">
+									<select name="contractType" id="contractType" class="form-control">
+										<option value="0">固定期</option>
+										<option value="1">无固定期</option>
+										<option value="2">以完成一定的工作任务为期限</option>
+
+									</select>
+								</td>
+
+								<td width="100" class="title">协议类型</td>
+								<td>
+									<select name="treatyType" class="form-control" id="treatyType">
+										<option value="0">实习协议</option>
+										<option value="1" selected="selected">劳动合同</option>
+										<option value="2">聘用合同</option>
+										<option value="3">聘用协议</option>
+
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td style="width: 120px;">合同期限(月)<span class="red1">*</span> </td>
+								<td id="cDeadlineTD">
+									<input type="text" name="contractDeadline" id="cDeadline" data-placement="right" class="form-control">
+
+								</td>
+								<td class="title" style="width: 108px;">合同起始时间<span class="red1">*</span> </td>
+								<td id="d4311TD">
+									<input name="contractStartDate" type="text" readonly="readonly" id="d4311" class="form-control" onfocus="WdatePicker({onpicked:contractStartDateChange(),maxDate:'#F{$dp.$D(\'d4312\')||\'2050-01-01\'}'})" cn_name="合同起始时间">
+
+								</td>
+							</tr>
+							<tr>
+								<td>合同终止时间<span class="red1">*</span> </td>
+								<td id="d4312TD">
+									<input name="contractEndDate" type="text" readonly="readonly" id="d4312" data-placement="right" class="form-control" onclick="WdatePicker({minDate:'#F{$dp.$D(\'d4311\')}',maxDate:'2050-01-01'})" cn_name="合同结束时间">
+
+								</td>
+								<td class="title">试用期(月) </td>
+								<td id="probationPeriodID">
+									<input type="text" name="probationPeriod" id="probationPeriod" class="form-control">
+								</td>
+							</tr>
+							<tr>
+								<td>试用开始时间</td>
+								<td>
+									<input name="probationStartDate" type="text" readonly="readonly" class="form-control" id="d1" onclick="WdatePicker()" onfocus="WdatePicker({onpicked:probationStartDateChange(),maxDate:'#F{$dp.$D(\'d2\')||\'2050-01-01\'}'})" cn_name="试用开始时间">
+								</td>
+								<td class="title">试用到期时间</td>
+								<td>
+									<input name="probationDeadlineDate" type="text" readonly="readonly" class="form-control" id="d2" onclick="WdatePicker({minDate:'#F{$dp.$D(\'d1\')}',maxDate:'2050-01-01'})" cn_name="试用到期时间">
+								</td>
+							</tr>
+							<tr>
+								<td class="title">试用期工资</td>
+								<td>
+									<input type="text" name="probationSalary" class="form-control">
+								</td>
+								<td class="title">转正工资</td>
+								<td>
+									<input type="text" name="fullMemberSalary" class="form-control">
+								</td>
+							</tr>
+
+							<!-- 新增合同签署地 -->
+							<tr>
+								<td class="title">合同签订时间</td>
+								<td>
+									<input name="contractSignDate" type="text" readonly="readonly" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false})" id="contractSignDate" class="form-control" cn_name="合同签订时间" validate="required">
+								</td>
+								<td class="title">合同签署地</td>
+								<td>
+									<input type="hidden" name="siArea">
+									<div class="col-lg-6">
+										<div class="input-group">
+											<input type="text" name="siName" class="form-control" style="width:171px;" readonly="readonly">
+											<span class="input-group-btn">
+								        <button type="button" class="btn btn-default" onclick="showAreaTree(this)" title="签署地选择">选择</button>
+								      </span>
+										</div>
+										<!-- /input-group -->
+									</div>
+								</td>
+								<!-- <td colspan="2">
+			            		<input type="hidden" name="siArea" />
+			            		<input type="text" name="siName" class="form-control" readonly="readonly"/>
+			            	</td>
+			            	<td>
+			            		<button type="button" class="btn btn-default" onclick="showAreaTree(this)" title="签署地选择">选择</button>
+			            	</td> -->
+							</tr>
+							<tr>
+								<td>备注</td>
+								<td colspan="3">
+									<textarea name="remark" style="resize:none;" class="form-control"></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<!-- 底部按钮 -->
+				<div class="modal-footer" style="padding:10px 15px;">
+					<button type="button" class="btn btn-primary" id="forbid" onclick="newContract()">确认提交</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<script>
+
+$('#myModal').modal('show')
+
+
+	//下拉框
+	$('select').select2({
+		 	// minimumResultsForSearch: Infinity,
+		 	// width: 'resolve'
+	});
+
+	
+	//iCheck
+	$(function(){
+	        	 $('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });	          
+	 });
+	
+	//Switch	
+	$(".switchs").bootstrapSwitch();
+</script>
+<script>
+	$('#myTabs a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+</script>
+
+

@@ -1,0 +1,175 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("icheck,select2,scrolltofixed");
+	}
+</script>
+ 
+ <script>
+	$(function(){
+	        	$('input').not(".switchs").iCheck({
+	        	 	   checkboxClass: 'icheckbox_minimal-blue',
+					   radioClass: 'iradio_minimal-blue',
+					  
+	        	 });  
+	
+	            $("#selectAll").on("ifChecked",function(){
+	                $('input:checkbox').iCheck('check');
+	            });
+	
+	            $("#selectAll").on("ifUnchecked",function(){
+	                $('input:checkbox').iCheck('uncheck');
+	            });
+	            
+	          
+	        });
+</script>
+		
+
+<div class="RedSea">
+	<div class="RedSea-Body-2">
+		
+		
+		<div class="RedSea-Title-1" id="tbFixed">
+			<div class="RedSea-Title-1-text"><!--元件1-->
+				<div class="btn-group pull-left mgr-10 btn-group-sm" style="margin-left: -10px;">
+					<input type="checkbox" id="selectAll" />
+
+				</div>
+				<span class="icon-group"></span>员工花名册</div>
+			<div class="RedSea-Title-1-tools">
+				
+				<!--元件2-->
+				<div class="btn-group pull-right btn-group-sm">
+					<button type="button" class="btn btn-default but-border">新签合同</button>
+				</div>
+				<!--元件3-->
+				<div class="btn-group pull-right mgr-10 btn-group-sm">
+					<button type="button" class="btn btn-default but-border">新签合同</button>
+				</div>
+			<!--元件4-->
+				<div class="btn-group pull-right mgr-10  btn-group-sm">
+					<input type="text" class="form-control input-sm inline-block pull-left" style="width: 120px;" placeholder="联系人姓名" />
+					<button class="btn btn-info btn-sm but-border" style="margin-left: -10px;"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+					
+				<div class="btn-group pull-right btn-group-sm">
+				<div class="RedSea-Title-2-pyLink" style="margin-top: 5px;"><span>拼音索引</span><a>A</a><a class="pyLink-sel">B</a><a>C</a><a>D</a><a>E</a><a>F</a></div>
+				</div>
+				
+				
+			</div>
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--列表主体-->
+		<div class="RedSea-list-2">
+				<ul>
+					<li>
+							<dl><dt><i><input type="checkbox" /></i><em><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3410764670,3407421629&fm=58"/></em></dt>
+								<dd>
+									<h1><span class="color-main">王涛</span><span>广州红海网络科技开发有限公司 | 综合组</span></h1>
+									<h2><span><i class="icon-phone"></i>13596859682</span><span><i class=" icon-envelope"></i>43554555@qq.com</span></h2>
+									<h3><button class="btn btn-default btn-xs but-border mgr-10"><span></span> 发事务</button><button class="btn btn-default btn-xs but-border"><span></span> 发邮件</button></h3>
+								</dd>
+							</dl>
+
+						</li>
+				</ul>	
+		</div>
+		
+		<!--列表主体end-->
+		
+		
+		<!--列表foot-->
+		
+		<div class="RedSea-Foot-1 mgt-10">
+			<div class="RedSea-page-2">
+				<dl>
+					<dt>
+						<nav>
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+												
+					</dt>
+					<dd>
+						<div class="btn-group pull-left mgr-10 btn-group-sm">
+							<button type="button" class="btn btn-default">10条</button>
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">10条</a></li>
+								<li><a href="#">20条</a></li>
+								<li><a href="#">30条</a></li>
+								
+							</ul>
+						</div>				
+					</dd>
+					<dd>
+						<span>共135条记录</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--列表footend-->
+			
+			
+		
+		
+		
+		
+		
+		
+		
+
+	</div>
+	
+
+
+<!--插件说明
+			https://github.com/bigspotteddog/ScrollToFixed
+		-->
+		
+		
+		<script type="text/javascript">       
+ 		 $('#tbFixed').scrollToFixed({
+ 		   
+ 		 });
+ 		  
+ 		  	//下拉框
+			$('select').select2({
+				 	 minimumResultsForSearch: Infinity,
+				 	 width: 'resolve'
+			});
+   		 </script>

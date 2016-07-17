@@ -1,0 +1,237 @@
+<style>
+ul li {
+	padding: 0;
+	margin: 0;
+}
+
+.portlet.light.bg-inverse {
+	background: #F7F7F7;
+}
+
+.portlet.light {
+	padding: 12px 20px 15px 20px;
+}
+
+.portlet>.portlet-title {
+	border-bottom: 1px solid #eee;
+}
+
+.portlet>.portlet-title>.caption {
+	float: left;
+	display: inline-block;
+	font-size: 18px;
+	line-height: 18px;
+	padding: 10px 0;
+}
+
+.portlet.light>.portlet-title>.caption>.caption-subject {
+	font-size: 16px;
+}
+
+.portlet>.portlet-title>.caption>.caption-helper {
+	padding: 0;
+	margin: 0;
+	line-height: 13px;
+	color: #9eacb4;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.font-purple-plum {
+	color: #8775a7;
+	font-weight: 700;
+}
+
+.portlet>.portlet-title>.actions {
+	float: right;
+	display: inline-block;
+	padding: 6px 0;
+}
+
+.portlet>.portlet-title>.actions .btn-icon-only.btn-default {
+	padding: 4px 6px 2px 6px;
+	color: #666;
+}
+
+.portlet.light>.portlet-title>.actions .btn-icon-only {
+	height: 27px;
+	width: 27px;
+	border-radius: 50%;
+}
+
+.portlet.light .portlet-body {
+	padding-top: 8px;
+	color: #666;
+}
+
+/*  以下是右键菜单需要的css */
+.context-menu .dropdown-menu {
+	color: #666;
+	min-width: 175px;
+	padding: 0;
+	box-shadow: 5px 5px rgba(102, 102, 102, 0.1);
+	border-radius: 0;
+	border: 1px solid #eee;
+}
+
+.context-menu .dropdown-menu li>a {
+	color: #666;
+	padding: 6px 14px;
+}
+
+.badge-success {
+	background-color: #45B6AF;
+	background-image: none;
+}
+
+.badge-danger {
+	background-color: #F3565D;
+	background-image: none;
+}
+
+.badge-warning {
+	background-color: #dfba49;
+	background-image: none;
+}
+
+.context-menu .dropdown-menu>li>a>.badge {
+	position: absolute;
+	margin-top: 1px;
+	right: 3px;
+}
+</style>
+<!-- 引入右键菜单所需js -->
+<script type="text/javascript" src="/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap-contextmenu.js" > </script>
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1 ">
+		<!--列表头-->
+		<div class="RedSea-Title-3">
+			<div class="RedSea-Title-3-clear">
+				<div class="RedSea-Title-tabs">
+					<div class="RedSea-Title-3-text">
+						<span class="icon-group"></span>右键菜单
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表头end-->
+		<!-- Tab panes -->
+		<div class="RedSea-list-1">
+			<div class="col-md-6" style="margin: 50px;">
+				<!-- BEGIN PORTLET-->
+				<div class="portlet light bg-inverse">
+					<div class="portlet-title">
+						<div class="caption font-purple-plum">
+							<i class="icon-speech font-purple-plum"></i> <span class="caption-subject bold uppercase"> Demo 1</span> <span class="caption-helper">right click inside the
+								box</span>
+						</div>
+						<div class="actions">
+							<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;"> <i class="icon-cloud-upload"></i>
+							</a> <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;"> <i class="icon-wrench"></i>
+							</a> <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;"> <i class="icon-trash"></i>
+							</a>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+					<div class="portlet-body">
+						<div id="context2" data-toggle="context" data-target="#context-menu2">
+							<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis
+								mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit.</p>
+						</div>
+						<!-- Your custom menu with dropdown-menu as default styling -->
+						<div id="context-menu2" style="position: absolute; z-index: 9999; top: -72px; left: 180px;" class="context-menu">
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="javascript:;"> <i class="icon-user"></i> New User
+								</a></li>
+								<li><a href="javascript:;"> <i class="icon-gift"></i> New Event <span class="badge badge-success">4</span>
+								</a></li>
+								<li><a href="javascript:;"> <i class="icon-shopping-cart"></i> New order
+								</a></li>
+								<li class="divider"></li>
+								<li><a href="javascript:;"> <i class="icon-flag"></i> Pending Orders <span class="badge badge-danger">4</span>
+								</a></li>
+								<li><a href="javascript:;"> <i class="icon-github-alt"></i> Pending Users <span class="badge badge-warning">12</span>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- END PORTLET-->
+			</div>
+		</div>
+		<div class="well">
+			<span class="red1">右键菜单所需引入js</span>	
+			<p>
+			    <span style="font-family: Consolas;color: rgb(0, 128, 128);font-size: 15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">script</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(127, 0, 127);font-size: 15px">type</span><span style="font-family: Consolas;font-size: 15px">=</span><span style="font-family: Consolas;color: rgb(42, 0, 255);font-style: italic;font-size: 15px">&quot;text/javascript&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(127, 0, 127);font-size: 15px">src</span><span style="font-family: Consolas;font-size: 15px">=</span><span style="font-family: Consolas;color: rgb(42, 0, 255);font-style: italic;font-size: 15px">&quot;/RedseaPlatform/skins/library/bootstrap-3.3.0/js/bootstrap-contextmenu.js&quot;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(0, 128, 128);font-size: 15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style="font-family: Consolas;color: rgb(0, 128, 128);font-size: 15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">script</span><span style="font-family: Consolas;color: rgb(0, 128, 128);font-size: 15px">&gt;</span>
+			</p>
+			<p>
+			    <br/>
+			</p>
+			<span class="red1">相关html代码</span>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;context&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">data-toggle</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;context&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">data-target</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;#context-menu&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">p</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">Duis&nbsp;mollis,&nbsp;est&nbsp;non&nbsp;commodo&nbsp;luctus,&nbsp;nisi&nbsp;erat&nbsp;porttitor&nbsp;ligula,&nbsp;eget&nbsp;lacinia&nbsp;odio&nbsp;sem&nbsp;nec&nbsp;elit.&nbsp;Cras&nbsp;mattis&nbsp;consectetur&nbsp;purus&nbsp;sit&nbsp;amet&nbsp;fermentum.&nbsp;Duis</span>
+			</p>
+			<p>
+			    <span style="font-family: Consolas;font-size: 15px">mollis,&nbsp;est&nbsp;non&nbsp;commodo&nbsp;luctus,&nbsp;nisi&nbsp;erat&nbsp;porttitor&nbsp;ligula,&nbsp;eget&nbsp;lacinia&nbsp;odio&nbsp;sem&nbsp;nec&nbsp;elit.&nbsp;Cras&nbsp;mattis&nbsp;consectetur&nbsp;purus&nbsp;sit.</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">p</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(63,95,191);font-size:15px">&lt;!--&nbsp;Your&nbsp;custom&nbsp;menu&nbsp;with&nbsp;dropdown-menu&nbsp;as&nbsp;default&nbsp;styling&nbsp;--&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">id</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;context-menu&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">style</span><span style="font-family: Consolas;font-size: 15px">=&quot;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">position</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">absolute</span><span style="font-family: Consolas;font-size: 15px">;&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">z-index</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">9999</span><span style="font-family: Consolas;font-size: 15px">;&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">top</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">-72px</span><span style="font-family: Consolas;font-size: 15px">;&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">left</span><span style="font-family: Consolas;font-size: 15px">:&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,225);font-style:italic;font-size:15px">180px</span><span style="font-family: Consolas;font-size: 15px">;&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;context-menu&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ul</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;dropdown-menu&quot;</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">role</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;menu&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;javascript:;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon-user&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;New&nbsp;User</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;javascript:;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon-gift&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;New&nbsp;Event&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;badge&nbsp;badge-success&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">4</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;javascript:;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon-shopping-cart&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;New&nbsp;order</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;divider&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;javascript:;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon-flag&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;Pending&nbsp;Orders&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;badge&nbsp;badge-danger&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">4</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">href</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;javascript:;&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;icon-github-alt&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">i</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">&nbsp;Pending&nbsp;Users&nbsp;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">class</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;badge&nbsp;badge-warning&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span><span style="font-family: Consolas;font-size: 15px">12</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">span</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">a</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">li</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">ul</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">div</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <br/>
+			</p>
+		</div>
+	</div>
+</div>
+</div>

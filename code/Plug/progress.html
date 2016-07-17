@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+
+
+<button class="btn btn-primary" onclick="startProgress()">核算</button>
+
+<div style="margin-top: 50px;">
+<a href="/RedseaPlatform/UIdemo2/code/Plug/progress-doc.html" target="_blank">查看说明文档</a>
+</div>
+
+
+
+
+
+<!--进度条模态框-->
+<div class="modal fade" id="mainProgressBar" style="margin-top: 50px;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">
+						<div><i class='glyphicon glyphicon-calendar' style="margin-right: 5px;"></i><span id="msgTitle" style="display: inline-block;">开始导入核算</span><a onclick="endProgress()" class="pull-right">取消</a><a onclick="finishProgress()" class="pull-right">完成</a></div>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div  class="progress">
+					  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+					    <span class="sr-only">100% Complete</span>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<script src="/RedseaPlatform/skins/js/common/progress.js"></script>
+<script>		
+	//调用进度条
+	function startProgress(){
+		//Speed 为相应百分比的标题，第一个数字,必须是0-100就数字
+		var Speed={"0":"标题","20":"开始导入核算","40":"正在初始化数据","60":"正在导入公式","80":"正在核算"}
+		//第一个参数为进度条的时长,单位:毫秒
+		progress.startProgress(10000,Speed);	
+	}	
+	//清除进度条
+	 function endProgress(){
+			progress.endProgress();
+	}	
+		
+	//完成进度条
+	 function finishProgress(){
+			progress.finishProgress();
+	}		
+</script>

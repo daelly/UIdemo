@@ -1,0 +1,134 @@
+<meta charset="utf-8" />
+
+<p style="text-align:center">
+    <span style=";font-family:宋体;font-size:19px">进度条插件使用说明</span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:宋体;font-size:19px">一．引入<span style="font-family:Times New Roman">bootstrap&nbsp;</span><span style="font-family:宋体">模态框的</span><span style="font-family:Times New Roman">html</span></span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(149,163,171);font-size:17px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;!--进度条模态框--&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;modal&nbsp;fade&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">id=&quot;mainProgressBar&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">style</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(60,122,3);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">margin-top</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">:</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;</span><span style=";font-family:Consolas;color:rgb(155,28,235);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">50</span><span style=";font-family:Consolas;color:rgb(87,121,9);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">px</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">;</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;modal-dialog&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;modal-content&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;modal-header&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">h4&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;modal-title&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">i&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&#39;glyphicon&nbsp;glyphicon-calendar&#39;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">style</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(60,122,3);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">margin-right</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">:</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;</span><span style=";font-family:Consolas;color:rgb(155,28,235);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">5</span><span style=";font-family:Consolas;color:rgb(87,121,9);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">px</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">;</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">i</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">span&nbsp;</span><span style=";font-family:Consolas;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">id=&quot;msgTitle&quot;</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">style</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(60,122,3);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">display</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">:</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;</span><span style=";font-family:Consolas;color:rgb(196,79,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">inline-block</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">;</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;开始导入核算&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">span</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span><span style=";font-family:Consolas;color:rgb(0,255,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;a&nbsp;onclick=&quot;endProgress()&quot;&nbsp;class=&quot;pull-right&quot;&gt;取消&lt;/a&gt;&lt;a&nbsp;onclick=&quot;finishProgress()&quot;&nbsp;class=&quot;pull-right&quot;&gt;完成&lt;/a&gt;</span><span style=";font-family:Consolas;color:rgb(0,0,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/div&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">h4</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;modal-body&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;progress&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;&nbsp;&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;progress-bar&nbsp;progress-bar-striped&nbsp;active&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">role</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;progressbar&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">aria-valuenow</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;0&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">aria-valuemin</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;0&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">aria-valuemax</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;100&quot;&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">style</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(60,122,3);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">width</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">:</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;</span><span style=";font-family:Consolas;color:rgb(155,28,235);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">0</span><span style=";font-family:Consolas;color:rgb(87,121,9);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">%</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">;</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">span&nbsp;</span><span style=";font-family:Consolas;color:rgb(203,45,1);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">class</span><span style=";font-family:Consolas;color:rgb(56,68,75);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">=</span><span style=";font-family:Consolas;color:rgb(36,140,133);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&quot;sr-only&quot;</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;100%&nbsp;Complete&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">span</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;&nbsp;&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p style=";text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&lt;/</span><span style=";font-family:Consolas;color:rgb(35,105,182);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">div</span><span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&gt;</span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">&lt;/div&gt;</span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(192,192,192);background:rgb(192,192,192)">&nbsp;</span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:Consolas;color:rgb(62,75,83);font-size:12px;background:rgb(192,192,192);background:rgb(192,192,192)">&nbsp;</span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:Consolas;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">mainProgressBar</span><span style=";font-family:宋体;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;和&nbsp;</span><span style=";font-family:Consolas;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">msgTitle</span><span style=";font-family:宋体;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;两个<span style="font-family:Consolas">id&nbsp;</span><span style="font-family:宋体">是后面脚本要用到的</span></span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:宋体;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp;</span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:宋体;color:rgb(0,255,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">绿色的标标签为了方便测试用的，实际用到时要删除</span>
+</p>
+<p style="text-align:left">
+    <br/><span style=";font-family:宋体;color:rgb(0,255,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)"></span>
+</p>
+<p style="text-align:left">
+    <br/><span style=";font-family:宋体;color:rgb(0,255,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)"></span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:宋体;color:rgb(0,255,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)"></span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:宋体;font-size:19px">二．引入<span style="font-family:Times New Roman">js</span></span>
+</p>
+<p>
+    <span style=";font-family:宋体;color:rgb(0,0,255);font-size:14px">&lt;script&nbsp;src=&quot;/RedseaPlatform/skins/js/common/progress.js&quot;&gt;&lt;/script&gt;</span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">&nbsp;</span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">调用开始<br/></span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">&nbsp;</span>
+</p>
+<p>
+    <span style=";font-family:Consolas;color:rgb(255,0,0);font-size:12px;background:rgb(192,192,192);background:rgb(192,192,192)">//Speed&nbsp;为相应百分比的标题，第一个数字,必须是0-100就数字</span>
+</p>
+<p>
+    <span style=";font-family:宋体;color:rgb(0,0,255);font-size:14px">var&nbsp;Speed={&quot;0&quot;:&quot;<span style="font-family:宋体">标题</span><span style="font-family:Times New Roman">&quot;,&quot;20&quot;:&quot;</span><span style="font-family:宋体">开始导入核算</span><span style="font-family:Times New Roman">&quot;,&quot;40&quot;:&quot;</span><span style="font-family:宋体">正在初始化数据</span><span style="font-family:Times New Roman">&quot;,&quot;60&quot;:&quot;</span><span style="font-family:宋体">正在导入公式</span><span style="font-family:Times New Roman">&quot;,&quot;80&quot;:&quot;</span><span style="font-family:宋体">正在核算</span><span style="font-family:Times New Roman">&quot;}</span> <br/></span>
+</p>
+<p>
+    <span style=";font-family:Consolas;color:rgb(255,0,0);font-size:12px;background:rgb(192,192,192);background:rgb(192,192,192)">//第一个参数为进度条的时长,单位:毫秒</span>
+</p>
+<p>
+    <span style=";font-family:宋体;color:rgb(0,0,255);font-size:14px">progress.startProgress(10000,Speed);</span>
+</p>
+<p style="text-align:left">
+    <span style=";font-family:宋体;color:rgb(255,102,0);font-size:12px;background:rgb(255,255,255);background:rgb(255,255,255)">&nbsp; <br/></span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">完成到<span style="font-family:Times New Roman">100%</span> <br/></span>
+</p>
+<p>
+    <span style=";font-family:宋体;color:rgb(0,0,255);font-size:14px">progress.finishProgress();</span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">&nbsp;</span>
+</p>
+<p>
+    <span style=";font-family:宋体;font-size:14px">清除进度条和模态框 <br/></span>
+</p>
+<p>
+    <span style=";font-family:宋体;color:rgb(0,0,255);font-size:14px">progress.endProgress();</span>
+</p>

@@ -1,0 +1,193 @@
+<script>
+	if (typeof (requreLib) != "undefined") {
+		requreLib.setplugs("jValidate,pubfunction");
+	}
+</script>
+<script type="text/javascript">
+		checkForm();
+		function checkForm() {
+			//验证
+			var isValidation = $("#form1").validate();
+			if (isValidation) {
+			}
+		}
+</script>
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-1 ">
+		<!--列表头-->
+		<div class="RedSea-Title-3">
+			<div class="RedSea-Title-3-clear">
+				<div class="RedSea-Title-tabs">
+					<div class="RedSea-Title-3-text">
+						<span class="icon-group"></span>表单验证
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表头end-->
+		<!-- Tab panes -->
+		<div class="RedSea-list-1">
+			<form id="form1" name="form1" method="post" action="" class="form-search middle-l" enctype="multipart/form-data">
+					<input id="isStru" value="" type="hidden"> <input id="baseId" name="baseId" value="" type="hidden"> <input id="personStatus" name="personStatus"
+						value="" type="hidden"> <input name="rootId" value="EARTH" type="hidden"> <input id="staffId" name="staffId" value="" type="hidden"> <input
+						name="belongUnitStruId" value="4b939896-98e0-4176-a77a-694ee4639b59" type="hidden"> <input id="oldIdCard" value="" type="hidden">
+					<!-- 入职的单位与单位名称 -->
+					<input name="struId" value="4b939896-98e0-4176-a77a-694ee4639b59" type="hidden"> <input name="deptOrgName" value="妖精尾巴" type="hidden">
+					<table class="table-edit table-block" border="0" width="100%">
+						<tbody>
+							<tr>
+								<td class="left" nowrap="" width="220">URL地址</td>
+								<td><input class="form-control" value="需填写URL地址格式" name="url" validate="url" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">日期格式</td>
+								<td><input class="form-control" value="需填写日期格式" validate="date" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">必输项</td>
+								<td><input class="form-control" value="" validate="required" type="text" style="width: 300px" placehoder="必填项"></td>
+								<td class="left" nowrap="" width="220">电子邮件</td>
+								<td><input class="form-control" value="需填写电子邮件格式" validate="email" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">有效数值</td>
+								<td><input class="form-control" value="须填写有效数值" validate="number" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">正整数数值</td>
+								<td><input class="form-control" value="需填写正整数数值" validate="plusnumber" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">正数</td>
+								<td><input class="form-control" value="需填写正数" validate="plusnumber1" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">信用卡号</td>
+								<td><input class="form-control" value="需填写信用卡号格式" validate="creditcard" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">身份证号</td>
+								<td><input class="form-control" value="需填写身份证号码格式" validate="isCardNo" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">电话号码</td>
+								<td><input class="form-control" value="需填写电话号码格式" validate="phone" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">英文</td>
+								<td><input class="form-control" value="需填写英文" validate="english" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">大小写字母，数字，-，_</td>
+								<td><input class="form-control" value="须填写大小写字母,数字,-,_()" validate="noChina" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">不接受特殊字符</td>
+								<td><input class="form-control" value="需填写非特殊字符" validate="special" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">该输入项的最大长度是[2]字符</td>
+								<td><input class="form-control" value="填写项长度不可大于2" validate="maxLength[2]" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">该输入项的最小长度是[20]字符</td>
+								<td><input class="form-control" value="填写项长度不可小于20" validate="minLength[20]" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">长度范围应该在[18,20]字符之间</td>
+								<td><input class="form-control" value="填写项长度要在区间内" validate="rangeLength[20]" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">两次输入的密码不一样</td>
+								<td><input class="form-control" value="" validate="confirmPassWord" type="text" style="width: 300px"></td>
+								<td class="left" nowrap="" width="220">该输入项的最大值是[20]</td>
+								<td><input class="form-control" value="22" validate="maxValue[20]" type="text" style="width: 300px"></td>
+							</tr>
+							<tr>
+								<td class="left" nowrap="" width="220">该输入项的最小值是[20]</td>
+								<td colspan="3"><input class="form-control" value="2" validate="minValue[20]" type="text" style="width: 300px"></td>
+							</tr>
+
+							<tr>
+								<td class="left" nowrap="" width="220">条件必填项校验： 当url=1 时候，本项必填</td>
+								<td colspan="3"><input class="form-control" value="" validate="if('【url】'=='1') return 'required',maxLength[2]" type="text" style="width: 300px"></td>
+							</tr>
+
+						</tbody>
+					</table>
+
+
+
+					<div style="width: 100%; text-align: center; height: 30px;margin:10px 0">
+						<button type="button" class="btn btn-primary" tabindex="13" id="submitBtn2" onclick="checkForm()">校验</button>
+						&nbsp;&nbsp;
+					</div>
+				</form>
+		</div>
+		<div class="well">
+			<span class="red1">表单验证所需引入js(前提是已经引入boostrap)</span>	
+			按需加载所需的验证js：
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">script</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">if</span><span style="font-family: Consolas;font-size: 15px">&nbsp;(</span><span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">typeof</span><span style="font-family: Consolas;font-size: 15px">&nbsp;(requreLib)&nbsp;!=&nbsp;</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;undefined&quot;</span><span style="font-family: Consolas;font-size: 15px">)&nbsp;{</span>
+			</p>
+			<p>
+			    <span style="font-family: Consolas;font-size: 15px">requreLib.setplugs(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;jValidate&quot;</span><span style="font-family: Consolas;font-size: 15px">);</span>
+			</p>
+			<p>
+			    <span style="font-family: Consolas;font-size: 15px">}</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px;background:rgb(192,192,192);background:rgb(192,192,192)">script</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <br/>
+			</p>
+			<span class="red1">
+					使用方式：在input、textarea等输入框元素中添加属性validate, 属性值按需填写，共有如下几种(多种按,分隔)。
+					然后在js方法中（如下所示的checkForm()中进行验证）。
+			</span>	
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">script</span><span style=";font-family:Consolas;font-size:15px">&nbsp;</span><span style=";font-family:Consolas;color:rgb(127,0,127);font-size:15px">type</span><span style="font-family: Consolas;font-size: 15px">=</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-style:italic;font-size:15px">&quot;text/javascript&quot;</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">function</span><span style="font-family: Consolas;font-size: 15px">&nbsp;checkForm()&nbsp;{</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(63,127,95);font-size:15px">//验证</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">var</span><span style="font-family: Consolas;font-size: 15px">&nbsp;isValidation&nbsp;=&nbsp;$(</span><span style=";font-family:Consolas;color:rgb(42,0,255);font-size:15px">&quot;#testForm&quot;</span><span style="font-family: Consolas;font-size: 15px">).validate();</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(63,127,95);font-size:15px">//如果isValidation为true,则表示验证通过，否则验证不通过</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(127,0,85);font-weight:bold;font-size:15px">if</span><span style="font-family: Consolas;font-size: 15px">&nbsp;(isValidation)&nbsp;{</span>
+			</p>
+			<p>
+			    <span style="font-family: Consolas;font-size: 15px">}</span>
+			</p>
+			<p>
+			    <span style="font-family: Consolas;font-size: 15px">}</span>
+			</p>
+			<p>
+			    <span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&lt;/</span><span style=";font-family:Consolas;color:rgb(63,127,127);font-size:15px">script</span><span style=";font-family:Consolas;color:rgb(0,128,128);font-size:15px">&gt;</span>
+			</p>
+			<p>
+			    <br/>
+			</p>
+			<span class="red1">所有可验证项：</span>	
+<pre>
+required: "必输项",
+email: "请输入有效的电子邮件地址，格式如：user@domain.com",
+url: "请输入有效的URL地址，格式如： http://www.domain.com",
+date: "无效的日期，格式必需为 YYYY-MM-DD",
+number: "请输入有效数值",
+plusnumber: "请输入正整数数值",
+plusnumber1: "请输入正数",
+creditcard: "请输入有效的信用卡号",
+isCardNo: "身份证号输入错误: 长度应为15位或18位!",
+phone:"请输入有效的电话号码",
+english:"只能输入英文",
+noChina:"只能输入大小写字母，数字，-，_",
+special:"不接受特殊字符",
+maxLength: "该输入项的最大长度是{0}字符",(例如果最大长度为20，则validate的属性值为maxLength[20],即validate="maxLength[20]")
+minLength: "该输入项的最小长度是{0}字符",(例如果最小长度为20，则validate的属性值为minLength[20],即validate="minLength[20]")
+rangeLength: "该输入项的长度范围应该在{0}字符之间",(例如果长度范围为20，则validate的属性值为rangeLength[20],即validate="rangeLength[20]")
+confirmPassWord:"两次输入的密码不一样",
+maxValue: "该输入项的最大值是{0}",(例如果最大值为20，则validate的属性值为maxValue[20],即validate="maxValue[20]")
+minValue: "该输入项的最小值是{0}"(例如果最小值为20，则validate的属性值为minValue[20],即validate="minValue[20]")
+</pre>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,17 @@
+.hr-soft-header{height: 50px;top:0px;left: 0px;right: 0px; position: fixed;background-color: #2b3643;z-index: 99999;}
+.hr-soft-header span{line-height: 50px;color: #fff;font-size: 24px;margin-left: 30px;}
+.hr-soft-header a{float: right;background-color: #fff; padding: 3px;border-radius: 3px;color: #666;text-decoration: none;font-size: 14px; margin-right: 10px;margin-top: 13px;}
+.hr-soft-sidebar{position: fixed;top:50px;left:0px;bottom: 0px;width: 235px;background-color:#364150 ;}
+.hr-soft-content{margin-left: 235px; margin-top: 50px;padding: 10px; min-height: 1000px;}
+.hr-soft-leftmeun{}
+.hr-soft-leftmeun ul,.leftmeun li{list-style: none;}
+.hr-soft-leftmeun ul{margin: 0px;padding: 10px;}
+.hr-soft-leftmeun li{border-bottom: #3d4957 dotted 1px;color: #949db5;}
+.hr-soft-leftmeun li a{line-height: 30px;display: block;text-decoration: none;color: #949db5;cursor: pointer;padding: 0px 10px;}
+.hr-soft-leftmeun li a:hover{background-color:#3e4b5c ;}
+.hr-soft-leftmeun-a-sl{background-color:#3e4b5c ;}
+.hr-soft-leftmeun li a:before{content: "·";}
+.hr-soft-leftmeun h3{outline: 0;font-size: 14px; border-bottom: #3d4957 solid 1px; color: #949db5;line-height: 40px;margin: 0px;padding-left: 10px;display: block;cursor: pointer;}
+.hr-soft-content iframe{width: 100%;min-height: 600px;border: none;}
+.hr-soft-index-bg{text-align: center; color: #364150;margin-top: 200px;}
+.hr-soft-index-bg span{font-size: 80px;}

@@ -1,0 +1,100 @@
+
+<style type="text/css">
+	body{background-color: #f3f4f6;}
+</style>
+<script>			
+	if(typeof(requreLib)!="undefined"){
+		requreLib.setplugs("select2,slimscroll");
+	}
+</script>
+ 
+		
+
+<div class="RedSea">
+	<div class="pd-10 RedSea-Body-2">
+		<!--列表头-->
+		<div class="RedSea-Title-1">
+			<div class="RedSea-Title-1-text"><span class="icon-check"></span>复选列表</div>
+			<div class="RedSea-Title-1-tools">
+				<!--元件1-->
+				<div class="btn-group pull-right btn-group-sm mgl-10">
+					<button type="button" class="btn btn-default but-border">按钮</button>
+				</div>
+			
+				<!--元件4-->
+				<div class="btn-group pull-right mgr-10  btn-group-sm">
+					<input type="text" class="form-control input-sm inline-block pull-left" style="width: 120px;" placeholder="考场名称" />
+					<button class="btn btn-info btn-sm but-border" style="margin-left: -10px;"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+
+				
+				<!--元件5-->
+				<div class="input-group pull-right mgr-10 input-group-sm" style="width:150px;">
+					<span class="input-group-addon" id="sizing-addon2">分类</span>
+					<select class="form-control">
+						<option>全部</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>						
+					</select>
+				</div>				
+			</div>
+		</div>
+
+		<!--列表头end-->
+		
+		
+		
+		<div class="RedSea-list-8 mgt-10">
+			<div class="RedSea-list-8-l">
+				<ul id="leftmeun">
+					<li><i class="icon-check-empty"></i><em data-id="zsf">张三峰</em></li>
+					<li><i class="icon-check-empty"></i><em data-id="ls">李四</em></li>					
+				</ul>
+			</div>
+			<div class="RedSea-list-8-r">
+				<ul id="innerli">
+					
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+<script>
+$(".RedSea-list-8-l ul li").click(function(){			
+			if($(this).find("i").attr("class")=="icon-check-empty"){				
+					$(this).find('i').attr("class","icon-check");
+					var dataid=$(this).find("em").attr("data-id")
+					var emtext=$(this).find("em").text();					
+					var em=$("<em></em>").attr("data-id",dataid);
+					em.text(emtext);					
+					var li=$("<li></li>");					
+					$("#innerli").append(li.append(em));					
+			}else{
+				$(this).find("i").attr("class","icon-check-empty");				
+				var dataId=$(this).find("em").attr("data-id");
+				$("#innerli em[data-id="+dataId+"]").parents("li").remove();				
+			}
+
+	});
+
+
+$(document).ready(function(){
+	$('select').select2({
+				 	 minimumResultsForSearch: Infinity
+	});	
+	$("#leftmeun").slimScroll({
+        width: 'auto', //可滚动区域宽度
+        height: '500px', //可滚动区域高度 
+        size: '6px',
+    });    
+    $("#innerli").slimScroll({
+        width: 'auto', //可滚动区域宽度
+        height: '500px', //可滚动区域高度 
+        size: '6px',
+    });				 
+})
+</script>
